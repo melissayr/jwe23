@@ -1,0 +1,47 @@
+.roter-text {
+    color: brown;
+}
+
+.blauer-hintergrund {
+    background-color: lightskyblue;
+}
+
+#headline1 {
+    text-decoration: line-through;
+}
+
+#headline2 {
+    letter-spacing: 0.25em;
+}
+
+body {
+    background-color: lightgrey;
+    margin: 40px;
+}
+
+/* Tag Selektro */
+
+li {
+    padding: 5px;
+    border-left: 10px solid green;
+}
+
+/* class selektor */
+
+.list-element {
+    border-left: 3px solid blue;
+}
+
+/* id selektor */
+
+#list-element-1 {
+    border-left: 50px solid deeppink;
+}
+
+/* ab einer Viewpoint-Breite von 400 Pixel gilt folgender CSS Code */
+
+@media (min-width: 400px) {
+    body {
+        background-color: orange;
+    }
+}
