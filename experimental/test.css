@@ -1,0 +1,16 @@
+.hellotext {
+    color: rgb(49, 113, 93);
+    border: 3px solid rgb(145, 98, 173);
+    padding: 8px;
+    background-color: lightpink;
+    display: flex;
+    justify-content: space-between;
+}
+.hellotext2 {
+    color: rgb(63, 152, 200);
+    border: 3px solid rgb(48, 82, 134);
+    padding: 8px;
+    background-color: lightpink;
+    display: flex;
+    justify-content: space-between;
+}
