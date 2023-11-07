@@ -1,0 +1,62 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors: */
+    --grey: #969696;
+    --light-grey: #dddddd;
+    --primary: #e74149;
+}
+
+/*nur .container Klassen innerhalb des #main-header*/
+
+#main-header {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-image: url(img/blog-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    /*50vh sind 50% der verfügbaren Viewport Höhe*/
+    min-height: 75vh;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    align-items: center;
+    flex: 0;
+}
+
+#main-header .container:last-child {
+    flex-flow: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+button.cta {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+}
+
+@media (min-width: 768px){
+    /*CSS Code für Viewports größer/gleich 768px*/
+}
+
+@media (min-width: 1200px){
+    /*CSS Code für Viewports größer/gleich 1200px*/
+}

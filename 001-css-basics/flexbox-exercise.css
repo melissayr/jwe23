@@ -1,0 +1,45 @@
+html{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+.flexcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article1 {
+    margin: 0 1% 0 0;
+}
+
+.article-text {
+    background-color: orange;
+    
+}
+
+
+
+.footer {
+    background-color: grey;
+    padding: 5%;
+    margin-top: 4rem;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+h2,
+p {
+    margin: 0;
+}
+
+@media (min-width: 576px) {
+    .container {
+
+        flex-wrap: wrap;
+      
+    }
+}
+
+.wrapper{max-width: 800px;
+margin-right: auto;
+margin-left: auto;}
