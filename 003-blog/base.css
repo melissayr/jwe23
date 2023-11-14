@@ -1,12 +1,32 @@
+@font-face {
+    font-family: "lato";
+    src: url(fonts/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: "lato";
+    src: url(fonts/Lato-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "lato";
+    src: url(fonts/Lato-Black.ttf);
+    font-weight: 900;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: lato;
 }
 
 html* {
     box-sizing: border-box;
+    font-family: lato;
+}
+
+h1 {
+    font-weight: 900;
 }
 
 :root {
@@ -14,6 +34,7 @@ html* {
     --grey: #969696;
     --light-grey: #dddddd;
     --primary: #e74149;
+    --h-space: 30px;
 }
 
 /*nur .container Klassen innerhalb des #main-header*/
@@ -29,6 +50,11 @@ html* {
 
     /*50vh sind 50% der verfügbaren Viewport Höhe*/
     min-height: 75vh;
+}
+
+.h-spacing {
+    padding-left: var(--h-space);
+    padding-right: var(--h-space);
 }
 
 #main-header .container {
@@ -52,18 +78,81 @@ button.cta {
     font-size: 18px;
     border: none;
     border-radius: 12px;
+    font-weight: normal;
+}
+
+.subheader {
+    font-style: bold;
+    text-align: left;
+    font-size: 24px;
+}
+
+h3 {
+    color: var(--primary);
+    font-size: 18px;
+    text-align: left;
+}
+
+main {
+    padding-left: var(--h-space);
+    padding-right: var(--h-space);
+}
+
+.teaser-item img {
+    width: 100%;
+}
+
+.inner-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+.link1 {
+    color: var(--primary);
+}
+
+#main-footer {
+    background-color: var(--light-grey);
+}
+
+#footer-logo {
+    display: none;
+}
+
+#main-footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+#main-footer nav ul li {
+    flex-basis: 50%;
+}
+
+#copyright {
+    font-size: 0.8em;
+    color: var(--grey);
+    text-align: center;
+}
+
+a {
+    color: var(--primary);
+}
+
+#main-footer a {
+    color: inherit;
 }
 
 @media (min-width: 768px) {
-    /*CSS Code für Viewports größer/gleich 768px*/
+    section .container {
+        display: flex;
+        gap: 10px;
+    }
+
+    #main-footer .inner-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 @media (min-width: 1200px) {
     /*CSS Code für Viewports größer/gleich 1200px*/
-}
-
-.secondheader {
-    font-style: bold;
-    text-align: left;
-    font-size: 24px;
 }
