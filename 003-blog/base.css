@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html* {
@@ -53,10 +54,16 @@ button.cta {
     border-radius: 12px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     /*CSS Code für Viewports größer/gleich 768px*/
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     /*CSS Code für Viewports größer/gleich 1200px*/
+}
+
+.secondheader {
+    font-style: bold;
+    text-align: left;
+    font-size: 24px;
 }
