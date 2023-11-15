@@ -27,6 +27,8 @@ html* {
 
 h1 {
     font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px #080404;
 }
 
 :root {
@@ -47,10 +49,15 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    /*margin-top: 80px;*/
 
     /*50vh sind 50% der verfügbaren Viewport Höhe*/
     min-height: 75vh;
 }
+
+/* #main-header .container:first-child{
+    margin-top: -60;
+    position: relative;} */
 
 .h-spacing {
     padding-left: var(--h-space);
@@ -107,14 +114,30 @@ main {
     margin-right: auto;
     max-width: 1200px;
 }
+
+#main-header .inner-wrapper::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    z-index: 0;
+    display: block;
+}
 .link1 {
     color: var(--primary);
 }
 
 #main-footer {
     background-color: var(--light-grey);
+    margin-top: 50px;
+    padding-bottom: 50px;
 }
-
+#main-footer .inner-wrapper{
+    padding-top: var(--h-space);
+}
 #footer-logo {
     display: none;
 }
@@ -122,15 +145,52 @@ main {
 #main-footer nav ul {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 30px;
 }
 #main-footer nav ul li {
     flex-basis: 50%;
+    margin-bottom: 1em;
+   
+    
+}
+
+#main-footer nav ul li::marker{
+    content: "\2BC8";
+    color: var(--primary);
+    font-size: 0.65em;
+}
+
+
+.teaser-item > a::after{
+    content: "\2BC8";
+    color: var(--primary);
+    font-size: 0.65em;
+}
+
+.teaser-item a:hover::before{
+    content: "";
+    display: block;
+    position: relative;
+    bottom: -1.5em;
+    width: calc(100% - 1.25em);
+    height: 1px;
+    background: var(--primary);
+}
+
+.teaser-item a{
+    transition: all 0.5s ease;
 }
 
 #copyright {
     font-size: 0.8em;
     color: var(--grey);
     text-align: center;
+    margin-top: 30px;
+    padding-left: var(--h-space);
+    padding-right: var(--h-space);
+
 }
 
 a {
@@ -148,8 +208,14 @@ a {
     }
 
     #main-footer .inner-wrapper {
+      
         display: flex;
         flex-wrap: wrap;
+    }
+
+    #footer-logo{
+        display: block;
+        filter: grayscale(1);
     }
 }
 
