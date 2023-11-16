@@ -1,1 +1,167 @@
-.h1 {color: green;}
+@font-face {
+    font-family: josefin-sans;
+    src: url(fonts/josefin-sans-v20-latin-regular.woff);
+    font-weight: normal;
+}
+@font-face {
+    font-family: josefin-sans;
+    src: url(fonts/josefin-sans-v20-latin-300.woff2);
+    font-weight: 300;
+}
+@font-face {
+    font-family: josefin-sans;
+    src: url(fonts/josefin-sans-v20-latin-700.woff);
+    font-weight: 700;
+}
+
+:root {
+    /* Colors: */
+    --grey: #969696;
+    --white: #dddddd;
+    --h-space: 30px;
+    --brown: #c39065;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 300;
+    color: var(--grey);
+    text-align: center;
+    margin: 3rem 0 3rem;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: josefin;
+}
+header .mainheader {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    background-size: cover;
+}
+
+header > img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.guetepic {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    right: 0;
+    bottom: 33%;
+}
+
+.logo {
+    padding-left: 3%;
+    width: 250px;
+    padding: 30px;
+}
+
+.burger {
+    padding-right: 3%;
+    width: 40px;
+}
+
+.mainpics {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    text-align: center;
+    width: 100%;
+}
+
+.mainimg {
+    width: 256px;
+    height: 256px;
+}
+
+#main-footer {
+    background-color: var(--brown);
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+#main-footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#main-footer nav ul {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+#main-footer nav ul li {
+    flex-basis: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.lastchild {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    text-align: center;
+}
+.textone {
+    font-family: josefin-sans;
+}
+
+button {
+    color: var(--grey);
+    margin: 5%;
+    padding: 10px;
+    font-family: josefin-sans;
+}
+
+#main-footer address {
+    display: block;
+    font-style: normal;
+    color: white;
+    color: var(--white);
+    font-family: josefin-sans;
+}
+
+a:link {
+    color: var(--white);
+    text-decoration: none;
+    font-family: josefin-sans;
+}
+
+/* #main-footer nav ul li: list style: none ----oder */
+#main-footer nav ul li::marker {
+    content: none;
+}
+
+#copyright {
+    background-color: var(--grey);
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    font-family: josefin-sans;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        max-height: 1080;
+    }
+}
+
+
