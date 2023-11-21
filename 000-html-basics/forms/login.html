@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+
+        <link rel="stylesheet" href="login.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header><h1>Secret login area</h1></header>
+
+            <main>
+                <section class="login">
+                    <form action="https://jwe.obinet.at/login.php?key=wifi2023"
+                    method="post">
+                        <div>
+                            Email oder Username:<br />
+                            <input type="text" name="username" id="username" />
+                        </div>
+                        <div>
+                            Passwort: <br />
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                            />
+                        </div>
+                        <div>
+                            <button type="submit">Anmelden</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

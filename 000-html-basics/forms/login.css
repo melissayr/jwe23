@@ -1,0 +1,40 @@
+html,body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+
+}
+
+body{background: silver;}
+
+h1{ text-align: center;}
+
+section.login{
+    display:flex;
+    justify-content: center;
+}
+
+.login form{
+    background: white;
+    padding: 30px;
+    border-radius:5px;
+    border: 1px solid #999
+}
+
+input,
+button{
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #999;
+}
+
+button{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: blue;
+    color: white;
+   box-shadow: 2px 2px 1px 1px rgb(104, 99, 99);
+}
+
+form>div {
+    margin-bottom: 10px;
+}

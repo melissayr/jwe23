@@ -37,6 +37,14 @@ body {
     padding: 0;
     font-family: josefin;
 }
+
+img { max-width: 100%;}
+
+#burger{
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
 header .mainheader {
     position: relative;
     display: flex;
@@ -45,7 +53,11 @@ header .mainheader {
     background-size: cover;
 }
 
-header > img {
+#hero{
+    position: relative;
+}
+
+header img.headerpic {
     display: block;
     max-width: 100%;
     width: 100%;
@@ -56,8 +68,9 @@ header > img {
     position: absolute;
     width: 200px;
     height: auto;
+    bottom: -50px;
     right: 0;
-    bottom: 33%;
+
 }
 
 .logo {
@@ -66,10 +79,7 @@ header > img {
     padding: 30px;
 }
 
-.burger {
-    padding-right: 3%;
-    width: 40px;
-}
+
 
 #mainpics {
     display: flex;
@@ -77,6 +87,12 @@ header > img {
     justify-content: center;
     align-items: center;
     gap: 4rem;
+}
+
+#navigation{
+    text-decoration: none;
+    list-style: none;
+    
 }
 
 .mainimg {
@@ -93,7 +109,8 @@ header > img {
 #main-footer {
     display: flex;
     justify-content: space-between;
-    text-align: center;
+   
+
 }
 
 #main-footer nav ul {
@@ -102,15 +119,14 @@ header > img {
     flex-flow: column;
     margin-top: 0;
     margin-left: 0;
-    padding-left: 30px;
     text-decoration: none;
     text-align: right;
 }
 
 #main-footer nav ul li {
-    flex-basis: auto;
     margin-bottom: 1em;
     margin-top: 1em;
+    
 }
 
 .lastchild {
@@ -183,3 +199,26 @@ a:link {
     }
 }
 
+@media (min-width: 768px) {
+    #navigation {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+        font-weight: bold;
+        font-family: josefin-sans;
+    }
+
+}
+
+@media (min-width: 768px) {
+   #burger {
+        display: none;
+       
+    }
+
+}
+@media(max-width: 767px){
+    #navigation{display:none}
+}
