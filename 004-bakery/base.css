@@ -71,12 +71,12 @@ header > img {
     width: 40px;
 }
 
-.mainpics {
+#mainpics {
     display: flex;
-    justify-content: space-between;
-    flex-flow: row;
-    text-align: center;
-    width: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }
 
 .mainimg {
@@ -104,6 +104,7 @@ header > img {
     margin-left: 0;
     padding-left: 30px;
     text-decoration: none;
+    text-align: right;
 }
 
 #main-footer nav ul li {
@@ -130,12 +131,24 @@ button {
     font-family: josefin-sans;
 }
 
+#main-footer .inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 #main-footer address {
     display: block;
-    font-style: normal;
-    color: white;
-    color: var(--white);
     font-family: josefin-sans;
+    color: var(--white);
+    font-style: normal;
+    padding-top: var(--h-space);
+    text-align: left;
+    padding-left: var(--h-space);
+}
+
+#main-footer address span {
+    margin-bottom: 1em;
+    display: block;
 }
 
 a:link {
@@ -164,4 +177,9 @@ a:link {
     }
 }
 
+@media (min-width: 768px) {
+    #mainpics {
+        flex-flow: row;
+    }
+}
 
