@@ -35,12 +35,14 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: josefin;
+    font-family: josefin-sans;
 }
 
-img { max-width: 100%;}
+img {
+    max-width: 100%;
+}
 
-#burger{
+#burger {
     padding-top: 15px;
     padding-right: 15px;
 }
@@ -53,7 +55,7 @@ header .mainheader {
     background-size: cover;
 }
 
-#hero{
+#hero {
     position: relative;
 }
 
@@ -70,7 +72,6 @@ header img.headerpic {
     height: auto;
     bottom: -50px;
     right: 0;
-
 }
 
 .logo {
@@ -78,8 +79,6 @@ header img.headerpic {
     width: 250px;
     padding: 30px;
 }
-
-
 
 #mainpics {
     display: flex;
@@ -89,10 +88,9 @@ header img.headerpic {
     gap: 4rem;
 }
 
-#navigation{
+#navigation {
     text-decoration: none;
     list-style: none;
-    
 }
 
 .mainimg {
@@ -109,8 +107,6 @@ header img.headerpic {
 #main-footer {
     display: flex;
     justify-content: space-between;
-   
-
 }
 
 #main-footer nav ul {
@@ -126,7 +122,6 @@ header img.headerpic {
 #main-footer nav ul li {
     margin-bottom: 1em;
     margin-top: 1em;
-    
 }
 
 .lastchild {
@@ -187,6 +182,19 @@ a:link {
     font-family: josefin-sans;
 }
 
+.row {
+    margin-top: 30px;
+}
+
+.inner-wrapper {
+    margin-left: 30px;
+}
+
+#data{text-decoration: underline;
+color: rgb(10, 10, 158);}
+
+
+
 @media (min-width: 768px) {
     .wrapper {
         max-height: 1080;
@@ -209,16 +217,15 @@ a:link {
         font-weight: bold;
         font-family: josefin-sans;
     }
-
 }
 
 @media (min-width: 768px) {
-   #burger {
+    #burger {
         display: none;
-       
     }
-
 }
-@media(max-width: 767px){
-    #navigation{display:none}
+@media (max-width: 767px) {
+    #navigation {
+        display: none;
+    }
 }

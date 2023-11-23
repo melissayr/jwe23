@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bakery</title>
+        <link rel="stylesheet" href="base.css" />
+        <link rel="stylesheet" href="fonts/" />
+        <link rel="stylesheet" href="img/" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="mainheader">
+                    <img
+                        class="logo"
+                        src="img/Logo-placeholder.png"
+                        alt="logo"
+                    />
+
+                    <nav>
+                        <ul id="navigation">
+                            <li><a href="about.html">Über Uns</a></li>
+                            <li><a href="team.html">Unser Team</a></li>
+                            <li><a href="#">Galerie</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                        </ul>
+
+                        <img id="burger" src="img/burger.svg" alt="burger" />
+                    </nav>
+                </div>
+
+                <div id="hero">
+                    <!-- relativ -->
+
+                    <img
+                        class="guetepic"
+                        src="img/2000px-Guetesiegel_anz.svg.png"
+                        alt=""
+                    />
+                    <!-- slider js -->
+                </div>
+
+                <!-- img before slider -->
+            </header>
+            <main>
+                <section class="kontakt">
+                    <header class="inner-wrapper">
+                        <h1>Bestellen Sie bei uns</h1>
+                    </header>
+
+                    <div class="inner-wrapper">
+                        <form action="kotakt.html" method="get">
+                            <label for="salutation">Anrede</label>
+                            <input
+                                type="radio"
+                                name="salutation"
+                                id="salutation_herr"
+                            />
+
+                            <label for="salutation_herr">Herr</label>
+
+                            <input
+                                type="radio"
+                                name="salutation"
+                                id="salutation_frau"
+                            />
+
+                            <label for="salutation_frau">Frau</label>
+
+                            <input
+                                type="radio"
+                                name="salutation"
+                                id="salutation_firma"
+                            />
+
+                            <label for="salutation_firma">Firma</label>
+
+                            <div class="row">
+                                <label for="firstname">Name</label><br />
+                                <input name="firstname" id="firstname" />
+                            </div>
+                            <div class="row">
+                                <label for="email">E-mail</label><br />
+
+                                <input type="email" id="email" />
+                            </div>
+                            <div class="row">
+                                <label for="subject">Betreff</label><br />
+                                <input type="subject" id="subject" />
+                            </div>
+                            <div class="row">
+                                <label for="deliverydate"
+                                    >Wunschlieferdatum</label
+                                ><br />
+                                <input type="deliverydate" id="deliverydate" />
+                            </div>
+                            <div class="row">
+                                <label for="massage">Nachricht</label><br />
+                                <textarea
+                                    name="massage"
+                                    id="massage"
+                                    cols="30"
+                                    rows="10"
+                                    hallo
+                                >
+hallo</textarea
+                                >
+                            </div>
+                            <div class="row">
+                                <input type="checkbox" name="gdpr" id="gdpr" />
+                                <label for="gdpr"
+                                    >Ja ich bin mit den
+                                    <a id="data" href="dateschutz.html" target="_blank"
+                                        >Datenschutzbestimmungen</a
+                                    > einverstanden.</label
+                                >
+
+                            </div>
+
+                            <div class="row">
+                                <label for="feedback"> Wie haben Sie von uns erfahren?</label> <br>
+                                <select name="feedback" id="feedback">
+                                    <option value="" disabled selected>Bitte wählen Sie eine Option</option>
+                                <option value="Google">Google</option>
+                                <option value="Friend">Durch einen Freund</option>
+                                <option value="Magazine">Aus einer Zeitung</option>
+                                </select>
+                            </div>
+
+                        </form>
+                        <button class="send">Senden</button>
+                    </div>
+                </section>
+            </main>
+            <footer id="main-footer">
+                <div class="inner-wrapper">
+                    <address>
+                        <span>Bakery GmbH</span>
+                        <span>Salzburgerstraße 55</span>
+                        <span>5620 Schwarzach</span>
+                        <span>Österreich</span>
+                        <br />
+                        <span>Tel. +43 6415 422 42 80</span>
+                        <span>E-Mail: bakery@example.com</span>
+                    </address>
+
+                    <nav>
+                        <ul>
+                            <li><a href="#">Über uns</a></li>
+                            <li><a href="#">Unser Team</a></li>
+                            <li><a href="#">Gallerie</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                            <li><a href="#">Impressum</a></li>
+                            <li><a href="#">Datenschutz &amp; Cookies</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
+            <div id="copyright">&copy; 2018 Bakery | copyright</div>
+        </div>
+    </body>
+</html>
