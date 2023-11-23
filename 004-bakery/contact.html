@@ -50,7 +50,10 @@
                     </header>
 
                     <div class="inner-wrapper">
-                        <form action="kotakt.html" method="get">
+                        <form
+                            action="https://jwe.obinet.at/bakery_order.php"
+                            method="post"
+                        >
                             <label for="salutation">Anrede</label>
                             <input
                                 type="radio"
@@ -111,25 +114,36 @@ hallo</textarea
                                 <input type="checkbox" name="gdpr" id="gdpr" />
                                 <label for="gdpr"
                                     >Ja ich bin mit den
-                                    <a id="data" href="dateschutz.html" target="_blank"
+                                    <a
+                                        id="data"
+                                        href="dateschutz.html"
+                                        target="_blank"
                                         >Datenschutzbestimmungen</a
-                                    > einverstanden.</label
+                                    >
+                                    einverstanden.</label
                                 >
-
                             </div>
 
                             <div class="row">
-                                <label for="feedback"> Wie haben Sie von uns erfahren?</label> <br>
+                                <label for="feedback">
+                                    Wie haben Sie von uns erfahren?</label
+                                >
+                                <br />
                                 <select name="feedback" id="feedback">
-                                    <option value="" disabled selected>Bitte wählen Sie eine Option</option>
-                                <option value="Google">Google</option>
-                                <option value="Friend">Durch einen Freund</option>
-                                <option value="Magazine">Aus einer Zeitung</option>
+                                    <option value="" disabled selected>
+                                        Bitte wählen Sie eine Option
+                                    </option>
+                                    <option value="Google">Google</option>
+                                    <option value="Friend">
+                                        Durch einen Freund
+                                    </option>
+                                    <option value="Magazine">
+                                        Aus einer Zeitung
+                                    </option>
                                 </select>
                             </div>
-
                         </form>
-                        <button class="send">Senden</button>
+                        <button class="buttonsend">Senden</button>
                     </div>
                 </section>
             </main>
