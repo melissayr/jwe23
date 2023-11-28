@@ -1,0 +1,27 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heroimg {
+    max-width: 100%;
+    width: 100%;
+}
+
+#hero {
+    position: relative;
+}
+
+.mainheader {
+    position: relative;
+}
+
+.mainimg {
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
