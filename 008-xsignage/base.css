@@ -1,0 +1,92 @@
+html,
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    src: url();
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+
+:root {
+    --primary: #47aed4;
+    --skyblue: #ffffff63;
+    --grey: #777777;
+    --lightgrey: #b4b4b4;
+    --darkgrey: #444444;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 34px;
+    padding-bottom: 30px;
+}
+
+.heroimg {
+    width: 423px;
+    position: relative;
+    overflow: hidden;
+    height: 530px;
+    background-size: auto 400%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1 {
+    font-family: Montserrat-Bold;
+    font-size: 35px;
+    text-align: right;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    opacity: 1;
+    color: white;
+}
+
+.heroslogan {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: var(--primary);
+    text-align: right;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    width: 194px;
+    height: 44px;
+    border-radius: 22px;
+    box-shadow: 2px 2px 10px #0000003d;
+    border: 2px solid #ffffff63;
+    border-radius: 22px;
+}
+
+.herotext {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    position: absolute;
+    height: auto;
+    top: 100px;
+    right: 33px;
+}
+
+#bluerow {
+    margin: 0;
+    padding: 0;
+    height: 6px;
+    background-color: var(--primary);
+}
