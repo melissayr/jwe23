@@ -14,8 +14,15 @@ img {
 
 .mainbackground {
     background-color: #7c4e4e;
-    height: 734px;
     width: 100%;
+    position: relative;
+    top:198px;
+}
+
+.headerimg{
+    position: absolute;
+    top: 128px;
+    z-index: 10;
 }
 
 .profilpic {
@@ -27,6 +34,7 @@ img {
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    position: absolute;
 }
 
 .parent {
@@ -36,6 +44,8 @@ img {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+
+
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
