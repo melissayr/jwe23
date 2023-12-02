@@ -1,7 +1,6 @@
-html * {
+html, body{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+ 
 }
 
 img {
@@ -13,6 +12,7 @@ img {
     width: 100%;
     position: relative;
     top: 198px;
+    padding-top: 200px;
 }
 
 .headerimg {
@@ -48,6 +48,8 @@ img {
     grid-row-gap: 0px;
     object-position: center;
     position: relative;
+   
+
 }
 
 .div1 {
