@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: Montserrat-Bold;
-    src: url(fonts/Montserrat-Bold.ttf);
+    src: url(font/Montserrat-Bold.ttf);
     font-weight: bold;
 }
 
@@ -45,6 +45,79 @@ img {
     padding-top: 30px;
 }
 
-.headerimg{
-    
+.headerimg {
+    width: 100%;
+    padding-top: 30px;
+    border-bottom: 6px solid var(--primary);
+    position: relative;
+    display: block;
+}
+
+h1 {
+    font-family: Montserrat-Bold;
+    font-size: 35px;
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
+    align-items: right;
+    height: auto;
+    top: 100px;
+    right: 33px;
+    position: absolute;
+    opacity: 1;
+}
+
+.headertext {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: var(--primary);
+    text-align: center;
+    align-items: right;
+    opacity: 1;
+    height: auto;
+    top: 250px;
+    right: 33px;
+    position: absolute;
+}
+
+.headerbutton {
+    background: #47aed4;
+    box-shadow: 2px 2px 10px #0000003d;
+    border: 2px solid #ffffff63;
+    border-radius: 22px;
+    color: white;
+    font-size: 18px;
+    width: 194px;
+    height: 44px;
+    text-align: center;
+    align-items: right;
+    position: absolute;
+    top: 320px;
+    right: 33px;
+}
+
+h2 {
+    font-size: 18px;
+    font-family: Montserrat-Bold;
+    color: var(--primary);
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.teaserimg {
+    max-width: 100%;
+    width: 315;
+    height: 231;
+}
+
+.teasertext {
+    color: var(--middlegrey);
+    font-size: 14px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: left;
+    line-height: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
