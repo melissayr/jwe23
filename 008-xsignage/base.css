@@ -1,7 +1,7 @@
 html,
 body {
     margin: 0px;
-    padding: 0px;
+
 }
 
 html * {
@@ -113,7 +113,9 @@ h2 {
 .teaserimg {
     width: 315px;
     height: 231px;
-    opacity: 1;
+    padding-left: 30px;
+    padding-right: 30px;
+    
 }
 
 .teasertext {
