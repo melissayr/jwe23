@@ -1,0 +1,50 @@
+:root {
+    --primary: #47aed4;
+    --grey: #b4b4b4;
+    --middlegrey: #777777;
+    --darkgrey: #444444;
+}
+
+@font-face {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    src: url();
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Montserrat-Reg;
+    src: url(font/Montserrat-Regular.ttf);
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+}
+
+.headerimg{
+    
+}
