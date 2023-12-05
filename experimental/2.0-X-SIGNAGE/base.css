@@ -185,7 +185,7 @@ a {
     text-align: center;
 }
 
-.question{
+.question {
     align-items: center;
     padding-bottom: 30px;
 }
@@ -208,31 +208,28 @@ a {
     border-radius: 22px;
     color: white;
     font-size: 14px;
-    width: 194px;
-    height: 44px;
     text-align: center;
     align-items: center;
     width: 286px;
     height: 44px;
- 
-
+    display: inline-block;
 }
 
-.address{
+.address {
     background-color: var(--primary);
     align-items: center;
     padding: 30px;
 }
 
-.addresslogo{
+.addresslogo {
     align-items: center;
 }
 
-.addresstext{
+.addresstext {
     color: white;
     align-items: center;
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 14px;
 }
 
@@ -244,4 +241,14 @@ a {
     text-align: center;
     font-size: 14px;
 }
+@media (min-width: 768px) {
+    #teaserelement {
+        display: flex;
+        justify-content: space-between;
+    }
 
+    .teaserimg {
+        width: 461px;
+        height: 231px;
+    }
+}
