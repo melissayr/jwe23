@@ -247,7 +247,7 @@ h4 {
     padding-bottom: 30px;
 }
 
-.copy{
+.copy {
     font-family: Cherry-Reg;
     font-size: 10px;
     color: var(--green);
@@ -255,4 +255,59 @@ h4 {
     padding-top: 31px;
     padding-bottom: 31px;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    #hero h1 {
+        padding-right: 191px;
+        text-align: right;
+    }
+    #hero p {
+        padding-right: 191px;
+        text-align: right;
+    }
+    #hero button {
+        margin-left: 671px;
+    }
+    .teaser {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row;
+        gap: 32px;
+    }
+    .teasertext {
+        text-align: left;
+    }
+
+    .teaserimg {
+        width: 445px;
+        height: 231px;
+    }
+    #booking button{
+        margin-left: 440px;
+    }
+    .footerflex{
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row;
+
+    }
+    .logofooter {
+        width: 300px;
+        height: 105px;
+        
+    }
+    .cookies{text-align: right;
+    gap: 210px;}
+
+    .div3 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .div1 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .div2 {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
 }
