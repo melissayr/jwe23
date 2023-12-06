@@ -312,4 +312,20 @@ a {
     .buttontwo {
         align-items: center;
     }
+
+    .mainfooter {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footerlogo {
+        padding-bottom: 141px;
+        padding-top: 20px;
+    }
+    .flexfooter {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row;
+        gap: 10px;
+        padding-top: 110px;
+    }
 }
