@@ -1,0 +1,21 @@
+:root{
+    --green: #053336;
+    --gold:#A9A084;
+    --grey:#E8E8E8;
+}
+
+@font-face {
+    font-family: Cherry-Reg;
+    src: url(fonts/CherrySwash-Regular.ttf);
+}
+
+@font-face {
+    font-family: Cherry-Bold;
+    src: url(fonts/CherrySwash-Bold.ttf);
+}
+
+@font-face {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    src: url();
+}
+

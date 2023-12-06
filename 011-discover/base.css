@@ -213,8 +213,7 @@ h2 {
     align-items: center;
     position: relative;
     margin-bottom: 48px;
-    left:124px;
-
+    left: 124px;
 }
 
 .mainfooter {
@@ -284,23 +283,19 @@ a {
         display: flex;
         flex-flow: row;
         padding-left: 30px;
-        padding-right:30px;
+        padding-right: 30px;
         align-items: center;
         gap: 25px;
-       
-        
     }
 
     .div1 {
         width: 291px;
         height: 195px;
-        
     }
 
     .div2 {
         width: 184px;
         height: 195px;
-        
     }
 
     .div3 {
@@ -338,7 +333,7 @@ a {
         gap: 10px;
         padding-top: 110px;
     }
-    .buttontwo{
+    .buttontwo {
         left: 448px;
     }
 }
