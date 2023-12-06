@@ -211,8 +211,10 @@ h2 {
     font-family: Open-Sans-Bold;
     font-size: 16px;
     align-items: center;
-    margin-left: 124px;
+    position: relative;
     margin-bottom: 48px;
+    left:124px;
+
 }
 
 .mainfooter {
@@ -281,21 +283,29 @@ a {
     .parent {
         display: flex;
         flex-flow: row;
+        padding-left: 30px;
+        padding-right:30px;
+        align-items: center;
+        gap: 25px;
+       
+        
     }
 
     .div1 {
         width: 291px;
-        height: 194px;
+        height: 195px;
+        
     }
 
     .div2 {
-        width: 148px;
+        width: 184px;
         height: 195px;
+        
     }
 
     .div3 {
         width: 260px;
-        height: 194px;
+        height: 195px;
     }
     .div4 {
         width: 192px;
@@ -327,5 +337,8 @@ a {
         flex-flow: row;
         gap: 10px;
         padding-top: 110px;
+    }
+    .buttontwo{
+        left: 448px;
     }
 }
