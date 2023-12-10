@@ -1,0 +1,99 @@
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(font/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+
+:root{
+    --gold:
+
+    --h-space: 30px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.inner-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.herologo{
+    width: 100px;
+    height: auto;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+
+.heroimg{
+    height: 250px;
+    width: auto;
+}
+
+h1{
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 30px;
+}
+
+.teaserimg {
+    width: 315px;
+    height: 231px;
+    object-fit: cover;
+    object-position: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 16px;
+    margin-bottom: 27px;
+}
+
+.teasertext {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: black;
+    line-height: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#teaserinfos {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 69px;
+}
+
+h2 {
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    color: var(--gold);
+    text-align: center;
+}
+
+
