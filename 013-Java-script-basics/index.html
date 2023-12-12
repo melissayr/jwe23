@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript</title>
+
+        <script src="basics.js"></script>
+        <script>
+            document.write("hi");
+        </script>
+    </head>
+
+    <body>
+        <h1>Headline</h1>
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            dolores quasi illo animi in aut atque repudiandae odio temporibus
+            corrupti deleniti, aperiam harum voluptas beatae est iste ad esse
+            sint.
+        </p>
+
+        <button onclick="showMyListInConsole()">
+            Zeige meine Einkaufsliste in der Console
+        </button>
+
+        <script>
+            // lesen aus dem HTML Dokument
+            let textFormH1 = document.querySelector("h1").innerText;
+        </script>
+    </body>
+</html>
