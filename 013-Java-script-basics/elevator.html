@@ -13,9 +13,11 @@
             <div id="elevator" class=""></div>
         </div>
 
+        <div id="controls"></div>
+
         <script>
             let currentFloor = 0; // EG = 0,1 OG = 1, usw.
-            let floors = ['ug', 0, 1, 2, 3];
+            let floors = ["ug", "0", "1", "2", "3"];
 
             let elevator = document.querySelector("#elevator");
 
@@ -30,7 +32,20 @@
                 currentFloor = floor;
             };
 
-            goToFloor(3);
+            let showControls = function () {
+                let htmlOutput = "";
+
+                floors.forEach((floor) => {
+                    htmlOutput += `<button class="btn btn-primary" onclick="goToFloor('${floor}')">
+                ${floor}
+            </button>
+            `;
+                });
+
+                document.querySelector("#controls").innerHTML = htmlOutput;
+            };
+
+            showControls();
         </script>
     </body>
 </html>
