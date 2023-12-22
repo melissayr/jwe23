@@ -65,50 +65,62 @@ h1 {
     display: block;
     margin: auto;
     align-items: center;
-    height: 300px;
     width: auto;
-}
-
-.teasertext {
-    font-family: Montserrat;
-    font-size: 14px;
-    color: black;
-    line-height: 22px;
-    padding-left: 30px;
-    padding-right: 30px;
+    height: auto;
 }
 
 #teaserinfos {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: white;
+    line-height: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
     align-items: center;
     text-align: center;
     margin-bottom: 69px;
 }
 
-h2 {
+.teaser-headline {
     font-family: Montserrat-Bold;
     font-size: 20px;
-    color: var(--gold);
+    color: white;
     text-align: center;
 }
+
 .teaserlink {
-    color: rgb(116, 12, 113);
+    color: gold;
     text-decoration: none;
 }
 
 .teaserone {
-    background-color: blanchedalmond;
-    margin: 50px;
+    background-color: black;
+    margin: 10px;
     padding: 30px;
 }
 
 .teasertwo {
-    background-color: blanchedalmond;
-    margin: 50px;
+    background-color: black;
+    margin: 10px;
     padding: 30px;
 }
 
 .teaserthree {
-    background-color: blanchedalmond;
-    margin: 50px;
+    background-color: black;
+    margin: 10px;
     padding: 30px;
+}
+
+@media (min-width: 768px) {
+    .teaser {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        margin:50px;
+    }
+
+    .teaserimg{
+       
+        width: auto;
+    }
 }
