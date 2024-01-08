@@ -45,6 +45,7 @@ function displayQuestion() {
 
     question.answers.forEach((answer, index) => {
         let answerButton = document.createElement("button");
+        answerButton.classList.add("btn", "btn-dark", "me-2")
         answerButton.textContent = answer;
         answerButton.onclick = () => checkAnswer(index);
         answersDiv.appendChild(answerButton);
