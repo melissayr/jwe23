@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gallery in JavaScript dynamically generated</title>
+
+        <link
+            rel="stylesheet"
+            href="../013-Java-script-basics/fancybox/fancybox.css"
+        />
+    </head>
+    <body>
+        <a
+            href="img/full/pexels-james-wheeler-417074 (1).jpg"
+            data-fancybox="gallery"
+        >
+            <img src="img/thumbs/pexels-james-wheeler-417074.jpg" alt="" />
+        </a>
+
+        <script src="../013-Java-script-basics/fancybox/fancybox.umd.js"></script>
+
+        <script>
+            Fancybox.bind("[data-fancybox]", {
+                // Your custom options
+            });
+        </script>
+    </body>
+</html>

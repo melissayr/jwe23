@@ -16,6 +16,25 @@ document.querySelector("#art-no").innerHTML = PRODUCT_DATA.artNo;
 
 document.querySelector("#product-title").innerHTML = PRODUCT_DATA.productTitle;
 
-document.querySelector("#price").innerHTML = PRODUCT_DATA.price;
+document.querySelector("#product-description").innerHTML =
+    PRODUCT_DATA.description;
 
-document.querySelector("#product-description").innerHTML = PRODUCT_DATA.description;
+document.querySelector("#price").innerHTML = PRODUCT_DATA.price
+    .toFixed(2) //statement
+    .toString()
+    .replace(".", ",");
+
+console.log(PRODUCT_DATA.price);
+
+PRODUCT_DATA.variants.sizes.forEach((size) => {
+    htmlOutput += `<option value="${size}">${size}</option>`;
+});
+
+document.querySelector("#prod-size").innerHTML = htmlOutput;
+
+htmlOutput = "";
+PRODUCT_DATA.variants.colors.forEach((color) => {
+    htmlOutput += `<option value="${color}">${color}</option>`;
+});
+
+document.querySelector("#prod-color").innerHTML = htmlOutput;
