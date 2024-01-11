@@ -11,6 +11,9 @@
         />
     </head>
     <body>
+
+        <div class="" id="gallery"></div>
+
         <a
             href="img/full/pexels-james-wheeler-417074 (1).jpg"
             data-fancybox="gallery"
@@ -24,9 +27,27 @@
             Fancybox.bind("[data-fancybox]", {
                 // Your custom options
             });
+
+            let createDynamicGallery = function () {
+                for (let img = 1; img <= 4; img++) {
+
+                    //console.log(img);
+
+                    //console.log(`<a href="img/full/${img}.jpg" data-fancybox="gallery">
+                    //<img src="img/thumbs/${img}.jpg" alt="" />`);
+
+                    htmlOutput += `
+                    <a href="img/full/${img}.jpg" data-fancybox="gallery">
+                    <img src="img/thumbs/${img}.jpg" alt="" /></a>`;
+                }
+
+                document.querySelector("#gallery").innerHTML = htmlOutput;
+            };
+
+            createDynamicGallery();
+
         </script>
 
         <script src="gallery.js"></script>
-
     </body>
 </html>
