@@ -1,0 +1,40 @@
+#redlight {
+    background-color: red;
+    border-radius: 55%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+#orangelight {
+    background-color: orange;
+    border-radius: 55%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+#greenlight {
+    background-color: green;
+    border-radius: 55%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.ampelbuttons {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#ampel {
+    background-color: rgb(8, 8, 8);
+    height: 200px;
+    width: 70px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 20px;
+    gap: 5px;
+}
