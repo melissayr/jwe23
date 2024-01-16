@@ -25,7 +25,7 @@ $("#add-product").on("click", addNewProduct);
 
 $("#new-product").on("keyup", function (e) {
     console.log(e.keyCode);
-
+    //enter wurde gedrückt
     if (e.keyCode == 13) {
         addNewProduct();
     }
