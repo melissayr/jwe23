@@ -1,5 +1,10 @@
 let myList = ["Senf", "Brot", "Butter"];
 
+//Wenn das Cookie für die "product-list" existiert, dann befülle das Array mit den Produkten aus dem Cookie
+if (typeof Cookies.get("product_list") !== "undefined") {
+    myList = Cookies.get("product_list").split(",");
+};
+
 /*Checkbox Vorlage Listenelement
 
 <div class="form-check">
@@ -16,6 +21,9 @@ let myList = ["Senf", "Brot", "Butter"];
 
 const addNewProduct = function () {
     myList.push($("#new-product").val());
+    Cookies.set("product_list", myList, {
+        expires: 365,
+    }); /*einkaufsliste gespeichert in Cookies für 365 T*/
     prependNewProduct(myList.lenght - 1, myList[myList.length - 1]);
     $("#new-product").val("").focus();
 };
