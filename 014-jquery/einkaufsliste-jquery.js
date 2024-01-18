@@ -19,21 +19,19 @@ if (typeof Cookies.get("product_list") !== "undefined") {
 //     console.log(product);
 // });
 
-    const addNewProduct = function () {
+const addNewProduct = function () {
     let value = $("#new-product").val();
 
-    if (!filteredList.length){
+    if (!filteredList.length) {
         myList.push(value);
         Cookies.set("product_list", myList, {
             expires: 365,
         }); /*einkaufsliste gespeichert in Cookies für 365 T*/
         prependNewProduct(myList.lenght - 1, myList[myList.length - 1]);
-
     } else {
-        $('#new-product').val("").focus();
+        $("#new-product").val("").focus();
     }
 
-    
     $("#new-product").val("").focus();
 };
 
@@ -86,13 +84,23 @@ const showFilteredList = function (list) {
 
 const filterList = function () {
     let value = $(this).val().toLowerCase(); //documentQueryselector. # new-product = this
-    let filteredList = myList.filter (function (article) {
+    let filteredList = myList.filter(function (article) {
         return article.toLowerCase().includes(value);
-    })};
-
-
-$("#new-product").on("click", addNewProduct);
-$("#new-product").on("keyup", function (e) {
+    });
 
     showFilteredList(filteredList);
+};
+
+$("#new-product").on("click", filterList);
+$("#new-product").on("keyup", filterList);
+
+$("input.from-ckeck-input").on("click", function () {
+    let checkbox = $(this);
+
+    console.log(checkbox.prop('ckecked'));
+
+    if (checkbox.prop('checked') == true) {
+        //speichere in array 
+        
+    }
 });
