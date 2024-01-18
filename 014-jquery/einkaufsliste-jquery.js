@@ -101,6 +101,12 @@ $("input.from-ckeck-input").on("click", function () {
 
     if (checkbox.prop('checked') == true) {
         //speichere in array 
-        
+
+    }
+});
+$('input.form-check-input').each(function(indey,input)
+{
+    if (input.attr('id')== "product-"+2){
+        $(input.prop("checked", true));
     }
 });
