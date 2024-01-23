@@ -76,6 +76,20 @@ createProductList();
 //     console.log(product);
 // });
 
+const setCheckedListItems = function () {
+    const cookie = Cookies.get('checked_items');
+    if(typeof cookie !="undefined" && cookie != ''){
+        let checkedItems = cookie.split(',');
+        $(checkedItems).each(function(index, value)
+        { $('#product-' +value).prop('checked', true);
+
+        });
+
+    }
+};
+
+setCheckedListItems();
+
 const showFilteredList = function (list) {
     $("#product-list").empty();
 
@@ -94,19 +108,36 @@ const filterList = function () {
 $("#new-product").on("click", filterList);
 $("#new-product").on("keyup", filterList);
 
-$("input.from-ckeck-input").on("click", function () {
+$("input.form-check-input").on("click", function () {
     let checkbox = $(this);
+    console.log(checkbox.prop("checked"));
 
-    console.log(checkbox.prop('ckecked'));
-
-    if (checkbox.prop('checked') == true) {
-        //speichere in array 
-
+    if (checkbox.prop("checked") == true) {
+        // speichere in array
     }
 });
-$('input.form-check-input').each(function(indey,input)
-{
-    if (input.attr('id')== "product-"+2){
-        $(input.prop("checked", true));
-    }
+
+//lesen der aktuellen gechecked inputs
+//bauen des Arrays mit der Liste aller product-ids der Elemente die gecheckt sind
+//Speichern Cookie
+
+//let checkedInputs; // Global
+
+$("#product-list input").change(function () {
+    let listOfCheckedInputs = [];
+
+    let checkedInputs = $("input:checked"); // innerhalb { nur für die function}
+    checkedInputs.each(function () {
+        let productId = $(this).closest("[data-product-id]").data("product-id");
+        console.log(productId);
+
+        listOfCheckedInputs.push(productId);
+        console.log(listOfCheckedInputs);
+    });
+
+    Cookies.set("checked_items", listOfCheckedInputs.join(","), {expires: 365}); //Join zerlegt das array
 });
+
+//Cookie auslesen
+//Array mit Schleife durchgehen
+//Listenelemente .prop()aktualisieren
