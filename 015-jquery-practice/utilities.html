@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Utilities</title>
+    </head>
+    <body>
+        <ul>
+            <li>hgf</li>
+            <li>sdg</li>
+            <li>afg</li>
+            <li>ag</li>
+            <li>adfg</li>
+            <li>dfg</li>
+        </ul>
+
+        <div>
+            Benutzer
+            <br />
+            <input type="text" id="username" name="username" />
+        </div>
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script>
+            //Each / forEach
+
+            $("li").each(function (index) {
+                console.log($(this).text());
+                $(this).css("background", "hsl(" + index * 10 + ", 50%, 100%)");
+            });
+
+            $.each($("li"), function () {});
+
+            // Array Utilities
+            //api.jquery.com/category/utilities
+
+            let arrayMerge = $.merge([1, 2, 3], [4, 5, 6]);
+            console.log(arrayMerge);
+
+            let names = ["Harry", "Marry", "Kevin"];
+            let names2 = ["Barbara", "Monica", "Sophie"];
+
+            console.log($merge(names, names2));
+
+
+            //Trimmen eines Strings
+
+            $("#username").change(function(){
+                console.log($.trim($(mthis).val())); 
+            });
+        </script>
+    </body>
+</html>

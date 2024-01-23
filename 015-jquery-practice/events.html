@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events</title>
+
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0%;
+            }
+
+            #circle {
+                border: 1px solid red;
+                border-radius: 50%;
+                width: 50%;
+                height: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                user-select: none;
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="circle"></div>
+       
+        <a href="#" rel="stylesheet" href="#">Zu Google</a>
+
+        <button id="myButton">Click me!</button>
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script>
+            //Event Handler setzen
+
+            $("#myButton").on("click", function () {
+                console.log("hey, you clicked me");
+            });
+
+            $("myButton").click(function () {
+                console.log("Another Click");
+            });
+
+            //Event Handler entfernen
+            $("#myButton").off("click");
+
+            $("a").click(function (e) {
+                e.preventDefault();
+                alert("dieser link wird von Javascript blockiert");
+            });
+
+            //unterbinden von typischen Events
+            //e.preventDefault()
+
+            $("#myButton").mouseenter(function () {
+                $(this).css("border", "1px solid red");
+            });
+
+            $("#myButton").mouseleave(function () {
+                $(this).css("border", "4px solid green");
+            });
+
+            $("body").mousemove(function () {
+                console.log(e.pageX, e.pageY);
+                $("#circle").css({
+                    top: e.pageX,
+                    left: e.pageY, // X koordinate und Y koordinate
+                });
+            });
+        </script>
+    </body>
+</html>
