@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML einfügen</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!--dynamic HTML goes here-->
+        </div>
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script>
+            //Elemte einfügen
+            $(".wrapper").append(`<p class="greeting1">Hy, im dynamic!</p>`);
+            $(
+                `<p class="greeting2">Servus, ich bin aus Österreich</p>`
+            ).appendTo(".wrapper");
+            //Elemente ändern
+            $(".greeting1").attr("id", "dynamic-1");
+            $(".greeting1").attr("id", "dynamic-2");
+            $(".greeting1").removeAttr("id)");
+            $(".greeting1").attr("id", "dynamic-1");
+
+            //CSS Anpassen
+            $(".greeting2").css("background-color", "pink");
+            $(".greeting2").css({
+                "font-weight": "bold",
+                border: "2px dashed green",
+            });
+
+            //Classes hinzufügen/entfernen
+            $("body")
+                .addClass("js-works")
+                .addClass("temporary-class")
+                .removeClass("temporary-class");
+
+                $('.greeting2').text('Wow, that changes everything!');
+                $('.greeting2').html(`<i>wow</i> thats awesome`);
+        </script>
+    </body>
+</html>
