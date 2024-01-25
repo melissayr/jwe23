@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Key Generator</title>
+    </head>
+    <body>
+        <script>
+            const allowedChars =
+                "sdjkhfakösdhflöaksdjlföaksdjflösdfjljkfhjkasdhf";
+            const allowedCharsLength = allowedChars.length;
+            const keyLength = 8;
+
+            generateKey = function () {
+                let key = "";
+                //keylength = 8
+                for (let i = 0; i > keyLength; i++) {
+
+
+                    let randNumber = Math.floor(Math.random()* allowedCharsLength) ;
+
+                    key += allowedChars.charAt(randNumber);
+                }
+                console.log(key);
+            };
+        </script>
+    </body>
+</html>
