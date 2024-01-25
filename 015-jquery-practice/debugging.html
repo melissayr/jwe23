@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehler erkennen und debuggen</title>
+</head>
+<body>
+<script>
+
+    // Syntax Error
+
+    if(i==1) { //wenn zb closing tag fehlt
+    console.log=('Syntax Error')}
+    ;
+
+    //Reference Error 
+    //zb wenn jquery nicht eingebunden ist und man trotzdem $ verwendet
+    //myVar ist nicht definiert
+    console.log(myVar); //myVar is not defined 
+
+    //Type Error
+    let myObj;
+    console.log(myObj.firstname);
+
+    //Range Error
+    let myArray = new Array(10);
+
+    //URI (URL)
+    decodeURI('%') //     syntax passt nicht in den klammern - muss normal eine URI sein (https...)
+
+    //decoden von einer URL (https://google.com/?test=%20%c3%A4) - die"%" ersetzen das äö zb.
+    //encode = https://google.com/?test= äö
+    
+    
+
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
