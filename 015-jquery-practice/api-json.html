@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON API</title>
+    </head>
+    <body>
+        <div id="gallery"></div>
+        <!--Data from JSON API-->
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script>
+            const url = "https://jsonplaceholder.typicode.com/photos";
+
+            let getGalleryFromAPI = function () {
+                $.getJSON(url, function (data) {
+                    console.log(data[4].thumbnailUrl);
+
+                    let htmlOut = "";
+
+                    $(data).each(function (index, entry) 
+                    
+                    {if (index > 0 && index < 100)
+                        htmlOut += `<img src="${entry.thumbnailUrl}" alt=""/>`;
+                    });
+                    $("#gallery").html(htmlOut);
+                });
+            };
+        </script>
+    </body>
+</html>

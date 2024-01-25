@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API mit jQuery nutzen (ajax abfrage)</title>
+</head>
+<body>
+
+    <div id="ajaxContent">
+
+    </div>
+
+    
+    <script src="../vendor/jquery-3.7.1.js"></script>
+    <script>
+        //ajax - Asynchron js  - wenn sich parallel nur kleine teile einer website aktualisieren/laden zb. Facebook: Facebook Hintergrund bleibt - der chat wird aktualisiert 
+        //zb. Aktienseiten, wo sich ständig Werte ändern aber die ganze Seite nicht aktualisiert werden muss
+
+        let getGallery = function(){
+            $.get('https://phet-dev.colorado.edu/html/build-an-atom/0.0.0-3/simple-text-only-test-page.html', function(data){
+                console.log(data);
+                $("#ajaxContent").html(data);
+            }
+            ); //jQuery.get() -> $.get
+        };
+ 
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>
