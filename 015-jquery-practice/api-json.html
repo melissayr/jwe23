@@ -6,8 +6,9 @@
         <title>JSON API</title>
     </head>
     <body>
-        <div id="gallery"></div>
-        <!--Data from JSON API-->
+        <div id="gallery"><!--Data from JSON API--></div>
+
+        <button id="load"></button>
 
         <script src="../vendor/jquery-3.7.1.js"></script>
 
@@ -20,14 +21,36 @@
 
                     let htmlOut = "";
 
-                    $(data).each(function (index, entry) 
-                    
-                    {if (index > 0 && index < 100)
-                        htmlOut += `<img src="${entry.thumbnailUrl}" alt=""/>`;
+                    $(data).each(function (index, entry) {
+                        if (index > 0 && index < 100)
+                            htmlOut += `<img src="${entry.thumbnailUrl}" alt=""/>`;
+
+                        //shorthand schreibweise f+r eine Condition - if else
+                        //Wenn Bedingung true ? DANN CODE : ANSONSTEN CODE
+                        index == 5
+                            ? console.log("index is 5")
+                            : console.log("index is not 5");
                     });
                     $("#gallery").html(htmlOut);
                 });
             };
+
+            $("#load").on("click", function () {
+                getGalleryFromAPI();
+            });
+
+            //PRÜFUNG!!!
+
+            //Auslesen formulare, attribute, schleifen + .each , API Abfrage , if und else 
+            //if die zahl ist höher als 10 grad, dann so und so 
+            //html einfügen in die function 
+            //consol.log output 
+
+            //eine seite mit funct., folgende bedinung, auslesen, wenn man auf den button clickt passiert ... 
+
+            //HOMEWORK !!! API KEY NICHT MIT COMMITTN - API OPEN WEATHER im MAIN die grad von Kelvin auf Celsius ändern - wetter daten abfragen und im HTML ausgeben
+            // mit setIntervall diese funtion immerwieder ausführen (stadtt dem BUTTON #load -> window.setInerval(getGalleryFromAPI)5000,)
+        
         </script>
     </body>
 </html>
