@@ -3,21 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Strings Zusammenbauen</title>
+        <title>Homework</title>
     </head>
     <body>
+        <script src="../vendor/jquery-3.7.1.js"></script>
         <div id="output"></div>
 
-        <script src="../vendor/jquery-3.7.1.js"></script>
-
         <script>
-            let person = {
-                firstname: "Melissa",
-                lastname: "Reim",
+            // Strings verketten
+
+            let girl = {
+                myName: "Melissa",
+                myAge: 28,
             };
 
             $("#output").text(
-                `Herzlich Willkommen ${person.firstname} ${person.lastname}`
+                `Hallo ich bin ${girl.myName} und bin ${girl.myAge} Jahre alt!`
             );
         </script>
     </body>

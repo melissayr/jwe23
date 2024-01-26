@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homework API JSON</title>
+    </head>
+    <body>
+        <div id="weather"></div>
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script>
+            const url =
+                "https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid={b0dc1b4625730cf902fb9f81b94b6104}&units=metric";
+
+            let getDegreeFromAPI = function () {
+                $getJSON(url, function (data) {
+                    $(this).weather.main;
+
+                    console.log(data.weather.main);
+
+                    let htmlOutput = "";
+                });
+                $("#weather").html(htmlOutput);
+            };
+        </script>
+    </body>
+</html>
