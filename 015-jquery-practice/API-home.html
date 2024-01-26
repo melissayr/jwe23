@@ -12,8 +12,8 @@
 
         <script>
             const url =
-                "https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid={b0dc1b4625730cf902fb9f81b94b6104}&units=metric";
-
+                "https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid={KEY }&units=metric";
+            //KEY IN MY ACCOUNT
             let getDegreeFromAPI = function () {
                 $getJSON(url, function (data) {
                     $(this).weather.main;
