@@ -6,19 +6,47 @@
         <title>Strings Zusammenbauen</title>
     </head>
     <body>
+        <link
+            rel="stylesheet"
+            href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+        />
         <div id="output"></div>
 
-        <script src="../vendor/jquery-3.7.1.js"></script>
+        <div id="result"></div>
 
         <script>
-            let person = {
-                firstname: "Melissa",
-                lastname: "Reim",
-            };
+            //STRING VERKETTEN
 
-            $("#output").text(
-                `Herzlich Willkommen ${person.firstname} ${person.lastname}`
-            );
+            // let person = {
+            //     firstname: "Melissa",
+            //     lastname: "Reim",
+            // };
+
+            // $("#output").text(
+            //     `Herzlich Willkommen ${person.firstname} ${person.lastname}`
+            // );
+
+            //LOOP
+
+            // let yourName;
+
+            // do {
+            //     yourName = prompt("Who are you?");
+            // } while (!yourName);
+            // console.log(yourName);
+
+            //length
+
+            // const greeting = "Hello";
+            // const x = greeting.length;
+
+            const cars = ["vw", "BMW", "audi"];
+
+            cars[3] = "Mercedes";
+
+            $(cars.length);
         </script>
+        <script src="../vendor/jquery-3.7.1.js"></script>
+        <script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
     </body>
 </html>
