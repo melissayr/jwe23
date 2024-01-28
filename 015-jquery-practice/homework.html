@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aufgaben für Zuhause</title>
+    </head>
+    <body>
+        <link
+            rel="stylesheet"
+            href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+        />
+
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <h1 id="h1">Übungsaufgaben</h1>
+
+                    <label for="exercise" class="col col-form-label" id="label">
+                        Exercise</label
+                    >
+
+                    <input type="Aufgaben" id="exercise" />
+
+                    <button id="button" onclick="changeColor">Click me</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $("#h1").text("Hello");
+
+            $("#h1").hide("Hello");
+
+            $("#h1").show("Hello");
+
+            $("#button").on("click", function changeColor() {
+                $(this).css("color", "red");
+            });
+        </script>
+
+        <script src="homework.js"></script>
+
+        <script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    </body>
+</html>
