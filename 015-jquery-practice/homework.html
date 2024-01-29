@@ -39,6 +39,11 @@
                         src="http://via.placeholder.com/640x360"
                         alt=""
                     />
+
+                    <h2>Toggle</h2>
+                    <button id="buttontoggle">Hide and show</button>
+
+                    <div id="removeDiv">Das hier kommt jetzt weg</div>
                 </div>
             </div>
         </div>
@@ -72,6 +77,15 @@
                     );
                 });
             };
+
+            //toggle
+
+            $("#buttontoggle").click(function () {
+                $("p").toggle();
+            });
+
+            // let removeSomething = $("#removeDiv");
+            // removeSomething.remove("#removeDiv");
         </script>
 
         <script src="homework.js"></script>
