@@ -18,6 +18,8 @@
                 <div class="col">
                     <h1 id="h1">Übungsaufgaben</h1>
 
+                    <p class="p">Hier steht ein random Text</p>
+
                     <label for="exercise" class="col col-form-label" id="label">
                         Exercise</label
                     >
@@ -25,9 +27,23 @@
                     <input type="Aufgaben" id="exercise" />
 
                     <button id="button" onclick="changeColor">Click me</button>
+
+                    <p class="p">Übung macht den Meister</p>
+
+                    <button id="button2" onclick="changeImg">
+                        Change Image
+                    </button>
+
+                    <img
+                        id="img1"
+                        src="http://via.placeholder.com/640x360"
+                        alt=""
+                    />
                 </div>
             </div>
         </div>
+
+        <div class="c"></div>
 
         <script>
             $("#h1").text("Hello");
@@ -39,6 +55,23 @@
             $("#button").on("click", function changeColor() {
                 $(this).css("color", "red");
             });
+
+            $(".col").prepend($(".c").text("Test")); // Fragen warum doppelt !
+
+            $("#h1").css("color", "blue");
+
+            $(".p").css("background-color", "yellow"); //Fragen
+
+            //Formulardaten fragen
+
+            let changeImg = function () {
+                $("#button2").on("click", function () {
+                    $("#img1").setAttribute(
+                        "src",
+                        "https://placekitten.com/640/360"
+                    );
+                });
+            };
         </script>
 
         <script src="homework.js"></script>
