@@ -44,6 +44,12 @@
                     <button id="buttontoggle">Hide and show</button>
 
                     <div id="removeDiv">Das hier kommt jetzt weg</div>
+
+                    <div id="change">
+                        Dieser content wird mit html() verändert!
+                    </div>
+
+                    <div class="yourClass">ADDCLASS</div>
                 </div>
             </div>
         </div>
@@ -84,8 +90,20 @@
                 $("p").toggle();
             });
 
-            // let removeSomething = $("#removeDiv");
-            // removeSomething.remove("#removeDiv");
+            //remove
+
+            let removeSomething = $("#removeDiv");
+            removeSomething.remove("#removeDiv");
+
+            //html
+
+            $("#change").html(
+                "Dieser content <b>wird mit html()</b> verändert!"
+            );
+
+            //add and remove class
+
+            $("p").addClass("p yourClass");
         </script>
 
         <script src="homework.js"></script>
