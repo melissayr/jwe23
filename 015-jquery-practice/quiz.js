@@ -24,7 +24,7 @@ const quiz = [
     },
 ];
 
-let correcrAnswers = 0;
+let correctAnswers = 0;
 let currentQuestion = 0;
 
 let showQuestion = function (index) {
@@ -45,6 +45,7 @@ let showAnswers = function (index) {
 
 // let clickAnswer = function(index) {
 //     $("#button").on("click", function() {
+//         $()
 
 //     } )
 // }
