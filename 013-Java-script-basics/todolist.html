@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo List</title>
+
+        <link
+            rel="stylesheet"
+            href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="row">
+                <div class="container">
+                    <div id="todo">
+                        <h1>MY TO DO LIST</h1>
+                        <form name="toDoList">
+                            <input
+                                type="text"
+                                name="ListItem"
+                                placeholder="Press Button to add"
+                            />
+                        </form>
+
+                        <button type="submit" id="button">ADD</button>
+                        <br />
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../vendor/jquery-3.7.1.js"></script>
+
+        <script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+
+        <script src="todolist.js"></script>
+    </body>
+</html>
