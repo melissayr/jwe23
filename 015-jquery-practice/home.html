@@ -9,6 +9,12 @@
         <script src="../vendor/jquery-3.7.1.js"></script>
         <div id="output"></div>
 
+        <h1 id="h1">Hallooooo</h1>
+
+        <h2 id="h2">Übungen</h2>
+
+        <button id="button" onclick="clickIt">Press me</button>
+
         <script>
             // Strings verketten
 
@@ -20,6 +26,24 @@
             $("#output").text(
                 `Hallo ich bin ${girl.myName} und bin ${girl.myAge} Jahre alt!`
             );
+
+            $("#h1").text("NEUER TEXT");
+
+            $("#button").on("click", function (clickIt) {
+                $(this).css("color", "red");
+            });
+
+            $("#h1").append(`
+            <h1 id="h1">Hallooooo <b> APPEND IT </b></h1>
+            `);
+
+            $("#h1").prepend(`
+
+            <h1 id="h1"> Prepend it Hallooooo</h1>
+
+            `);
+
+            $("#h2").prepend("LOL ");
         </script>
     </body>
 </html>
