@@ -1,7 +1,7 @@
 let person = {
     myAge: 28,
     myName: "Melissa",
-    color: ["blue", "yellow", "pink"],
+    color: ["blue", "yellow", "pink", "orange", "green", "red"],
 };
 
 // console.log(person.color[2]);
@@ -27,6 +27,8 @@ und ich bin ${Alter} Jahre alt
 `);
 }
 
-let arrayX = ["#name", "#prename"];
+$("p").each(function () {
+    console.log(":" + $(this).text());
+});
 
-arrayX.push("#age");
+

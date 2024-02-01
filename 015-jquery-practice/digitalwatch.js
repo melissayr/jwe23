@@ -9,3 +9,5 @@ displayTime = function () {
     $("clock").innerHTML = "hour" + ":" + "min" + ":" + "sec";
 };
 setInterval(displayTime, 1000);
+
+//dosent work 
