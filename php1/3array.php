@@ -49,11 +49,41 @@ echo"</pre>";
 //Ausgabe: "Simon (40) aus Salzburg"
 
 echo $person["name"] . " (" . $person["alter"] .  ") aus " . $person["ort"];
+echo "<br/>";
+echo "{$person["name"]} ({$person["alter"]}) aus {$person["ort"]}";
+echo "<br/>";
 
+//Im Nachhinein einen Wert dem Array anfügen
+$person["guthaben"] = 100;
 
+echo"<pre>";
+print_r($person);
+echo"</pre>";
 
+//Mehrdimensionale Array (verschachtelt)
+$personen = array (
+    array( //index 0
+    "name" => "Lukas",
+    "alter" => 50,
+    "ort" => "Linz"),
+    array( //index 1
+        "name" => "Lisa",
+        "alter" => 18,
+        "ort" => "Wien",
+    ),
+    $person
+);
 
+echo"<pre>";
+print_r($personen);
+echo"</pre>";
 
+echo $personen[0]["ort"];
+echo "<br/>";
+
+//Ich bin Lukas und habe ein Guthaben von 100.
+
+echo "Ich bin " . $personen[0]["name"] . " und habe ein Guthaben von " . $person["guthaben"];
 
 ?>
     

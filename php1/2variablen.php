@@ -39,6 +39,41 @@ echo 'Ich heiße ' . $name;
 
 echo "<br/>";
 echo "Ich habe" . $name . "s Stift."; //String Verkettung mit . (Punkt)
+
+//Datentypen: Boolean (kurz: bool)
+echo "<br/>";
+$wahr = true;
+echo ">" . $wahr . "<";
+echo "<br/>";
+// 1 ist in PHP true
+
+$falsch = false;
+echo ">" .  $falsch . "<"; 
+echo "<br/>";
+// false ist leer 
+
+
+//null: "nichts oder "undefiniert"
+$nichts = null;
+echo ">" . $nichts . "<";
+echo "<br/>";
+
+//Eine Konstante definieren und verwenden
+        //name       //Wert
+define("datenbank", "php23");
+echo datenbank;
+echo "<br/>";
+
+//Neuere Schreibweise
+const datenbank2 = "php24";
+echo datenbank2;
+echo "<br/>";
+
+
+
+
+
+
 ?>
 
 
