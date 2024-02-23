@@ -16,7 +16,10 @@
 //19-23:Gute Nacht
 //sonst: Hallo
 
-$stunde = 5;
+// $stunde = 5;
+
+$stunde = date("G");
+
 
 if ($stunde >=0 && $stunde <= 5) {
     echo "schlaf gut";
