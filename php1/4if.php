@@ -18,15 +18,15 @@
 
 $stunde = 5;
 
-if ($stunde <= 5) {
+if ($stunde >=0 && $stunde <= 5) {
     echo "schlaf gut";
 } 
-else if ($stunde == 6 || $stunde == 7 || $stunde == 8 || $stunde == 9) {
+else if ($stunde >= 6 && $stunde <= 9) {
     echo "Guten Morgen";
 } 
 else if ($stunde == 12 || $stunde ==18) {
     echo "Mahlzeit";
-} else if($stunde == 19 || $stunde == 20 || $stunde == 21 || $stunde == 22 || $stunde == 23 ) {
+} else if($stunde >= 19 && $stunde <= 23 ) {
     echo "Gute Nacht";
 }
 else { echo "Hallo";
