@@ -24,10 +24,26 @@ $kontostand = 9.81;
 echo $kontostand;
 
 
+echo "<br/>";
 
+// Text (string) einer Variable zuweisen und ausgeben
 
+$name = "Melissa";
 
+echo "Ich heiße $name ";
+echo "<br/>";
+echo 'Ich heiße ' ;
+echo $name;
+echo "<br/>";
+echo 'Ich heiße ' . $name;
+
+echo "<br/>";
+echo "Ich habe" . $name . "s Stift."; //String Verkettung mit . (Punkt)
 ?>
+
+
+
+
 
 </body>
 </html>
