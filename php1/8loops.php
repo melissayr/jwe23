@@ -47,9 +47,13 @@ echo "<table border='1'>";
 for($zeile = 1; $zeile <=10; $zeile++){
 echo "<tr>";
 
-for ($spalte = 1; $spalte<=10; $spalte++){
+if ($zeile == 6) continue;
+
+for ($spalte = 1; $spalte<=10; $spalte++){ //Spalte mal zeile multiplizieren
     echo "<td>";
-    echo $spalte * $zeile;
+    //Division durch 7: Wenn NICHT (!=) 0, dann wird Zelle mit einem Wert befüllt
+
+    if (($spalte * $zeile) % 7 != 0) echo $spalte * $zeile; //Alles durch 7 Teilbare ausblenden
     echo "</td>";
 
 }
