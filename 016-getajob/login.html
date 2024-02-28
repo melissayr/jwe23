@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
@@ -73,45 +73,79 @@
   <main>
 
     <h2 class="page-heading">Melde dich an - als ein Bewerber oder als Unternehmen</h2>
+    <p>Bitte gebe einen Benutzernamen (Username) und ein Passwort ein, um dich Anzumelden. <br>
+    Das Passwort muss mindestens 10-Stellig sein!</p>
     <div id="post-container">
-      <section id="blogpost">
-        <div class="card">
-       
-          <div class="card-description">
-            <h3>login</h3>
-           
-          </div>
-        </div>
+   
+  
+          
 
-      </section>
+            <div class="login-card">
+                <div class="card-header">
+                  <div class="log">Login Bewerber</div>
+                </div>
+                <form>
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input required="" name="username" id="username" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input required="" name="password" id="password" type="password">
+                  </div>
+                  <div class="form-group">
+                    <input value="Login" type="submit">
+                  </div>
+                </form>
+              </div>
+              
+
+
+              <div class="login-card">
+                <div class="card-header">
+                  <div class="log">Login Unternehmen</div>
+                </div>
+                <form>
+                  <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input required="" name="username" id="username" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input required="" name="password" id="password" type="password">
+                  </div>
+                  <div class="form-group">
+                    <input value="Login" type="submit">
+                  </div>
+                </form>
+              </div>
+           
+     
+
+      
 
     </div>
 
     <footer>
         <div id="left-footer">
             <h3>Quick Links</h3>
-            <p>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="blogslist.html">Blogs</a>
-                    </li>
-                    <li>
-                        <a href="blogslist.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </p>
+                <p>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="jobs.html">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="ueberuns.html">Über uns</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Anmelden/Login</a>
+                        </li>
+                       
+                    </ul>
+                </p>
         </div>
 
         <div id="right-footer">
@@ -141,7 +175,13 @@
 
   </main>
 
-  <script src="base.js"></script>
+  
+<!-- Meine library & Cookies-->
+<script src="../vendor/js.cookie.min.js"></script>
+<script src="../vendor/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+<script src="../vendor/jquery-3.7.1.js"></script>
+<!-- Javascript -->
+<script src="base.js"></script>
 </body>
 
 </html>

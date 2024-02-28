@@ -5,7 +5,7 @@ body {
 
 h1 {
     padding: 8px;
-    background: rgb(249, 119, 5) ;
+    background: rgb(249, 119, 5);
     border-radius: 8px;
     margin: 0;
     font-size: 64px;
@@ -28,6 +28,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 
 /* Inputs */
 
@@ -69,10 +70,7 @@ textarea:focus {
     font-size: 24px;
 }
 
-
 /* Hier werden Jobs selektiert */
-
-
 
 .input {
     width: 100%;
@@ -84,21 +82,20 @@ textarea:focus {
     outline: none;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
     box-shadow: 0px 0px 20px -18px;
-  }
-  
-  .input:hover {
+}
+
+.input:hover {
     border: 2px solid lightgrey;
     box-shadow: 0px 0px 20px -17px;
-  }
-  
-  .input:active {
-    transform: scale(0.95);
-  }
-  
-  .input:focus {
-    border: 2px solid grey;
-  }
+}
 
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    border: 2px solid grey;
+}
 
 /* #searching {
     display: flex;
@@ -108,10 +105,6 @@ textarea:focus {
     padding: 5px;
 
 } */
-
-
-
-
 
 /* Search Box */
 
@@ -168,14 +161,9 @@ nav ul {
     margin: 0;
 }
 
-.active {
-    color: black;
-}
-
 .slogan {
     font-size: 15px;
     margin: 10px;
-
 }
 
 #logo-img {
@@ -274,8 +262,6 @@ section {
     padding: 4px 32px;
 }
 
-
-
 /* Section Source */
 
 #section-source p {
@@ -290,7 +276,7 @@ section {
 
 /* Card */
 
-.card{
+.card {
     margin: 15px;
 }
 
@@ -308,14 +294,14 @@ section {
 }
 
 .card-meta-blogpost {
-    color: #333;
+    color: white;
     font-size: 14px;
     padding: 16px;
     font-family: "Roboto Slab", serif;
 }
 
 .card-meta-blogpost a {
-    color: #333;
+    color: white;
 }
 
 /* Button Read more */
@@ -340,6 +326,97 @@ section {
     padding: 8px 64px 8px 24px;
     color: white;
 }
+
+/* Gallerie mit fade in CSS von stackoverflow.com */
+
+#gallerie img {
+    width: auto;
+    height: 250px;
+}
+
+#gallerie {
+    display: flex;
+    justify-content: space-between;
+    margin: 70px;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+/* LOGIN BEREICH */
+
+.login-card {
+    width: 300px;
+    margin: 50px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px 10px #ccc;
+
+  }
+  
+  .card-header {
+    text-align: center;
+    margin-bottom: 20px
+  }
+  
+  .card-header .log {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #ccc;
+    color: black;
+  }
+  
+
 
 /* Footer */
 
@@ -463,7 +540,7 @@ footer #social-media-footer ul li:hover a .fa-github {
     display: flex;
     flex-direction: column;
     width: 70%;
-    border-left: 1px solid #999;
+    border-left: 1px solid #828181;
 }
 
 #blogpost .card {
