@@ -21,8 +21,10 @@
 
             foreach ($nav_punkte as $href => $nav_punkt) {
                 echo '<li ';
-                if (false) echo 'class="active"';
-                echo '><a href="';
+                if ($site == $href) {
+                    echo 'class="active"';
+                }
+                echo '><a href="?seite=';
                 echo $href . '">' . $nav_punkt;
                 echo "</a></li>" ;
               }

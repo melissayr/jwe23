@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
     <head>
-        <title>WIFI Demo</title>
+        <title> <?php echo $seitentitel; ?>
+    </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         <meta name="keywords" content="" />
-        <meta name="description" content="" />
+        <meta name="description" content="<?php echo $description; ?>" />
 
         <link href="css/screen.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>
             <?php include "nav.php"; ?>
-            
+
             <figure>
                 <img src="images/stage.jpg" alt="" />
             </figure>
