@@ -1,3 +1,15 @@
+<?php
+
+// echo"<pre>";
+// print_r($_POST);
+// echo"</pre>";
+
+if (! empty($_POST)){
+    echo "BTN wurde gedrückt!";
+}
+?>
+
+
 <div class="text">
                 <h1>Kontakt</h1>
                 <div class="left">
@@ -17,7 +29,7 @@
                     </p>
                 </div>
                 <div class="contact right">
-                    <form>
+                    <form action="" method = "post">
                         <div>
                             <input type="text" id="name" name="name" value="Name" />
                         </div>
