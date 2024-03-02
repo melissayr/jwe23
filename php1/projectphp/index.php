@@ -33,6 +33,8 @@ if($site == "home") {
 
 include "kopf.php";
 
+// die "ENDE"; -> mit die beendet man das Programm
+
 include "inhalte/" . $include_datei;
 
 include "fuss.php";
