@@ -20,6 +20,15 @@ if(empty($_POST["name"])) {
 
 if(empty($_POST["email"])) {
     $fehlermeldungen[] = "Bitte geben Sie Ihre E-mail an."; 
+} elseif (!preg_match("/^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,15}$/", $_POST["email"])) { //REGEX!! (^ heisst beginn)  - preg_match ist funktion in php mit der man RegEx ausdrücke prüfen kann //!preg_match = wenn es nicht dieser form entspricht, dann $fehlermeldungen
+    $fehlermeldungen[] = "Bitte prüfen Sie ihre Email.";
+}
+
+
+
+
+if(!empty($_POST["prueffeld"])) {
+    $fehlermeldungen[] = "Lassen Sie dieses Feld bitte leer. Sie sind bestimmt ein Roboter!"; 
 }
 
 if(empty($_POST["message"])) {
@@ -27,12 +36,34 @@ if(empty($_POST["message"])) {
 }
 
 
+//Wennn keine Fehlermeldungen aufgetreten sind
 if(empty($fehlermeldungen)) {
-
     $erfolg = true;
+
+    $mail_inhalt = "Anfrage über Kontaktformular:
+        
+    Namen: {$_POST["name"]}
+    Email: {$_POST["email"]}
+    Nachricht: {$_POST["message"]}
+    ";
+    
+    //TESTWEISE INHALT IM BROWSER AUSGEBEN
+    // echo"<pre>";
+    // print_r($mail_inhalt);
+    // echo"</pre>";
+
+
+
+    //Anfrage in Datein am Server Speichern (als backup)
+    file_put_contents("mailbackup/mail.txt", $mail_inhalt);
+
+
+    //email 
+    mail("support@wifi.at", //Empfänger
+    "Webseiten-Kontaktformular-Anfrage von {$_POST["name"]}", //Betreff
+    $mail_inhalt //Email Nachricht
+    );
    }
-
-
 }
 
 ?>
@@ -86,11 +117,15 @@ if(empty($fehlermeldungen)) {
                             }?>" placeholder="Namen"/>
                         </div>
                         <div>
-                            <input type="text" id="email" name="email" value="<?php 
+                            <input type="email" id="email" name="email" value="<?php // Type email prüft automatisch ob @ dabei ist
                             if (!empty($_POST["email"])  )   {
                             echo htmlspecialchars($_POST["email"]); //htmlspecialchars - Zeichen wie / $ " das diese richtig angezeigt werden
                             }?>" placeholder="E-mail" />
                         </div>
+
+                        <div>
+                        <input type="text" id="prueffeld" name="prueffeld" value="" placeholder="Diese Zeile leer lassen"> </div>
+                      
                         <div>
                             <textarea id="message" name="message" value="<?php 
                             if (!empty($_POST["message"])  )   {
@@ -101,7 +136,7 @@ if(empty($fehlermeldungen)) {
                             <button type="submit" id="submit" name="submit">Absenden</button>
                         </div>
                     </form>
-                    <?php } // ENTWEDER FORMULAR IST DA, ODER WENN ABGESCHICKT WURDE DANN KOMMT NUR NOCH DIE $erfolg NACHRICHT! ?> 
+                    <?php } // Schliessende klammer von erfolgsmeldung // ENTWEDER FORMULAR IST DA, ODER WENN ABGESCHICKT WURDE DANN KOMMT NUR NOCH DIE $erfolg NACHRICHT! ?> 
                 </div>
                 <div class="clear"></div>
                 </div>

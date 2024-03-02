@@ -1,0 +1,6 @@
+Anfrage über Kontaktformular:
+        
+    Namen: Mel
+    Email: melmelmelmel@mel.com
+    Nachricht: Hier ist noch eine neue Nachricht
+    
