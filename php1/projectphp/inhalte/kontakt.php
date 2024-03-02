@@ -45,6 +45,8 @@ if(empty($fehlermeldungen)) {
     Namen: {$_POST["name"]}
     Email: {$_POST["email"]}
     Nachricht: {$_POST["message"]}
+
+    IP: {$_SERVER["REMOTE_ADDR"]}
     ";
     
     //TESTWEISE INHALT IM BROWSER AUSGEBEN
@@ -55,7 +57,8 @@ if(empty($fehlermeldungen)) {
 
 
     //Anfrage in Datein am Server Speichern (als backup)
-    file_put_contents("mailbackup/mail.txt", $mail_inhalt);
+    $dateiname = "mail_".date("Y-m-d_H-i-s"); // MIT DATE WIRD DER NAME INDIVIDUELL GEGEBEN UND SOMIT WIRD DATEI NICHT ÜBERSCHRIEBEN (TIMESTEMP) (oder DATEINAME UMBENENNEN)
+    file_put_contents("mailbackup/{$dateiname}.txt", $mail_inhalt);
 
 
     //email 
