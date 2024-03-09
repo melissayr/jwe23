@@ -1,0 +1,9 @@
+Anfrage über Kontaktformular:
+        
+    Namen: wertert
+    Email: asdfghjklvbcvb@jdkfg.de
+    Nachricht: mit server
+
+    IP: ::1
+    
+    mit print_r($_SERVER) Informationen über POST !
