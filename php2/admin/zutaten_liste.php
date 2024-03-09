@@ -9,8 +9,8 @@ include "kopf.php";
 <h1>Zutaten</h1>
 
 <?php
-
-$result = mysqli_query($db, "SELECT * FROM zutaten");
+//Ausbau Schritt mir ORDER BY
+$result = mysqli_query($db, "SELECT * FROM zutaten ORDER BY titel ASC");
 
 // print_r($result);
 
