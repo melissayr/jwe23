@@ -21,6 +21,8 @@ echo "<tr>";
 
     echo "<th>Titel</th>";
     echo "<th>Menge</th>";
+    echo "<th>Kalorien</th>";
+ 
 
 
 echo "</tr>";
@@ -32,7 +34,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     echo "<tr>";
         echo "<td>" . $row["titel"]  .  "</td>";
+      
         echo "<td>" . $row["menge"]  .  "</td>";
+
+        echo "<td>" . $row["kcal_pro_100"]  .  "</td>";
 
     echo "</tr>";
 }
