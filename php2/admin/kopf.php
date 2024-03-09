@@ -9,7 +9,8 @@
 
 <nav>
     <ul>
-        <li>Start</li>
+        <li><a href="zutaten_liste.php">Start</a></li>
+        <li><a href="zutaten_liste.php">Zutaten</a></li>
     </ul>
 </nav>
 
