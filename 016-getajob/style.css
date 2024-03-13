@@ -1,3 +1,5 @@
+
+
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -29,7 +31,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
 /* Inputs */
 
 input,
@@ -50,12 +51,12 @@ textarea:focus {
 /* Banner */
 
 #banner {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.2) url("img/3.jpg");
+    background: white;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -97,15 +98,6 @@ textarea:focus {
     border: 2px solid grey;
 }
 
-/* #searching {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
-    padding: 5px;
-
-} */
-
 /* Search Box */
 
 #searchbox {
@@ -127,7 +119,6 @@ textarea:focus {
 
 nav {
     height: 72px;
-    background: #f4d0a8;
     width: 100%;
     margin: 0;
     position: fixed;
@@ -138,6 +129,8 @@ nav {
     padding: 0 16px 0 0;
     box-sizing: border-box;
     z-index: 100;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 nav a {
@@ -145,6 +138,8 @@ nav a {
     color: rgb(3, 0, 0);
     transition: 0.4s;
     text-decoration: none;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 nav a:hover {
@@ -164,6 +159,9 @@ nav ul {
 .slogan {
     font-size: 15px;
     margin: 10px;
+    color: rgb(249, 119, 5);
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 #logo-img {
@@ -174,10 +172,14 @@ nav ul {
     align-items: center;
     color: white;
     transition: 0.4s;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 #logo-img img {
     height: 50px;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 #logo-img:hover {
@@ -242,6 +244,18 @@ nav ul {
     font-family: "Roboto Condensed", sans-serif;
     font-size: 20px;
     text-align: center;
+}
+
+/* Searching in Jobs */
+
+#searching {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    padding-left: 40px;
+    padding-right: 150px;
 }
 
 /* Sections */
@@ -334,29 +348,31 @@ section {
     height: 250px;
 }
 
-#gallerie {
+/* Gallerie überuns */
+
+
+/* #gallerie {
     display: flex;
     justify-content: space-between;
     margin: 70px;
 }
 
 .fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
 
 /* LOGIN BEREICH */
 
@@ -368,30 +384,30 @@ section {
     border-radius: 10px;
     background-color: #e8e8e8;
     box-shadow: 2px 2px 10px #ccc;
+}
 
-  }
-  
-  .card-header {
+.card-header {
     text-align: center;
-    margin-bottom: 20px
-  }
-  
-  .card-header .log {
+    margin-bottom: 20px;
+}
+
+.card-header .log {
     margin: 0;
     font-size: 24px;
     color: black;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  label {
+}
+
+label {
     font-size: 18px;
     margin-bottom: 5px;
-  }
-  
-  input[type="text"], input[type="password"] {
+}
+
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 12px 20px;
     font-size: 16px;
@@ -399,9 +415,9 @@ section {
     border-radius: 4px;
     box-sizing: border-box;
     transition: 0.5s;
-  }
-  
-  input[type="submit"] {
+}
+
+input[type="submit"] {
     width: 100%;
     background-color: #333;
     color: white;
@@ -409,14 +425,12 @@ section {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
+}
+
+input[type="submit"]:hover {
     background-color: #ccc;
     color: black;
-  }
-  
-
+}
 
 /* Footer */
 
@@ -528,27 +542,6 @@ footer #social-media-footer ul li:hover a .fa-github {
 .pagination a:hover {
     text-decoration: none;
     border-top: 3px solid black;
-}
-
-/* Single Blogpost */
-
-#post-container {
-    display: flex;
-}
-
-#blogpost {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    border-left: 1px solid #828181;
-}
-
-#blogpost .card {
-    width: 100%;
-}
-
-#blogpost .card-image:hover {
-    box-shadow: none;
 }
 
 /* Sidebar */
