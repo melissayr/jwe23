@@ -442,7 +442,7 @@ section {
     width: auto;
     font-weight: bold;
     color: white;
-    background: orange;
+    background: rgb(187, 241, 162);
     border-color: orange;
     cursor: pointer;
 }
@@ -572,6 +572,12 @@ footer #social-media-footer ul li:hover a .fa-github {
 
 /* Media Queries */
 
+@media (max-width: 1024px) {
+    .slogan {
+        font-size: 10px;
+    }
+}
+
 @media (max-width: 900px) {
     nav ul {
         display: none;
@@ -600,6 +606,10 @@ footer #social-media-footer ul li:hover a .fa-github {
 }
 
 @media (max-width: 719px) {
+    .slogan {
+        font-size: 10px;
+    }
+
     main {
         width: 95%;
     }
