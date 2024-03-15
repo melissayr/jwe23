@@ -9,4 +9,13 @@ $db = mysqli_connect("localhost", "root", "", "php2");
 mysqli_set_charset($db, "utf8");
 
 
+//Diese Funktion überprüft, ob der Benutzer eingeloggt ist.
+//Falls nicht, dann wird er automatisch auf die Login seite weitergeleitet.
+function ist_eingeloggt(){
+    if (empty ($_SESSION["eingeloggt"])){
+        header("Location: login.php");
+        exit; //damit der teil nicht mehr zum Browser geschickt wird.
+    }
+}
+
 ?>

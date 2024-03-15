@@ -46,6 +46,14 @@ if(!empty($_POST)){
                     $_SESSION["eingeloggt"] = true;
                     $_SESSION["benutzername"] = $row["benutzername"];
 
+                    //Anzahl Logins in DB speichern
+                    mysqli_query($db, "UPDATE benutzer SET 
+                                anzahl_logins = anzahl_logins + 1
+                                WHERE id = {$row["id"]}");
+
+
+
+
                     // Umleiten in Admin-system
 
                     header("Location: index.php");

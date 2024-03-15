@@ -2,6 +2,8 @@
 
 include "funktionen.php";
 
+ist_eingeloggt();
+
 include "kopf.php";
 
 ?>

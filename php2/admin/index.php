@@ -1,5 +1,11 @@
 <?php
 include "funktionen.php";
+
+ist_eingeloggt();
+
+// unset($_SESSION["eingeloggt"]);
+
+
 include "kopf.php";
 ?>
 
