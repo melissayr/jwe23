@@ -9,6 +9,7 @@ include "kopf.php";
 ?>
 
 <h1>Zutaten</h1>
+<p><a href="zutaten_neu.php">Neue Zutat anlegen</a></p>
 
 <?php
 //Ausbau Schritt mir ORDER BY

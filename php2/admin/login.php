@@ -19,7 +19,7 @@ if(!empty($_POST)){
 
         //diese Funktion bewahrt uns vor jeglicher sqlinjection
         //alle Daten aus $_POST u. $_GET (alle Benutzer bzw Formulardaten)
-        $sql_benutzername =  mysqli_real_escape_string($db, $_POST["benutzername"]);
+        $sql_benutzername =  escape( $_POST["benutzername"]);
 
         //Datenbank zugriff und Abfrage
         $result = mysqli_query($db, "SELECT * FROM benutzer     

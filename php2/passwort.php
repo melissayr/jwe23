@@ -19,10 +19,7 @@ echo "<br>";
 echo md5($passwort.$salt);
 // nicht oneway - man kann zurück rechnen 
 
-
-
 echo "<br>";
-
 
 // neue methode mit password_hash
 

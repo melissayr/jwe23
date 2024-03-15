@@ -60,11 +60,8 @@ if(empty($fehlermeldungen)) {
     $dateiname = "mail_".date("Y-m-d_H-i-s"); // MIT DATE WIRD DER NAME INDIVIDUELL GEGEBEN UND SOMIT WIRD DATEI NICHT ÜBERSCHRIEBEN (TIMESTEMP) (oder DATEINAME UMBENENNEN)
     file_put_contents("mailbackup/{$dateiname}.txt", $mail_inhalt);
 
-<<<<<<< HEAD
     // $inahlt = file_get_contents('PFAD')
 
-=======
->>>>>>> a3e05647b03fe6fad42db8bebee650d5a5fa7227
 
     //email 
     mail("support@wifi.at", //Empfänger
@@ -121,11 +118,7 @@ if(empty($fehlermeldungen)) {
                         <div>
                             <input type="text" id="name" name="name" value="<?php 
                             if (!empty($_POST["name"])  )   {
-<<<<<<< HEAD
                             echo htmlspecialchars($_POST["name"]); //htmlspecialchars - Zeichen wie / &^^... " das diese richtig angezeigt werden
-=======
-                            echo htmlspecialchars($_POST["name"]); //htmlspecialchars - Zeichen wie / $ " das diese richtig angezeigt werden
->>>>>>> a3e05647b03fe6fad42db8bebee650d5a5fa7227
                             }?>" placeholder="Namen"/>
                         </div>
                         <div>

@@ -8,6 +8,11 @@ $db = mysqli_connect("localhost", "root", "", "php2");
 //MySQLI mitteilen, dass unsere Befehle als utf8 kommen
 mysqli_set_charset($db, "utf8");
 
+//Function um SQL Injection zu vermeiden
+function escape($text){
+    mysqli_real_escape_string($db, $text);
+}
+
 
 //Diese Funktion überprüft, ob der Benutzer eingeloggt ist.
 //Falls nicht, dann wird er automatisch auf die Login seite weitergeleitet.
