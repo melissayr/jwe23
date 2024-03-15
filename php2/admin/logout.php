@@ -1,10 +1,17 @@
 <?php
 
     //LOGOUT 
-    
+
     session_start();
 
+    //einer dieser befehle würde reichen!!! :
+
+
+    //löscht alle Session variablen
     unset($_SESSION["eingeloggt"]);
+
+    //Vernichtet die Session samt Cookies
+    session_destroy();
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +25,8 @@
     <h1>Logout aus dem Rezepte-Administrationsbereich</h1>
 
     <p>Sie wurden ausgeloggt.</p>
+
+    <p><a href="login.php">Hier gehts zurück zum Login</a></p>
     
 </body>
 </html>
