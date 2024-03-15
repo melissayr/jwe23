@@ -8,9 +8,10 @@ $db = mysqli_connect("localhost", "root", "", "php2");
 //MySQLI mitteilen, dass unsere Befehle als utf8 kommen
 mysqli_set_charset($db, "utf8");
 
-//Function um SQL Injection zu vermeiden
-function escape($text){
-    mysqli_real_escape_string($db, $text);
+//Function um SQL Injections zu vermeiden
+function escape($post_var){
+    global $db; //keyword global um die $db Variable vom globalen scope zu übernehmen
+   return mysqli_real_escape_string($db, $post_var);
 }
 
 

@@ -15,11 +15,17 @@ if (!empty($_POST))
 
 
     //Felder validieren
-    if(empty($_POST["titel"])) {
+    if(empty($sql_titel)) {
         $errors[] = "Bitte gebe einen Namen für die Zutat an";
-        }
-}
+        } else {
 
+            //überprüfen ob es die zutat bereits gibt
+            $result = mysqli_query($db, "SELECT * FROM zutaten
+                    WHERE titel = '{$sql_titel}' "); 
+            $row = mysqli_fetch_assoc($result);
+            if ($row) {$errors[]="Diese Zutat existiert bereits";}
+} 
+}
 ?>
 
 
