@@ -49,8 +49,8 @@ if(!empty($_POST)){
                     //Anzahl Logins in DB speichern
                     mysqli_query($db, "UPDATE benutzer SET 
                                 anzahl_logins = anzahl_logins + 1
+                                , letzter_login = NOW()
                                 WHERE id = {$row["id"]}");
-
 
 
 
