@@ -24,6 +24,7 @@ echo "<tr>";
 
     echo "<th>Titel</th>";
     echo "<th>Menge</th>";
+    echo "<th>Einheit</th>";
     echo "<th>Kalorien</th>";
  
 echo "</tr>";
@@ -38,7 +39,13 @@ while ($row = mysqli_fetch_assoc($result)) {
       
         echo "<td>" . $row["menge"]  .  "</td>";
 
+        echo "<td>" . $row["einheit"]  .  "</td>";
+
         echo "<td>" . $row["kcal_pro_100"]  .  "</td>";
+
+        echo "<td>" . "<a href='zutaten_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
+
+
 
     echo "</tr>";
 }

@@ -5,7 +5,7 @@ ist_eingeloggt();
 
 $errors = array();
 
-include "kopf.php";
+
 
 //prüfen ob formular abgeschickt wurde
 if (!empty($_POST)) 
@@ -33,23 +33,34 @@ if (!empty($_POST))
 
         if (empty($errors)) {
 
+            if ($sql_kcal_pro_100 == "") {
+                $sql_kcal_pro_100 = "NULL"; // Wenn eine Zutat keine kcal hat, setze auf NULL
+            }
+
+            if ($sql_einheit == "") {
+                $sql_einheit = "NULL"; //  setze auf NULL wenn leer
+            }
+
+
+
             query("INSERT INTO zutaten SET 
             titel = '{$sql_titel}',
-            kcal_pro_100 = '{$sql_kcal_pro_100}',
+            kcal_pro_100 = {$sql_kcal_pro_100},
             menge = '{$sql_menge}',
-            einheit = '{$sql_einheit}' ") ;
+            einheit = {$sql_einheit} ") ;
         }
-
-
 }
 
 ?>
 
 
 <body>
+
+
     <h1>Neue Zutat anlegen</h1>
 
     <?php 
+    include "kopf.php";
     //Schleife für Fehler
 
     if(!empty($errors)) {
