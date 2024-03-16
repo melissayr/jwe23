@@ -5,6 +5,7 @@ ist_eingeloggt();
 
 $errors = array();
 
+$erfolg = false;
 
 
 //prüfen ob formular abgeschickt wurde
@@ -47,7 +48,9 @@ if (!empty($_POST))
             titel = '{$sql_titel}',
             kcal_pro_100 = {$sql_kcal_pro_100},
             menge = '{$sql_menge}',
-            einheit = {$sql_einheit} ") ;
+            einheit = '{$sql_einheit}' ") ;
+
+            $erfolg = true;
         }
 }
 
@@ -74,6 +77,12 @@ if (!empty($_POST))
         }
         echo "</ul></nav>";
     }
+    if ($erfolg) {
+        echo "<p>Zutat erfolgreich angelegt. <a href='zutaten_liste.php'>Zurück zur Zutaten Liste</a></p>";
+    }
+
+
+
 
     ?>
 

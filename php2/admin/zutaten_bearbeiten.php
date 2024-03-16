@@ -82,7 +82,7 @@ include "kopf.php";
 
     //Erfolgsmeldung
     if ($erfolg) {
-        echo "<p>Zutat erfolgreich bearbeitet!</p>";
+        echo "<p>Zutat erfolgreich bearbeitet!</p> - <a href='zutaten_liste.php'>Zurück zur Liste</a></p>";
     }
     
 
@@ -98,8 +98,9 @@ include "kopf.php";
             <lable for="titel">Zutat:</lable>
             <input type="text" name="titel" id="titel" value="<?php 
             if (!$erfolg && !empty($_POST["titel"])){
+                //für den Fehlerfall - alter/flascher Wert wird wieder in das Feld geschrieben
                 echo htmlspecialchars($_POST["titel"]);
-            } else {
+            } else { // Datenbankwert wird in das Feld eingetragen (Vorausfüllung)
             echo htmlspecialchars($row["titel"]);
              }
              

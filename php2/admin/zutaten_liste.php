@@ -26,6 +26,7 @@ echo "<tr>";
     echo "<th>Menge</th>";
     echo "<th>Einheit</th>";
     echo "<th>Kalorien</th>";
+    echo "<th>Aktionen</th>";
  
 echo "</tr>";
 echo "</thread>";
@@ -44,6 +45,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo "<td>" . $row["kcal_pro_100"]  .  "</td>";
 
         echo "<td>" . "<a href='zutaten_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
+
+        echo "<td>" . "<a href='zutaten_entfernen.php?id={$row["id"]}'>Entfernen</a>"  .  "</td>";
 
 
 
