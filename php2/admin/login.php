@@ -21,8 +21,9 @@ if(!empty($_POST)){
         //alle Daten aus $_POST u. $_GET (alle Benutzer bzw Formulardaten)
         $sql_benutzername =  escape( $_POST["benutzername"]);
 
-        //Datenbank zugriff und Abfrage
-        $result = mysqli_query($db, "SELECT * FROM benutzer     
+        //Datenbank zugriff und Abfrage // NEUE QUERY FUNCTION FÜR KÜRZEREN CODE UNTER FUNKTIONEN 
+        // $result = mysqli_query 
+        $result = query ( "SELECT * FROM benutzer     
                     WHERE benutzername = '{$sql_benutzername}'");
 
 
@@ -43,11 +44,12 @@ if(!empty($_POST)){
                     //Alles gut -> 
                     // echo "ist eingeloggt";
 
+                    // Verwendung im Kopf
                     $_SESSION["eingeloggt"] = true;
                     $_SESSION["benutzername"] = $row["benutzername"];
 
-                    //Anzahl Logins in DB speichern
-                    mysqli_query($db, "UPDATE benutzer SET 
+                    //Anzahl Logins in DB speichern // QUERY FUNKTION FÜR KÜRZEREN CODE
+                    $result = query ("UPDATE benutzer SET 
                                 anzahl_logins = anzahl_logins + 1
                                 , letzter_login = NOW()
                                 WHERE id = {$row["id"]}");

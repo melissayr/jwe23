@@ -14,6 +14,14 @@ function escape($post_var){
    return mysqli_real_escape_string($db, $post_var);
 }
 
+// Funktion für mysqli_query
+function query ($sql_befehl) { 
+    global $db; //keyword global um die $db Variable vom globalen scope zu übernehmen
+    $result = mysqli_query($db, $sql_befehl);
+
+    return $result;
+}
+
 
 //Diese Funktion überprüft, ob der Benutzer eingeloggt ist.
 //Falls nicht, dann wird er automatisch auf die Login seite weitergeleitet.

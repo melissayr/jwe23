@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 09. Mrz 2024 um 15:16
+-- Erstellungszeit: 15. Mrz 2024 um 20:22
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -31,17 +31,20 @@ CREATE TABLE `benutzer` (
   `id` int(10) UNSIGNED NOT NULL,
   `benutzername` varchar(50) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `passwort` varchar(50) NOT NULL
+  `passwort` varchar(255) NOT NULL,
+  `anzahl_logins` int(11) NOT NULL,
+  `letzter_login` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Daten für Tabelle `benutzer`
 --
 
-INSERT INTO `benutzer` (`id`, `benutzername`, `email`, `passwort`) VALUES
-(1, 'Herbert', 'herbert@wifi.at', '1234'),
-(2, 'Melissa', 'melissa@wifi.at', 'asdf'),
-(3, 'Markus', 'neueMail@wifi.at', 'jklö');
+INSERT INTO `benutzer` (`id`, `benutzername`, `email`, `passwort`, `anzahl_logins`, `letzter_login`) VALUES
+(1, 'Herbert', 'herbert@wifi.at', '$2y$10$jMQpTF87jVmEYMo1nsDFb.2RiYwwaZV/jo8Fu73yyTS9z9j8l45cu', 7, '2024-03-15 18:58:09'),
+(2, 'Melissa', 'melissa@wifi.at', '$2y$10$jMQpTF87jVmEYMo1nsDFb.2RiYwwaZV/jo8Fu73yyTS9z9j8l45cu', 2, '2024-03-15 19:10:32'),
+(3, 'Markus', 'neueMail@wifi.at', '$2y$10$jMQpTF87jVmEYMo1nsDFb.2RiYwwaZV/jo8Fu73yyTS9z9j8l45cu', 0, '2024-03-15 19:04:55'),
+(5, 'Herbst', 'herbst@wifi.at', '$2y$10$jMQpTF87jVmEYMo1nsDFb.2RiYwwaZV/jo8Fu73yyTS9z9j8l45cu', 0, '2024-03-15 19:05:00');
 
 -- --------------------------------------------------------
 
@@ -150,7 +153,7 @@ ALTER TABLE `zutaten_zu_rezepte`
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT für Tabelle `rezepte`

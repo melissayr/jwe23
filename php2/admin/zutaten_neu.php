@@ -11,7 +11,9 @@ include "kopf.php";
 if (!empty($_POST)) 
 {
     $sql_titel = escape( $_POST["titel"]);
-
+    $sql_kcal_pro_100 = escape( $_POST["kcal_pro_100"]);
+    $sql_menge = escape( $_POST["menge"]);
+    $sql_einheit = escape( $_POST["einheit"]);
 
 
     //Felder validieren
@@ -20,12 +22,27 @@ if (!empty($_POST))
         } else {
 
             //überprüfen ob es die zutat bereits gibt
-            $result = mysqli_query($db, "SELECT * FROM zutaten
-                    WHERE titel = '{$sql_titel}' "); 
+            $result = query("SELECT * FROM zutaten WHERE titel = '{$sql_titel}' "); // $db in funktionen 
+
+                    //Datensatz aus mysqli in ein php array umwandeln
             $row = mysqli_fetch_assoc($result);
+
+            //Wenn die Zutaten bereits existiert -> Fehlermeldung bzw Hinweis
             if ($row) {$errors[]="Diese Zutat existiert bereits";}
-} 
+        } 
+
+        if (empty($errors)) {
+
+            query("INSERT INTO zutaten SET 
+            titel = '{$sql_titel}',
+            kcal_pro_100 = '{$sql_kcal_pro_100}',
+            menge = '{$sql_menge}',
+            einheit = '{$sql_einheit}' ") ;
+        }
+
+
 }
+
 ?>
 
 

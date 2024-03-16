@@ -8,7 +8,7 @@
 
 
     //löscht alle Session variablen
-    unset($_SESSION["eingeloggt"]);
+    unset($_SESSION["eingeloggt"]); // entscheidet ob wir eingeloggt sind oder nicht
 
     //Vernichtet die Session samt Cookies
     session_destroy();

@@ -12,8 +12,8 @@ include "kopf.php";
 <p><a href="zutaten_neu.php">Neue Zutat anlegen</a></p>
 
 <?php
-//Ausbau Schritt mir ORDER BY
-$result = mysqli_query($db, "SELECT * FROM zutaten ORDER BY titel ASC");
+//Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
+$result = query ( "SELECT * FROM zutaten ORDER BY titel ASC");
 
 // print_r($result);
 
@@ -26,12 +26,10 @@ echo "<tr>";
     echo "<th>Menge</th>";
     echo "<th>Kalorien</th>";
  
-
-
 echo "</tr>";
 echo "</thread>";
 
-echo "<tbody>";
+    echo "<tbody>";
 
 while ($row = mysqli_fetch_assoc($result)) {
 
