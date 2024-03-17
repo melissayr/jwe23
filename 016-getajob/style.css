@@ -193,18 +193,7 @@ nav ul {
     align-items: center;
 }
 
-/* Search Icon */
 
-#search-icon {
-    color: white;
-    padding: 0 32px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-#search-icon:hover {
-    color: rgb(249, 119, 5);
-}
 
 /* Slideout Menu */
 
