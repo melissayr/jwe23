@@ -13,9 +13,11 @@ if (!empty($_POST)){
     $sql_kcal_pro_100 = escape( $_POST["kcal_pro_100"]);
     $sql_menge = escape( $_POST["menge"]);
     $sql_einheit = escape( $_POST["einheit"]);
-    
-    //Validierung der Felder
+    //erstmal alles escapen um SQL Injection zu vermeiden! 
 
+
+    //Validierung der Felder
+    
     if(empty($sql_titel)) {
         $errors[] = "Bitte gebe einen Namen für die Zutat an";
         } else {
