@@ -122,8 +122,34 @@ if (!empty($_POST))
                 echo htmlspecialchars($_POST["beschreibung"]);
             }?></textarea>
         </div>
+            <div class="zutatenliste">
 
-        <div><button type="submit">Rezept anlegen</button></div>
+                <?php $bloecke = 1;
+                for ($i=0; $i < $bloecke; $i++) {
+                    ?>
+
+                <div class="zutatenblock">
+                
+                <div>
+        <lable for="zutaten_id">Zutat:</lable>
+        <select name="zutaten_id" id="zutaten_id">
+            <option value="">-----Bitte Wählen------</option>
+            <?php $zutaten_result = query("SELECT * FROM zutaten ORDER BY titel ASC");
+            while ($zutaten = mysqli_fetch_assoc($zutaten_result)) {
+                echo "<option value='{$zutat["id"]}' ";
+                echo ">{$zutaten["titel"]}</option>";
+            }
+
+
+            ?>
+        </select>
+
+                    </div>
+                </div>
+              <?php  } ?>
+            </div>
+        <div>
+            <button type="submit">Rezept anlegen</button></div>
     </form>
 
     
