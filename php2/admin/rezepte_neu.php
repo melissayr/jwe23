@@ -142,8 +142,9 @@ if (!empty($_POST))
                 for ($i=0; $i < $bloecke; $i++) {
         ?>
 
+
+
                 <div class="zutatenblock">
-                
                 <div>
         <lable for="zutaten_id">Zutat:</lable>
         <select name="zutaten_id" id="zutaten_id">
@@ -161,6 +162,8 @@ if (!empty($_POST))
             <?php  } 
             ?>
         </div>
+
+            <a  class="zutat-neu" href="#" onclick="neueZutat();">Zutat hinzufügen</a>
 
         <div><button type="submit">Rezept anlegen</button></div>
     </form>
