@@ -13,7 +13,9 @@ include "kopf.php";
 
 <?php
 //Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
-$result = query ( "SELECT * FROM rezepte ORDER BY titel ASC");
+$result = query ( "SELECT  rezepte.*, benutzer.benutzername 
+FROM rezepte JOIN benutzer ON rezepte.benutzer_id = benutzer.id 
+ORDER BY titel ASC");
 
 
 
@@ -23,9 +25,8 @@ echo "<thread>";
 echo "<tr>";
 
     echo "<th>Titel</th>";
-    echo "<th>Menge</th>";
-    echo "<th>Einheit</th>";
-    echo "<th>Kalorien</th>";
+    echo "<th>Beschreibung</th>";
+    echo "<th>Benutzer</th>";
     echo "<th>Aktionen</th>";
  
 echo "</tr>";
@@ -34,13 +35,14 @@ echo "</thread>";
     echo "<tbody>";
 
 while ($row = mysqli_fetch_assoc($result)) {
-
+// print_r($row);
+// die;
     echo "<tr>";
         echo "<td>" . $row["titel"]  .  "</td>";
       
         echo "<td>" . $row["beschreibung"]  .  "</td>";
 
-        echo "<td>" . $row["benutzer_id"]  .  "</td>";
+        echo "<td>" . $row["benutzername"]  .  "</td>";
 
    
 
