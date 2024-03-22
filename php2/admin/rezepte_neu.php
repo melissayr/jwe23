@@ -77,8 +77,16 @@ if (!empty($_POST))
     <form action="rezepte_neu.php" method="post">
         <div><lable for="benutzer_id">Benutzer:</lable>
         <select name="benutzer_id" id="benutzer_id">
-            <option value="<?php $result = query("SELECT * FROM benutzer WHERE benutzername = '{$sql_benutzername}' "); $row = mysqli_fetch_assoc($result); ?>">Name</option>
-        </select>
+        
+<?php
+           $user_result = query("SELECT id, benutzername FROM benutzer ORDER BY benutzername ASC");
+           while ($user = mysqli_fetch_assoc($user_result)) {
+            echo "<option value='{$user["id"]}'>{$user["benutzername"]} </option>";
+           }
+          
+?>
+        
+    </select>
 </div>
         <div>
             <lable for="titel">Titel:</lable>
