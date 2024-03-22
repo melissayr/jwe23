@@ -7,12 +7,16 @@ $errors = array();
 
 $erfolg = false;
 
+// print_r($_POST); FÜR DEBUGGING ZWECKE IMMER ERST NACHSCHAUEN!!!
 
 //prüfen ob formular abgeschickt wurde
 if (!empty($_POST)) 
 {   $sql_benutzer_id = escape( $_POST["benutzer_id"]);
     $sql_titel = escape( $_POST["titel"]);
     $sql_beschreibung = escape( $_POST["beschreibung"]);
+
+
+
 
 
 
@@ -49,6 +53,16 @@ if (!empty($_POST))
              beschreibung = '{$sql_beschreibung}', 
              benutzer_id = '{$sql_benutzer_id}' 
              ");
+
+             $neue_rezepte_id = mysqli_insert_id($db); // gibt zurück welche id letztens verwendet wurde
+
+
+            //Zuordnung von Zutaten anlegen
+            $sql_zutaten_id = escape($_POST["zutaten_id"]);
+
+            query("INSERT INTO zutaten_zu_rezepte SET
+            zutaten_id = '{$sql_zutaten_id}',
+            rezepte_id = '{$neue_rezepte_id}'");
         
             $erfolg = true;
         }
@@ -105,10 +119,10 @@ if (!empty($_POST))
             echo ">{$user["benutzername"]} </option>";
            }
           
-?>
+    ?>
         
-    </select>
-</div>
+        </select>
+    </div>
         <div>
             <lable for="titel">Titel:</lable>
             <input type="text" name="titel" id="titel" value="<?php if (!empty($_POST["titel"])&& !$erfolg ) {
@@ -124,9 +138,9 @@ if (!empty($_POST))
         </div>
             <div class="zutatenliste">
 
-                <?php $bloecke = 1;
+        <?php $bloecke = 1;
                 for ($i=0; $i < $bloecke; $i++) {
-                    ?>
+        ?>
 
                 <div class="zutatenblock">
                 
@@ -136,20 +150,19 @@ if (!empty($_POST))
             <option value="">-----Bitte Wählen------</option>
             <?php $zutaten_result = query("SELECT * FROM zutaten ORDER BY titel ASC");
             while ($zutaten = mysqli_fetch_assoc($zutaten_result)) {
-                echo "<option value='{$zutat["id"]}' ";
+                echo "<option value='{$zutaten["id"]}' ";
                 echo ">{$zutaten["titel"]}</option>";
             }
 
-
-            ?>
-        </select>
-
+                    ?>
+                        </select>
                     </div>
                 </div>
-              <?php  } ?>
-            </div>
-        <div>
-            <button type="submit">Rezept anlegen</button></div>
+            <?php  } 
+            ?>
+        </div>
+
+        <div><button type="submit">Rezept anlegen</button></div>
     </form>
 
     
