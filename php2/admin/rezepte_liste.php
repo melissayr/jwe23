@@ -10,11 +10,13 @@ include "kopf.php";
 
 <h1>Rezepte</h1>
 
+<p><a href="rezepte_neu.php">Neue Rezepte anlegen</a></p>
+
 
 <?php
 //Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
 $result = query ( "SELECT  rezepte.*, benutzer.benutzername 
-FROM rezepte JOIN benutzer ON rezepte.benutzer_id = benutzer.id 
+FROM rezepte LEFT JOIN benutzer ON rezepte.benutzer_id = benutzer.id 
 ORDER BY titel ASC");
 
 
