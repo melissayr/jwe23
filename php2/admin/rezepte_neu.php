@@ -56,17 +56,23 @@ if (!empty($_POST))
 
              $neue_rezepte_id = mysqli_insert_id($db); // gibt zurück welche id letztens verwendet wurde
 
-
             //Zuordnung von Zutaten anlegen
-            $sql_zutaten_id = escape($_POST["zutaten_id"]);
+             foreach ($_POST["zutaten_id"] as $zutatenNr) {
+            
+            if (empty($zutatenNr)) continue; //überspringt diesen durchlauf der Schleife
+
+            
+            $sql_zutaten_id = escape($zutatenNr);
 
             query("INSERT INTO zutaten_zu_rezepte SET
             zutaten_id = '{$sql_zutaten_id}',
             rezepte_id = '{$neue_rezepte_id}'");
+            
+            }
         
             $erfolg = true;
         }
-}
+    }
 
 ?>
 
@@ -147,7 +153,7 @@ if (!empty($_POST))
                 <div class="zutatenblock">
                 <div>
         <lable for="zutaten_id">Zutat:</lable>
-        <select name="zutaten_id" id="zutaten_id">
+        <select name="zutaten_id[]" id="zutaten_id">
             <option value="">-----Bitte Wählen------</option>
             <?php $zutaten_result = query("SELECT * FROM zutaten ORDER BY titel ASC");
             while ($zutaten = mysqli_fetch_assoc($zutaten_result)) {
