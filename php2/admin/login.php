@@ -47,7 +47,7 @@ if(!empty($_POST)){
                     // Verwendung im Kopf
                     $_SESSION["eingeloggt"] = true;
                     $_SESSION["benutzername"] = $row["benutzername"];
-
+                    $_SESSION["benutzer_id"] = $row["id"];
                     //Anzahl Logins in DB speichern // QUERY FUNKTION FÜR KÜRZEREN CODE
                     $result = query ("UPDATE benutzer SET 
                                 anzahl_logins = anzahl_logins + 1

@@ -81,7 +81,11 @@ if (!empty($_POST))
 <?php
            $user_result = query("SELECT id, benutzername FROM benutzer ORDER BY benutzername ASC");
            while ($user = mysqli_fetch_assoc($user_result)) {
-            echo "<option value='{$user["id"]}'>{$user["benutzername"]} </option>";
+            echo "<option value='{$user["id"]}' ";
+            if ($user["id"] == $_SESSION["benutzer_id"]) {
+                echo "selected";
+            }
+            echo ">{$user["benutzername"]} </option>";
            }
           
 ?>
