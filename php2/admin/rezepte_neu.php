@@ -163,10 +163,13 @@ if (!empty($_POST))
             ?>
         </div>
 
-            <a  class="zutat-neu" href="#" onclick="neueZutat();">Zutat hinzufügen</a>
+            <a class="zutat-neu" href="#" onclick="neueZutat();">Zutat hinzufügen</a>
 
         <div><button type="submit">Rezept anlegen</button></div>
     </form>
 
-    
-</body>
+<?php
+
+include "fuss.php";
+
+?>
