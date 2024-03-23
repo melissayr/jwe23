@@ -26,9 +26,6 @@ if (!empty($_POST))
 
 
 
-
-
-
     //Felder validieren
     if(empty($sql_titel)) {
         $errors[] = "Bitte gebe einen Namen für dieses Rezept an";
@@ -111,8 +108,6 @@ if (!empty($_POST))
     }
 
 
-
-
     ?>
 
     <form action="rezepte_neu.php" method="post">
@@ -191,7 +186,7 @@ if (!empty($_POST))
 
             <a class="zutat-neu" href="#" onclick="neueZutat();">Zutat hinzufügen</a>
 
-        <div><button type="submit">Rezept anlegen</button></div>
+        <div><button type="submit">Rezept aktualisieren</button></div>
     </form>
 
 <?php
@@ -199,3 +194,7 @@ if (!empty($_POST))
 include "fuss.php";
 
 ?>
+
+id = int 10 - autoinkr - primary 
+update und WHERE
+delete where
