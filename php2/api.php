@@ -46,6 +46,32 @@ if (empty($parameter)) {
 }
 
 echo "Das API funktioniert!";
+
+//bir hier eigentlich Grundlagen für alle APIs
+//---
+//ab hier Spezifizierung je nach Anwedungsbedarf
+
+
+if($parameter[0] == "zutaten"){
+    //Liste aller Zutaten 
+    $ausgabe = array(
+        "status" => 1,
+        "result" => array()
+    );
+
+    $result = query("SELECT*FROM zutaten Order by id ASC");
+    while($row = mysqli_fetch_assoc($result)){
+        $ausgabe["result"][] = $row;
+    }
+
+    echo json_encode($ausgabe); // Umwandlung eines Arrays in JSON
+    exit;
+}
+
+
+
+
+
 ?>
 
 
