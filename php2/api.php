@@ -45,7 +45,6 @@ if (empty($parameter)) {
     fehler("Nach der Version wurde keine Methode übergeben. Prüfen Sie Ihren Aufruf!");
 }
 
-echo "Das API funktioniert!";
 
 //bir hier eigentlich Grundlagen für alle APIs
 //---
@@ -54,22 +53,82 @@ echo "Das API funktioniert!";
 
 if($parameter[0] == "zutaten"){
     //Liste aller Zutaten 
-    $ausgabe = array(
+        $ausgabe = array(
         "status" => 1,
         "result" => array()
     );
 
-    $result = query("SELECT*FROM zutaten Order by id ASC");
-    while($row = mysqli_fetch_assoc($result)){
+        $result = query("SELECT * FROM zutaten Order by id ASC");
+        while($row = mysqli_fetch_assoc($result)){
         $ausgabe["result"][] = $row;
     }
 
-    echo json_encode($ausgabe); // Umwandlung eines Arrays in JSON
+
+        echo json_encode($ausgabe); // Umwandlung eines Arrays in JSON
     exit;
-}
 
 
 
+
+    } elseif ($parameter[0] == "rezepte") {
+
+
+        if( !empty($parameter[1])) {
+            //ID wurde übergeben
+            $ausgabe = array(
+                "status" => 1,
+                "result" => array()
+            );
+
+            $sql_rezepte_id = escape($parameter[1]);
+            $result = query("SELECT * FROM rezepte WHERE id = '{$sql_rezepte_id}'");
+            $rezepte = mysqli_fetch_assoc($result);
+
+            if (!$rezepte) {
+                fehler("Mit dieser ID '{$parameter[1]}' wurde kein Rezept gefunden!");
+            }
+            $ausgabe["result"] = $rezepte;
+
+            //Benutzerdaten ermitteln und an die Ausgabe anhängen
+            $result = query("SELECT id, benutzername, email FROM benutzer WHERE id = '{$rezepte["benutzer_id"]}' ");
+
+            //Zutaten ermitteln und an Ausgabe anhängen
+
+            $result = query("SELECT zutaten. * FROM zutaten_zu_rezepte 
+            JOIN zutaten ON zutaten_zu_rezepte.zutaten_id =  zutaten_id 
+            WHERE zutaten_zu_rezepte.rezepte_id = '{$sql_rezepte_id}' 
+            ORDER BY zutaten_zu_rezepte.id");
+
+            $ausgabe["zutaten"] = array();
+            while($zutat = mysqli_fetch_assoc($result)) {
+                $ausgabe["zutaten"][] = $zutat;
+            }
+
+            echo json_encode($ausgabe); // Umwandlung eines Arrays in JSON
+            exit;
+
+        } else {
+
+
+            // Liste der Rezepte
+            $ausgabe = array(
+            "status" => 1,
+            "result" => array()
+        );
+
+            $result = query("SELECT * FROM rezepte Order by id ASC");
+            while($row = mysqli_fetch_assoc($result)){
+            $ausgabe["result"][] = $row;
+        
+       
+    }   
+            echo json_encode($ausgabe); // Umwandlung eines Arrays in JSON
+            exit;
+        }
+    }
+     else {
+            fehler("Die Methode '{$parameter[0]}' existiert nicht ");
+    }
 
 
 ?>
