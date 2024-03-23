@@ -1,56 +1,52 @@
 <?php
 
-require "admin/funktionen.php"; // require MUSS , include SOLL
+//Es wird unbedingt benötigt, bei include nur wenn es gebraucht wird
+require "admin/funktionen.php";
 
+//Schaltet auf eine andere Gestaltung
 header("Content-Type: application/json");
 
-
 function fehler($message) {
-    header("HTTP/1.1 404 NOT Found");
+    header("HTTP/1.1 404 Not Found");
     echo json_encode(array(
-        "status" => 0, // status gibt man meist mit, das man nicht in  HTTP  Code analysieren muss, dann erkennt man den gleich am Status ob es funktioniert hat
+        "status" => 0, //status gibt man meist mit, das man nicht in HTTP Code analysieren muss, 
+                        //dann erkennt man gleich am Status ob es funktioniert hat
         "error" => $message
     ));
+    exit;
 }
 
-
-
-
-// GET-Parameter aus request uri 
-
+//GET-Parameter aus request uri
 $request_uri_ohne_get = explode("?", $_SERVER["REQUEST_URI"])[0];
 
-$teile = explode("/api" , $request_uri_ohne_get, 2);
+$teile = explode("/api/", $request_uri_ohne_get, 2);
 $parameter = explode("/", $teile[1]);
 
-$api_version = ltrim(array_shift($parameter), "vV"); // kleines u. großes V auf der LINKEN SEITE entfernen
+$api_version = ltrim(array_shift($parameter), "vV"); //kleines u. großes V auf der LINKEN Seite entfernen
 
 if (empty($api_version)) {
-    fehler("Bitte geben Sie eine API - Version an."); // function fehler oben 
+    fehler("Bitte geben Sie eine API-Version an.");
 }
 
-
-// leere Einträge aus Parameter-Array entfernen
-
+//Leere Einträge aus Parameter-Array entfernen
 foreach ($parameter as $k => $v) {
     if (empty($v)) {
         unset($parameter[$k]);
-    } else { 
-        //alle parameter in kleinbuchstaben umwandeln falls diese falsch daher kommen
-        $parameter [$k] = mb_strtolower($v);
+    } else {
+        //alle Parameter in Kleinbuchstaben umwandeln, falls diese falsch daherkommen
+        $parameter[$k] = mb_strtolower($v);
     }
 }
-
 
 //Indizies neu zuordnen, falls mit doppelten Schrägstrichen aufgerufen wird
 $parameter = array_values($parameter);
 
-if(empty($parameter)) {
+if (empty($parameter)) {
     fehler("Nach der Version wurde keine Methode übergeben. Prüfen Sie Ihren Aufruf!");
 }
 
-
-
+echo "Das API funktioniert!";
+?>
 
 
 
