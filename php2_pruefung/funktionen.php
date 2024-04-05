@@ -5,7 +5,7 @@ $db = mysqli_connect("localhost", "root", "", "php2_pruefung");
 mysqli_set_charset($db, "utf8");
 
 
-// Kurzform für mysqli_query
+// Kurzform für mysqli_query -> Anfarge an das Programm (mysql)
 function query($statement) {
   global $db;
   $result = mysqli_query($db, $statement) or die(mysqli_error($db)."<br />".$statement);
