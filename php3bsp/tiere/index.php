@@ -1,8 +1,12 @@
 <?php
+
+//Der Autoloader erhält Klassennamen (mit Namespace), die noch nicht includet wurden.
+//Diesen können wir in einen Dateipfad umwandeln und die Datei danach einbinden.
+//Wird für jede Klasse bei der ersten Anwendung autom. aufgerufen.
 spl_autoload_register(
     function (string $klasse) {
         //Projekt-spezifisches namespace prefix
-        $prefix = "WIFI\\JWE\\";
+        $prefix = "WIFI\\JWE\\"; //Prefix und namespace MUSS zusammenpassen
 
         //Basisverzeichnis für das Projekt 
         $basis = __DIR__ . "/";
