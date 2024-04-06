@@ -7,8 +7,27 @@ spl_autoload_register(
         //Basisverzeichnis für das Projekt 
         $basis = __DIR__ . "/";
 
+     
+        //Wenn die Klasse das prefix nicht verwendet dann abbrechen
+        //Wir sind nicht für das Laden von Dateien anderer Projekte verantwortlich
+        $leange = strlen($prefix); //zählt die bustaben von prefix string oben - muss nicht jedes mal neu angepasst werden
+        if (substr($klasse, 0, $leange) !== $prefix ) {
+            return;
+        }
+
+        //Klasse ohne Prefix
+        $klasse_ohne_prefix = substr($klasse, $leange);
         
-  
+
+        //Dateipfad erstellen
+        $datei =$basis . $klasse_ohne_prefix . ".php"; //Dateipfad für autoloader
+        $datei = str_replace("\\", "/", $datei);
+
+        //Wenn die Datei existiert, einbinden
+        if (file_exists($datei)) {
+            include $datei;
+
+        }
     }
 );
 
