@@ -1,4 +1,6 @@
 <?php
+namespace WIFI\JWE\Tier;
+
 
 class Hund extends TierAbstract { //extends  = erweitern(vererben) ist der Aufruf zur Vererbung dahinter der dateiname was alles vererbt wird - INCLUDE AUF INDEX.PHP!
 

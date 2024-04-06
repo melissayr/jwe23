@@ -1,4 +1,6 @@
 <?php
+namespace WIFI\JWE\Tier;
+
 
 class Maus extends TierAbstract {
 
