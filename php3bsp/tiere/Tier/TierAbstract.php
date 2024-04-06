@@ -6,7 +6,10 @@
 
 abstract class TierAbstract {
 
-    private string $name;
+    private string $name; // protected - Man kann innerhalb dieser klasse und deren Vererbung darauf zugreifen! Diese Klasse und Kind-Klassen können diese Eigenschaft verwenden.
+    //private - ist NUR in der TierAbstarct und ausschließlich diese  Klasse kann die Eigenschaft verwenden.
+    //public - könnte JEDER darauf zugreifen und verändern (kann von "außen gelesen o. geändert werden)
+    //Man startet so streng wie möglich mit private!
 
     public function __construct(string $tiername) {
         $this->name = $tiername;
