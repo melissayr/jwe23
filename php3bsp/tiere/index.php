@@ -39,24 +39,28 @@ spl_autoload_register(
 use WIFI\JWE\Tier\Hund;
 use WIFI\JWE\Tier\Katze;
 use WIFI\JWE\Tier\Maus;
+use WIFI\JWE\Tier\Hund\Dogge;
+use WIFI\JWE\Tiere;
 
 
 $hund = new Hund("Rufus");//neues objekt hund - construktur Rufus übergeben - Das "new" ist der Aufruf für den Konstruktor
-
-echo $hund ->get_name();
-echo "<br>";
-echo $hund ->gib_laut();
-echo "<br>";
-
-
+$dogge = new Dogge("Spike");
 $katze = new Katze("Tom");
-echo $katze ->get_name();
-echo "<br>";
-echo $katze ->gib_laut();
-echo "<br>";
-
 $maus = new Maus("Jerry");
-echo $maus ->get_name();
-echo "<br>";
-echo $maus ->gib_laut();
 
+
+
+$tiere = new Tiere();
+$tiere->add($hund);
+$tiere->add($dogge);
+$tiere->add($katze);
+$tiere->add($maus);
+$tiere->add(new Maus("Mickey"));
+
+echo $tiere->ausgabe();
+
+
+foreach ($tiere as $tier) {
+    echo "<br>";
+    echo $tier->get_name();
+}

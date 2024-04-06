@@ -12,16 +12,27 @@ namespace WIFI\JWE\Tier;
 
 abstract class TierAbstract {
 
-    private string $name; // protected - Man kann innerhalb dieser klasse und deren Vererbung darauf zugreifen! Diese Klasse und Kind-Klassen können diese Eigenschaft verwenden.
-    //private - ist NUR in der TierAbstarct und ausschließlich diese  Klasse kann die Eigenschaft verwenden.
-    //public - könnte JEDER darauf zugreifen und verändern (kann von "außen gelesen o. geändert werden)
+    //"readonly" bei Eigenschaften
+    //Die Eigenschaft kann einmalig gesetzt werden (construct) und danach nicht mehr geändert werden - nur gelesen!
+    private readonly string $name; //*** */
+    //"protected" - Man kann innerhalb dieser klasse und deren Vererbung darauf zugreifen! Diese Klasse und Kind-Klassen können diese Eigenschaft verwenden.
+    //"private" - ist NUR in der TierAbstarct und ausschließlich diese  Klasse kann die Eigenschaft verwenden.
+    //"public" - könnte JEDER darauf zugreifen und verändern (kann von "außen gelesen o. geändert werden)
     //Man startet so streng wie möglich mit private!
 
-    public function __construct(string $tiername) {
-        $this->name = $tiername;
-    }
 
-    public function get_name(): string {
+    public function __construct(string $tiername) {
+        $this->name = $tiername; //*** */
+    }
+    //mit constructor promotion verkürzen: public function __construct(private string $name) {} -> alle  *** markierte kann man in der verkürzten version weglassen und fügt private als parameter ein
+    // Bei dieser Schreibweise muss man die Eigenschaft nicht mehr definieren
+    // und die Zuweisung im Konstruktor passiert auch automatisch
+
+
+
+    //public final function get_name()
+    //Wenn etwas "final" ist, kann keine Kind-Klasse diese Methode überschreiben (zb Maus)
+        public function get_name(): string {
         return $this->name;
     }
 
