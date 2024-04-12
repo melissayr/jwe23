@@ -23,6 +23,11 @@ class validieren
         return true;
     }
 
+    public function fehler_hinzu(string $fehler): void //wenn es keinen rückgabewert gibt (string oder bool o.ä) dann void leer 
+    {
+        $this->errors[] = $fehler;
+    }
+
 
 
     public function fehler_html(): string

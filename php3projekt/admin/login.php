@@ -20,6 +20,23 @@ if(!empty($_POST)){
         //wenn kein fehler aufgetreten dann login weitrmachen
         $db = new Mysql();
         $sql_benutzername = $db->escape($_POST["benutzername"]);
+        $ergebnis = $db->query("SELECT * FROM benutzer WHERE benutzername = '{$sql_benutzername}'");
+        $benutzer = $ergebnis->fetch_assoc();
+        // echo "<pre>"; print_r($benutzer);
+
+        if(empty($benutzer) || !password_verify($_POST["passwort"], $benutzer["passwort"])) { //benutzer leer || oder pw falsch
+            //Fehler: Eingegebener Benutzer existiert nicht
+            $validieren->fehler_hinzu("Benutzer oder Passwort war falsch.");
+        } else {
+            //Alles ok -> Login in Session merken
+            $_SESSION["eingeloggt"] = true;
+            $_SESSION["benutzername"] = $benutzer["benutzername"];
+            $_SESSION["benutzer_id"] =  $benutzer["id"];
+            
+            //Umleitung zum Admin-System
+            header("Location: index.php");
+            exit;
+        }
     }
     
 }
