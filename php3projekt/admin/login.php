@@ -17,6 +17,7 @@ if(!empty($_POST)){
     $validieren->ist_ausgefuellt($_POST["passwort"], "Passwort");
 
     if (!$validieren->fehler_aufgetreten()) {
+        
         //wenn kein fehler aufgetreten dann login weitrmachen
         $db = new Mysql();
         $sql_benutzername = $db->escape($_POST["benutzername"]);
