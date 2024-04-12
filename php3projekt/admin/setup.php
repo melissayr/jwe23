@@ -1,4 +1,24 @@
 <?php
+
+//Konfiguration für das Projekt
+const MYSQL_HOST = "localhost";
+const MYSQL_USER = "root";
+const MYSQL_PASSWORT = "";
+const MYSQL_DATENBANK = "php3projekt";
+
+
+
+//Setup-Code: Nur verändern wenn du weisst was du tust.
+session_start();//immer mit $_SESSION 
+
+function ist_eingeloggt(){
+    if (empty ($_SESSION["eingeloggt"])){ //wenn leer (benutzer nicht eingeloggt, dann umleiten zu login.php)
+        header("Location: login.php");
+        exit; 
+    }
+}
+
+
 //autoloader für namespace und use
 spl_autoload_register(
     function (string $klasse) {
@@ -31,12 +51,3 @@ spl_autoload_register(
         }
     }
 );
-
-session_start();//immer mit $_SESSION 
-
-function ist_eingeloggt(){
-    if (empty ($_SESSION["eingeloggt"])){ //wenn leer (benutzer nicht eingeloggt, dann umleiten zu login.php)
-        header("Location: login.php");
-        exit; 
-    }
-}

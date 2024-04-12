@@ -3,6 +3,9 @@
 include "setup.php";
 
 use WIFI\Php3\Fdb_Klassen\Validieren;
+use WIFI\Php3\Fdb_Klassen\Mysql;
+
+
 
 
 //wurde das Formular abgeschickt?
@@ -13,7 +16,11 @@ if(!empty($_POST)){
     $validieren->ist_ausgefuellt($_POST["benutzername"], "Benutzername");
     $validieren->ist_ausgefuellt($_POST["passwort"], "Passwort");
 
-
+    if (!$validieren->fehler_aufgetreten()) {
+        //wenn kein fehler aufgetreten dann login weitrmachen
+        $db = new Mysql();
+        $sql_benutzername = $db->escape($_POST["benutzername"]);
+    }
     
 }
 

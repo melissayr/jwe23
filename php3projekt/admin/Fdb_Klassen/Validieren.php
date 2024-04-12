@@ -15,9 +15,19 @@ class validieren
         return true;
     }
 
-    public function fehler_html(): string
+    public function fehler_aufgetreten(): bool
     {
         if (empty($this->errors)) {
+            return false;
+        }
+        return true;
+    }
+
+
+
+    public function fehler_html(): string
+    {
+        if (!$this->fehler_aufgetreten()) {
             return "";
         }
 
