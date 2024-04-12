@@ -1,15 +1,46 @@
 <?php
 
-include "funktionen.php";
-//Zugriff auf Datenbank mysql
+include "setup.php";
 
+use WIFI\Php3\Fdb_Klassen\Validieren;
 
 
 //wurde das Formular abgeschickt?
-// print_r($_POST);
 
 if(!empty($_POST)){
-    //Validieren
+    //Validierung
+    $validieren = new Validieren();
+    $validieren->istAusgefuellt($_POST["benutzername"]);
+    $validieren->istAusgefuellt($_POST["passwort"]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if(empty($_POST["benutzername"]) || empty($_POST["passwort"]) ){
     $error = "Benutzername oder Passwort ist leer";
     } else {
@@ -78,10 +109,10 @@ if(!empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loginbereich zur Fahrzeug-DB</title>
 </head>
 <body>
-    <h1>Loginbereich zur Rezepteverwaltung</h1>
+    <h1>Loginbereich zur Fahrzeug-DB</h1>
 <?php 
 if (!empty($error)){
     echo "<p>" .$error. "</p>";

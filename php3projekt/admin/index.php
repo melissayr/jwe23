@@ -1,7 +1,7 @@
 <?php
-//include "funktionen.php";
+include "setup.php";
 
-//ist_eingeloggt();
+ist_eingeloggt();
 
 include "kopf.php";
 ?>
