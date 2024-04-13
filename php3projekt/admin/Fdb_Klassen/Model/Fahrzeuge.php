@@ -11,7 +11,7 @@
     {   
         $alle_fahrzeuge = array();
 
-        $db = new Mysql;
+        $db = Mysql::getInstanz();
         $ergebnis = $db->query("SELECT * FROM fahrzeuge ORDER BY id ASC");
 
         while($row = $ergebnis->fetch_assoc()){

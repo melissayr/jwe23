@@ -4,16 +4,29 @@ namespace WIFI\Php3\Fdb_Klassen;
 
 class Mysql 
 {
+    //Singleton Implementieren
+    //Vermeidet mehrfache Erstellung des selben Objekts.
+    //Hier gewünscht, um nicht mehrere Datenbank Verbindungen (über den Konstruktor) gleichzeitig aufzubauen
+    
+    private static ?Mysql $instanz = null; // null oder mysql ist drin
+
+    public static function getInstanz(): Mysql
+    {
+        if (!self::$instanz) {
+            self:: $instanz = new Mysql();
+        }
+        return self::$instanz;
+    }
+
+    //Singleton Implementierung ENDE
+
+
     private \mysqli $db;
 
     public function __construct()
 
     {
         $this->verbinden();
-
-    //     $this->einstellung = "asdf";
-    //     $this->query("");
-    // 
     }
 
     public function verbinden()
@@ -37,3 +50,4 @@ class Mysql
         return $ergebnis;
     }
 }
+

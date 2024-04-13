@@ -10,7 +10,7 @@
     public function alle_marken(): array
     {   
         $alle_marken = array();
-        $db = new Mysql;
+        $db = Mysql::getInstanz();
         $ergebnis = $db->query("SELECT * FROM marken ORDER BY hersteller ASC");
 
         while($row = $ergebnis->fetch_assoc()) {

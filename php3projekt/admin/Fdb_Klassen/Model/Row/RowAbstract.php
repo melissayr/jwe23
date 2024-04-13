@@ -19,7 +19,7 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
             $this->daten = $id_oder_daten;
         } else {
             //id wurde übergeben, Daten aus Datenbank auslesen
-            $db = new Mysql();
+            $db = Mysql::getInstanz();
             $sql_id = $db ->escape($id_oder_daten);
             $ergebnis = $db->query("SELECT * FROM {$this->tabelle} WHERE id = '{$sql_id}'");
             $this->daten = $ergebnis->fetch_assoc();
@@ -30,12 +30,17 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
 
     public function __get(string $eigenschaften): mixed //obj, array, int .. = mixed
     {
+        if(!array_key_exists($eigenschaften, $this->daten)) {
+            throw new \Exception ("Die Spalte {$eigenschaft} existiert in der Tabelle {$this->tabelle} nicht."); //Fehler hinweis für anderen programmierer ob zb in der fahrzeuge_liste.php 
+            //im foreach alles korrekt geschrieben wurde $auto->kennzeich__ 
+        }
+
         return $this->daten[$eigenschaften];
     }
 
     public function entfernen(): void 
     {
-        $db = new Mysql();
+        $db = Mysql::getInstanz();
         $sql_id = $db->escape($this->id);
         $db->query("DELETE FROM {$this->tabelle} WHERE id = '{$sql_id}'");
     }
@@ -43,7 +48,7 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
 
     public function speichern(): void
     {
-        $db = new Mysql();
+        $db = Mysql::getInstanz();
 
         //Felder für SQL-Abfrage zusammen bauen
         $sql_felder = "";
