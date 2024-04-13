@@ -5,6 +5,8 @@ ist_eingeloggt();
 
 use WIFI\Php3\Fdb_Klassen\Validieren; //Error class not found ->use !
 use WIFI\Php3\Fdb_Klassen\Model\Row\Fahrzeug;
+use WIFI\Php3\Fdb_Klassen\Model\Marken; //Error class not found ->use !
+
 
 $erfolg = false;
 
@@ -29,6 +31,7 @@ if (!empty($_POST)) {
    if (!$validieren->fehler_aufgetreten()) {
         //speichern 
         $fahrzeug = new Fahrzeug(array(
+            "id" => $_GET["id"] ?? null, // wenn id vorhanden dann verwenden, sonst den rechten Wert (null)
             "kennzeichen" => $_POST["kennzeichen"],
             "marken_id" => $_POST["marken_id"],
             "farbe" => $_POST["farbe"],
@@ -53,13 +56,29 @@ if($erfolg) {
 if(!empty($validieren)){
     echo $validieren->fehler_html();
 }
+
+if (!empty($_GET["id"])) {
+    //bearbeiten-modus - Fahrzeugdaten ermitteln zum Formular vorausfüllen
+    $fahrzeug = new Fahrzeug($_GET["id"]); //
+
+}
 ?>
 
 
-<form method="post" action="fahrzeuge_bearbeiten.php">
+<form method="post" action="fahrzeuge_bearbeiten.php<?php 
+    if(!empty($fahrzeug)) {
+        echo "?id=" . $fahrzeug->id;
+    } ?>">
+
     <div>
         <label for="kennzeichen">kennzeichen</label>
-        <input type="text" name="kennzeichen" id="kennzeichen" placeholder="SL-123AB">
+        <input type="text" name="kennzeichen" id="kennzeichen" placeholder="SL-123AB" value="<?php 
+        if (!empty($_POST["kennzeichen"])) {
+            echo htmlspecialchars($_POST["kennzeichen"]);
+        } else if (!empty($fahrzeug)) {
+        echo htmlspecialchars($fahrzeug->kennzeichen);
+        }
+        ?>">
     </div>
 
     <div>
@@ -67,18 +86,40 @@ if(!empty($validieren)){
 
         <select name="marken_id" id="marken_id">
             <option value="">- Bitte wählen -</option>
-            <option value="1">- Option 1 -</option>
+            <?php
+            $marken = new Marken();
+            $alle_marken = $marken->alle_marken();
+            foreach ($alle_marken as $marke) {
+                echo "<option value='{$marke->id}' ";
+
+                echo ">{$marke->hersteller}</option>";
+
+            }
+            ?>
+
         </select>
     </div>
 
     <div>
         <label for="farbe">Farbe</label>
-        <input type="text" name="farbe" id="farbe" placeholder="blau">
+        <input type="text" name="farbe" id="farbe" placeholder="blau" value="<?php 
+        if (!empty($_POST["farbe"])) {
+            echo htmlspecialchars($_POST["farbe"]);
+        } else if (!empty($fahrzeug)) {
+        echo htmlspecialchars($fahrzeug->farbe);
+        }
+        ?>">
     </div>
 
     <div>
         <label for="baujahr">Baujahr</label>
-        <input type="text" name="baujahr" id="baujahr" placeholder="1999">
+        <input type="text" name="baujahr" id="baujahr" placeholder="1999" value="<?php 
+        if (!empty($_POST["baujahr"])) {
+            echo htmlspecialchars($_POST["baujahr"]);
+        } else if (!empty($fahrzeug)) {
+        echo htmlspecialchars($fahrzeug->baujahr);
+        }
+        ?>">
     </div>
 
 
