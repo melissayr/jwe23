@@ -33,6 +33,12 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
         return $this->daten[$eigenschaften];
     }
 
+    public function entfernen(): void 
+    {
+        $db = new Mysql();
+        $sql_id = $db->escape($this->id);
+        $db->query("DELETE FROM {$this->tabelle} WHERE id = '{$sql_id}'");
+    }
 
 
     public function speichern(): void

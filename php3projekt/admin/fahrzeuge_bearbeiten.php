@@ -91,7 +91,12 @@ if (!empty($_GET["id"])) {
             $alle_marken = $marken->alle_marken();
             foreach ($alle_marken as $marke) {
                 echo "<option value='{$marke->id}' ";
-
+                if (!empty($_POST["marken_id"]) && $_POST["marken_id"] == $marke->id) {
+                    echo " selected";
+                } else if (!empty($fahrzeug) && $fahrzeug->marken_id == $marke->id) {
+                    echo " selected";
+                }
+                
                 echo ">{$marke->hersteller}</option>";
 
             }

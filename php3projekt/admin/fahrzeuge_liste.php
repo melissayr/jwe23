@@ -34,7 +34,7 @@ echo "<table border='1'>";
         echo "<tr>";
 
             echo "<td>" . $auto->kennzeichen . "</td>";
-            echo "<td>" . $auto->marken_id . "</td>";
+            echo "<td>" . $auto->get_marke()->hersteller . "</td>";
             echo "<td>" . $auto->farbe . "</td>";
             echo "<td>" . $auto->baujahr . "</td>";
             echo "<td>"
