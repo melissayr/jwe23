@@ -15,6 +15,24 @@ class validieren
         return true;
     }
 
+    public function ist_kennzeichen(string $wert, string $feldname): bool
+    {   
+        //nach irgendeinem Kennzeichen suchen, das NICHT ^ A-Z, 0-9, oder Bindestrich ist.
+        if (preg_match("/[^A-Z0-9\-]/i", $wert)){ // alles was NICHT diese Zeichen sind, ist ein Fehler zb Sonderzeichen usw.
+            $this->errors[] = "Im " . $feldname  . " sind nur Buchstaben, Zahlen und Minus erlaubt.";
+            return false;
+        }
+        //auf korrekte Länge prüfen
+        if(strlen($wert) > 8 || strlen($wert) < 3){
+
+        $this->errors[] = "Die Länge von " . $feldname  . " scheint falsch zu sein.";
+            return false;
+        }
+
+        return true; //wenn er in die IF drüber nicht reingegangen ist, ist alles ok 
+    }
+    
+    
     public function fehler_aufgetreten(): bool
     {
         if (empty($this->errors)) {
