@@ -37,7 +37,11 @@ echo "<table border='1'>";
             echo "<td>" . $auto->marken_id . "</td>";
             echo "<td>" . $auto->farbe . "</td>";
             echo "<td>" . $auto->baujahr . "</td>";
+            echo "<td>"
+            . "<a href='fahrzeuge_bearbeiten.php?id={$auto->id}'>Bearbeiten</a> "
+            . "<a href='fahrzeuge_entfernen.php?id={$auto->id}'>Entfernen</a>";
 
+            echo "</td>" ;
 
         echo"</tr>";
 
