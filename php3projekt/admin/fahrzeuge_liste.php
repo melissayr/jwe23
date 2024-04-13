@@ -3,6 +3,7 @@
 include "setup.php";
 ist_eingeloggt();
 
+use WIFI\Php3\Fdb_Klassen\Model\Fahrzeuge;
 
 
 include "kopf.php";
@@ -21,20 +22,31 @@ echo "<table border='1'>";
             echo"<th>Farbe</th>";
             echo"<th>Baujahr</th>";
         echo"</tr>";
-    echo"<thead>";
+    echo"</thead>";
+
+    echo "<tbody>";
 
 
-    $fahrzeuge = new Fahzeuge(); //ACHTUNG MEHRZAHL ANDERES OBJEKT
+    $fahrzeuge = new Fahrzeuge(); //ACHTUNG MEHRZAHL ANDERES OBJEKT
     $alle_fahrzeuge = $fahrzeuge->alle_fahrzeuge(); //gibt "Fahrzeuge" Objekte als array zurück
 
-    echo "<pre>";
-    print_r($alle_fahrzeuge);
+    foreach ($alle_fahrzeuge as $auto) {
+        echo "<tr>";
+
+            echo "<td>" . $auto->kennzeichen . "</td>";
+            echo "<td>" . $auto->marken_id . "</td>";
+            echo "<td>" . $auto->farbe . "</td>";
+            echo "<td>" . $auto->baujahr . "</td>";
+
+
+        echo"</tr>";
+
+    }
 
 
 
-
-
-
+    echo "</tbody>";
+    echo "</table>";
 
 
 

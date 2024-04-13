@@ -14,13 +14,18 @@ class Fahrzeug // class Fahrzeug -> :  new "Fahrzeug" wird vom Constructor aufge
         $this->daten = $daten;
     }
 
+    public function __get(string $eigenschaften): mixed //obj, array, int .. = mixed
+    {
+        return $this->daten[$eigenschaften];
+    }
+
     public function speichern(): void
     {
         $db = new Mysql();
 
         //Felder für SQL-Abfrage zusammen bauen
         $sql_felder = "";
-        
+
         foreach($this->daten as $spaltenname => $wert) {
             $sql_wert = $db->escape($wert);
             $sql_felder .= "{$spaltenname} = '{$sql_wert}', ";
