@@ -31,6 +31,37 @@ class validieren
 
         return true; //wenn er in die IF drüber nicht reingegangen ist, ist alles ok 
     }
+
+
+
+
+
+    public function ist_jahr(string $wert, string $feldname): bool
+    {   //muss eine zahl sein
+        if(!is_numeric($wert)) {
+            $this->errors[] = "Im " . $feldname  . " dürfen nur Zahlen verwendet werden.";
+            return false;
+        }
+
+        //auf korrekte Länge prüfen - Jahr kann nur 4 zahlen sein
+        if(strlen($wert) != 4 ){ //  ungleich 4   oder strlen($wert) > 4 || strlen($wert) < 4
+
+            $this->errors[] = "Die Länge von " . $feldname  . " scheint falsch zu sein.";
+            return false;
+        }
+
+        if (date("Y") < $wert || $wert < 1890) {
+            $this->errors[] = "Das " . $feldname  . " kann nicht in der Zukunft liegen und muss größer als 1890 sein.";
+            return false;
+        }
+
+        return true; //wenn er in die IF drüber nicht reingegangen ist, ist alles ok 
+    }
+
+
+
+
+
     
     
     public function fehler_aufgetreten(): bool

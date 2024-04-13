@@ -4,6 +4,9 @@ include "setup.php";
 ist_eingeloggt();
 
 use WIFI\Php3\Fdb_Klassen\Validieren; //Error class not found ->use !
+use WIFI\Php3\Fdb_Klassen\Model\Row\Fahrzeug;
+
+$erfolg = false;
 
 //wurde es abgeschickt
 if (!empty($_POST)) {
@@ -12,14 +15,40 @@ if (!empty($_POST)) {
     if ($validieren->ist_ausgefuellt($_POST["kennzeichen"], "Kennzeichen")) {
         $validieren->ist_kennzeichen($_POST["kennzeichen"], "Kennzeichen");
     }
+
     $validieren->ist_ausgefuellt($_POST["marken_id"], "Marke");
+
     $validieren->ist_ausgefuellt($_POST["farbe"], "Farbe");
-    $validieren->ist_ausgefuellt($_POST["baujahr"], "Baujahr");
+
+   if ( $validieren->ist_ausgefuellt($_POST["baujahr"], "Baujahr")) {
+        $validieren->ist_jahr($_POST["baujahr"], "Baujahr");
+   }
+
+
+   // wenn keine Fehler aufgetreten sind
+   if (!$validieren->fehler_aufgetreten()) {
+        //speichern 
+        $fahrzeug = new Fahrzeug(array(
+            "kennzeichen" => $_POST["kennzeichen"],
+            "marken_id" => $_POST["marken_id"],
+            "farbe" => $_POST["farbe"],
+            "baujahr"=>$_POST["baujahr"]
+        ));
+        $fahrzeug->speichern();
+        $erfolg = true;
+   }
+
+
 }
 
 include "kopf.php";
 
 echo "<h1>Fahrzeuge anlegen/bearbeiten</h1>";
+
+if($erfolg) {
+    echo "<p>Fahrzeug wurde gespeichert <br>
+    <a href='fahrzeuge_liste.php'>Zurück zur Liste</a></p>";
+}
 
 if(!empty($validieren)){
     echo $validieren->fehler_html();
@@ -38,7 +67,7 @@ if(!empty($validieren)){
 
         <select name="marken_id" id="marken_id">
             <option value="">- Bitte wählen -</option>
-            <option value="">- Option 1 -</option>
+            <option value="1">- Option 1 -</option>
         </select>
     </div>
 
