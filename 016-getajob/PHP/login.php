@@ -1,20 +1,16 @@
 <?php
 include "kopf.php";
-
-
-
-
 ?>
 
 
+<link href="style.css" rel="stylesheet" type="text/css" />
 
 
-
-
+<div class="loginNew">
 
     <h1>Loginbereich</h1>
 
-    <div id="post-container">
+ 
 
     <form action="login.php" method="post">
         <div>
@@ -29,10 +25,12 @@ include "kopf.php";
 
         <div><button type="submit">Einloggen</button></div>
     </form>
+
+</div>
   
         
               
-
+    <div id="post-container">
 
 <!-- Hier ist die Card von UIVERSE.io  -->
         <!-- <form class="form">

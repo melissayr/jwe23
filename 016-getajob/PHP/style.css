@@ -193,8 +193,6 @@ nav ul {
     align-items: center;
 }
 
-
-
 /* Slideout Menu */
 
 #slideout-menu {
@@ -337,7 +335,7 @@ section {
 }
 
 .loginNew {
-   margin: 50px;
+    margin: 50px;
 }
 
 /* LOGIN BEREICH UIVERSE CARD! VORERST AUSKOMMENTIEREN UND NORMALES LOGIN BAUEN - HINTERHER STYLEN*/
@@ -408,6 +406,41 @@ section {
 .signup-link a {
     text-decoration: underline;
 } */
+
+/* BEWERBUNG HTML FORM  */
+.contact form input,
+.contact form textarea,
+.contact form button {
+    width: 400px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    background: white;
+    border: 1px;
+    border-radius: 5px;
+    outline: none;
+}
+.contact form textarea {
+    height: 100px;
+    resize: vertical;
+}
+.contact form input:hover,
+.contact form input:focus,
+.contact form textarea:hover,
+.contact form textarea:focus {
+    border-color: orange;
+}
+.contact form button {
+    width: auto;
+    font-weight: bold;
+    color: white;
+    background: rgb(187, 241, 162);
+    border-color: orange;
+    cursor: pointer;
+}
+.contact form button:hover {
+    color: orange;
+    background: white;
+}
 
 /* Footer */
 
