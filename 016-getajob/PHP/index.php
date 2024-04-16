@@ -1,5 +1,5 @@
 <?php
-// include "setup.php";
+include "setup.php";
 
 // ist_eingeloggt();
 
@@ -51,7 +51,7 @@ if($site == "home") {
 
 <?php
 
-include "inhalte/" . $include_datei;
+// include "inhalte/" . $include_datei;
 
 include "nav.php";
 
