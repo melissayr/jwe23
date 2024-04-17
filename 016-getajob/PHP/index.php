@@ -1,5 +1,5 @@
 <?php
-include "setup.php";
+
 
 // ist_eingeloggt();
 
@@ -13,7 +13,7 @@ include "kopf.php";
 if (empty($_GET["seite"])){ //existiert die GET seite oder ist sie leer $
     $site = "home";
 } else{
-    $site = $_GET["seite"];
+    $site = $_GET["seite"]; //seite?
 }
 // Navigation in php
 if($site == "home") {
@@ -51,9 +51,10 @@ if($site == "home") {
 
 <?php
 
-// include "inhalte/" . $include_datei;
+//nav.php?
+// include "funktionen.php"
 
-include "nav.php";
+include "inhalte/" . $include_datei;
 
 include "fuss.php";
 ?>

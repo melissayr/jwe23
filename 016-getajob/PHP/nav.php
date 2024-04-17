@@ -11,17 +11,17 @@ $nav_punkte = array(
     , "faq" => "FAQ´s"
 );
 
-// echo "<nav><ul>";
+echo "<nav><ul>";
 
-// foreach ($nav_punkte as $href => $nav_punkt) {
-//     echo '<li ';
-//     if ($site == $href) {
-//         echo 'class="active"';
-//     }
-//     echo '><a href="?seite=';
-//     echo $href . '">' . $nav_punkt;
-//     echo "</a></li>" ;
-//   }
+foreach ($nav_punkte as $href => $nav_punkt) {
+    echo '<li ';
+    if (true == $href) {
+        echo 'class="active"';
+    }
+    echo '><a href="?seite=';
+    echo $href . '">' . $nav_punkt;
+    echo "</a></li>" ;
+  }
 
-// echo "</ul></nav>"; 
+echo "</ul></nav>"; 
 ?>

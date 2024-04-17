@@ -2,48 +2,7 @@
 include "kopf.php";
 
 
-
-include "setup.php";
-
-use WIFI\Php3\Getajob_Klassen\Validieren;
-use WIFI\Php3\Getajob_Klassen\Mysql;
-
-
-
-
-//wurde das Formular abgeschickt?
-
-if(!empty($_POST)){
-    //Validierung
-    $validieren = new Validieren();
-    $validieren->ist_ausgefuellt($_POST["benutzername"], "Benutzername");
-    $validieren->ist_ausgefuellt($_POST["passwort"], "Passwort");
-
-    if (!$validieren->fehler_aufgetreten()) {
-        
-        //wenn kein fehler aufgetreten dann login weitrmachen
-        $db = Mysql::getInstanz();
-        $sql_benutzername = $db->escape($_POST["benutzername"]);
-        $ergebnis = $db->query("SELECT * FROM benutzer WHERE benutzername = '{$sql_benutzername}'");
-        $benutzer = $ergebnis->fetch_assoc();
-        // echo "<pre>"; print_r($benutzer);
-
-        if(empty($benutzer) || !password_verify($_POST["passwort"], $benutzer["passwort"])) { //benutzer leer || oder pw falsch
-            //Fehler: Eingegebener Benutzer existiert nicht
-            $validieren->fehler_hinzu("Benutzer oder Passwort war falsch.");
-        } else {
-            //Alles ok -> Login in Session merken
-            $_SESSION["eingeloggt"] = true;
-            $_SESSION["benutzername"] = $benutzer["benutzername"];
-            $_SESSION["benutzer_id"] =  $benutzer["id"];
-            
-            //Umleitung zum Admin-System
-            header("Location: index.php");
-            exit;
-        }
-    }
-    
-}
+// include "funktionen.php";
 
 
 //asdf
@@ -58,11 +17,7 @@ if(!empty($_POST)){
 
     <h1>Loginbereich</h1>
 
-<?php
-if (!empty($validieren)){
-    echo $validieren->fehler_html();
-}
-?>
+
 
  
 
