@@ -1,5 +1,5 @@
 <?php
-include "kopf.php";
+// include "kopf.php";
 
 
 // include "funktionen.php";

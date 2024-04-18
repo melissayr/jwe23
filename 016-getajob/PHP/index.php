@@ -55,6 +55,5 @@ if($site == "home") {
 // include "funktionen.php"
 
 include "inhalte/" . $include_datei;
-
 include "fuss.php";
 ?>
