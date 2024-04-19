@@ -2,16 +2,25 @@
 
 class Car {
 
-    private $sound;
+    private $marke;
 
-    public function __construct(string $loud ) {
-        $this->sound = $loud;
+    public function __construct($markenname) {
+        $this->marke = $markenname;
     }
 
-    public function honk(): string {
-        return $this->sound;
+    public function darstellen() {
+        return "Das ist die Marke " . $this->marke;
     }
 
-    
+    public function get_marke() {
+        return $this->marke;
+    }
+
 }
+
+
+   
+    
+
+
 
