@@ -6,23 +6,23 @@ use WIFI\JWE\Car\CarAbstract;
 
 
 
- class Car {
+//  class Car {
 
-    private $marke;
+//         private $marke;
     
-    public function __construct($markenname) {
-        $this->marke = $markenname;
-    }
+//         public function __construct($markenname) {
+//             $this->marke = $markenname;
+//         }
     
-    public function darstellen() {
-        return "Das ist die Marke " . $this->marke;
-    }
+//         public function darstellen() {
+//         return "Das ist die Marke " . $this->marke;
+//         }
     
-    public function get_marke() {
-        return $this->marke;
-    }
+//         public function get_marke() {
+//         return $this->marke;
+//         }
     
-    }
+//     }
     
    
     
