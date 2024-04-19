@@ -6,12 +6,12 @@ use WIFI\Php3\Fdb_Klassen\Mysql;
 
 abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Constructor aufgerufen
 
-{   
+{
     protected string $tabelle;
 
     private array $daten = array();
 
-    public function __construct(array|int $id_oder_daten) 
+    public function __construct(array|int $id_oder_daten)
     //speichern in $daten
     {   
         if(is_array($id_oder_daten)) {
@@ -34,7 +34,6 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
             throw new \Exception ("Die Spalte {$eigenschaft} existiert in der Tabelle {$this->tabelle} nicht."); //Fehler hinweis für anderen programmierer ob zb in der fahrzeuge_liste.php 
             //im foreach alles korrekt geschrieben wurde $auto->kennzeich__ 
         }
-
         return $this->daten[$eigenschaften];
     }
 
@@ -44,7 +43,6 @@ abstract class RowAbstract // class Fahrzeug -> :  new "Fahrzeug" wird vom Const
         $sql_id = $db->escape($this->id);
         $db->query("DELETE FROM {$this->tabelle} WHERE id = '{$sql_id}'");
     }
-
 
     public function speichern(): void
     {

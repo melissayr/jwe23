@@ -96,12 +96,10 @@ if (!empty($_GET["id"])) {
                 } else if (!empty($fahrzeug) && $fahrzeug->marken_id == $marke->id) {
                     echo " selected";
                 }
-                
                 echo ">{$marke->hersteller}</option>";
 
             }
             ?>
-
         </select>
     </div>
 
@@ -127,12 +125,9 @@ if (!empty($_GET["id"])) {
         ?>">
     </div>
 
-
     <div>
         <button type="submit">Fahrzeug speichern</button>
     </div>
-
-
 
 </form>
 

@@ -36,12 +36,6 @@ if(!empty($_GET["doit"])){
     }
 
 
-
-
-
-
 include "fuss.php";
-
-
 
 ?>

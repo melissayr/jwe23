@@ -5,7 +5,7 @@
  * und können mit phpDocumentor verarbeitet werden. 
  */
 
-class Kreis { 
+class Kreis {
     //Konstate, die fix einer Klasse zugeordnet ist
     const PI = 3.141592654;
 
@@ -52,7 +52,7 @@ class Kreis {
             //wirft eine Exception, die als Fehler am Bildschirm aufscheint.
             //Gibt Kollegen einen Hinweis, was sie falsch gemacht haben (die entwickler für index.php zb)
             throw new Exception("Radius muss größer 0 sein."); //neue Ausnahme(new Exception) vordefiniert von PHP! wenn Exception geworfen wird kann der code danach nicht ausgeführt werden 
-        } //einen throw(wurf) muss man auch fangen 
+        } //einen throw(wurf) muss man auch fangen
 
         $this->radius = $neuerRadius;
     }

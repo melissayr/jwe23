@@ -42,20 +42,10 @@ echo "<table border='1'>";
             . "<a href='fahrzeuge_entfernen.php?id={$auto->id}'>Entfernen</a>";
 
             echo "</td>" ;
-
         echo"</tr>";
-
     }
-
-
 
     echo "</tbody>";
     echo "</table>";
-
-
-
-
-
-
 
 include "fuss.php";

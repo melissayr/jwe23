@@ -19,6 +19,3 @@ echo"<br>";
 $sie = new Person("Sabrina");
 echo $sie->vorstellen();
 echo"<br>";
-
-
-
