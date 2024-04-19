@@ -1,6 +1,38 @@
 <?php
 
-include "Car.php";
+
+use WIFI\JWE\Car;
+
+//autoloader für namespaces und use
+spl_autoload_register(
+    function (string $klasse) {
+    
+        $prefix = "WIFI\\JWE\\"; 
+
+        //Basisverzeichnis für das Projekt 
+        $basis = __DIR__ . "/";
+
+        $leange = strlen($prefix); 
+        if (substr($klasse, 0, $leange) !== $prefix ) {
+            return;
+        }
+
+        //Klasse ohne Prefix
+        $klasse_ohne_prefix = substr($klasse, $leange);
+        
+        //Dateipfad erstellen
+        $datei =$basis . $klasse_ohne_prefix . ".php"; //Dateipfad für autoloader
+        $datei = str_replace("\\", "/", $datei);
+
+        //Wenn die Datei existiert, einbinden
+        if (file_exists($datei)) {
+            include $datei;
+
+        }
+    }
+);
+
+
 
 
 $car = new Car("BMW") ;
@@ -16,13 +48,6 @@ echo $anothercar->darstellen();
 echo"<br>";
 
 
-
-
-
-
-// $ich = new Person ("Melissa"); // Wenn Parameter Melissa mitgegeben wird, dann geht er in die function __contruct (Person.php) AUTOMATISCH 
-// echo $ich->vorstellen();
-// echo"<br>";
 
 
 // $anothercar = new Car("VW");

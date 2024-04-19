@@ -1,5 +1,7 @@
 <?php
 
+namespace WIFI\JWE;
+
 class Car {
 
     private $marke;
