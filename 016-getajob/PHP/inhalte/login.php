@@ -8,18 +8,9 @@
 //asdf
 ?>
 
-
-
-<link href="style.css" rel="stylesheet" type="text/css" />
-
-
 <div class="loginNew">
 
     <h1>Loginbereich</h1>
-
-
-
- 
 
     <form action="login.php" method="post">
         <div>
@@ -60,8 +51,4 @@
     </div>
 </main>
 
-<?php
-include "fuss.php";
-
-?>
 
