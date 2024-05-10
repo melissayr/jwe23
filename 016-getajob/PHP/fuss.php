@@ -20,21 +20,19 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
 <footer>
             <div id="left-footer">
-                <h3>Quick Links</h3>
+                <!-- <h3>Melissa Reim</h3> -->
                 <p>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <p>Hier steht die Adresse</p>
                         </li>
                         <li>
-                            <a href="jobs.html">Jobs</a>
+                            <p>Strasse Nr X</p>
                         </li>
                         <li>
-                            <a href="ueberuns.html">Über uns</a>
+                            <p>Salzburg, Österreich</p>
                         </li>
-                        <li>
-                            <a href="login.html">Anmelden/Login</a>
-                        </li>
+                       
                     </ul>
                 </p>
             </div>

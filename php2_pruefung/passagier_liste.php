@@ -9,6 +9,7 @@ include "funktionen.php";
 
 <?php
 //Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
+
 $result = query( "SELECT * FROM passagiere ORDER BY nachname ASC");
 
 // print_r($result);

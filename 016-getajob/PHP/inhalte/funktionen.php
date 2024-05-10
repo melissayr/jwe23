@@ -3,7 +3,7 @@
 session_start(); // für die $SESSION 
 
 
-$db = mysqli_connect("localhost", "root", "", "016-getajob"); //Verbindung Datenbank
+$db = mysqli_connect("localhost", "root", "", "getajob"); //Verbindung Datenbank
 
 
 mysqli_set_charset($db, "utf8"); //alle Befehle kommen als uft8

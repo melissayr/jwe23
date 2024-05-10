@@ -18,12 +18,12 @@
 
                 <div class="card-description">
                     
-                        <h3>Hier kannst du dich bewerben:</h3>
+                        <h3>Wie kannst du dich bewerben:</h3>
                     </a>
                     <p>
-                        Bewirb dich jetzt hier in unseren online Formular:
+                        Bewirb dich jetzt in unserem online Formular:
                     </p>
-                    <a href="bewerbung.html" class="btn-readmore">Erfahre mehr</a>
+                    <button class="btn-readmore">Dieses findest du unter "Bewerben"</button>
                 </div>
             </div>
 
@@ -34,9 +34,9 @@
                     
                         <h3>Wie meldest du dich an</h3>
                     </a>
-                    <p>Alle Informationen zur Registrierung und zum Login befinden sich unter Anmelden/Login.
+                    <p>Wenn du Informationen zur Registrierung und zum Login möchtest .
                     </p>
-                    <a href="login.html" class="btn-readmore">Login</a>
+                    <button class="btn-readmore">Gehe auf Anmelden/Login</button>
                 </div>
             </div>
         </section>
@@ -52,7 +52,7 @@
                     <p>
                         Viele Fragen, die wir bereits beantwortet haben kannst du natürlich hier nachlesen. Falls du noch Hilfe benötigen solltest, kontaktiere uns.
                     </p>
-                    <a href="faq.html" class="btn-readmore">FAQ´s</a>
+                    <button class="btn-readmore">Gehe auf FAQ´s</button>
                 </div>
             </div>
 
@@ -63,9 +63,9 @@
                     
                         <h3>Jobs</h3>
                     </a>
-                    <p>Ein paar Impressionen von uns für dich.
+                    <p>Hier befinden sich die Stellenanzeigen. Du kannst dort die passende Stellenanzeige für dich raussuchen.
                     </p>
-                    <a href="jobs.html" class="btn-readmore">Jobs</a>
+                    <button class="btn-readmore">Gehe auf Jobs</button>
                 </div>
             </div>
         </section>
