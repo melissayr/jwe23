@@ -16,28 +16,24 @@ if (empty($_GET["seite"])){ //existiert die GET seite oder ist sie leer $
     $site = $_GET["seite"]; //seite?
 }
 // Navigation in php
-if($site == "home") {
-    $include_datei = "home.php";
+if($site == "home") { // Key - Seitenident.
+    $include_datei = "inhalte/home.php";
     $seitentitel ="Find your passion";
 
 } else if ($site == "jobs") {
-    $include_datei = "jobs.php";
+    $include_datei = "inhalte/jobs.php";
     $seitentitel ="Jobs";
 
-} else if ($site == "ueberuns.php") {
-    $include_datei = "ueberuns.php";
+} else if ($site == "ueberuns") {
+    $include_datei = "inhalte/ueberuns.php";
     $seitentitel ="Team";
 
-} else if ($site == "login") {
-    $include_datei = "login.php";
-    $seitentitel ="Login.";
-
 } else if ($site == "bewerbung") {
-    $include_datei = "bewerbung.php";
+    $include_datei = "inhalte/bewerbung.php";
     $seitentitel ="Bewerben.";
 
 } else if ($site == "faq") {
-    $include_datei = "faq.php";
+    $include_datei = "inhalte/faq.php";
     $seitentitel ="FAQ´s";
 
 } else {
@@ -54,6 +50,6 @@ if($site == "home") {
 //nav.php?
 // include "funktionen.php"
 
-include "inhalte/" . $include_datei;
+include  $include_datei;
 include "fuss.php";
 ?>

@@ -37,6 +37,8 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 </p>
             </div>
 
+         
+
             <div id="right-footer">
                 <h3>Follow us on</h3>
                 <div id="social-media-footer">

@@ -54,17 +54,16 @@ if($parameter[0] == "jobs") { // STELLE 0 NACH DER SPLITTUNG ist Jobs
         $ausgabe = array(
         "status" => 1,
         "result" => array()
-    )  else (fehler("Spezifizierung Stelle falsch"));
-    }
+    ) ( fehler("Spezifizierung Stelle falsch")); 
 
 
         
-if($parameter[1] == "list"){
+if($parameter[1] == "list")
     //Liste aller Jobs 
         $ausgabe = array(
         "status" => 1,
         "result" => array()
-    ) else (fehler("Richtige Ausgabe prüfen."));
+    )  (fehler("Richtige Ausgabe prüfen."));
     
 
         $result = query("SELECT * FROM jobs Order by id ASC");

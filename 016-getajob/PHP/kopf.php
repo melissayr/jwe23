@@ -72,6 +72,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
             <li>
                 <a href="faq.html">FAQ´s</a>
             </li>
+           
         </ul>
     </div>
 

@@ -20,15 +20,13 @@
 
       <?php
 
-include "funktionen.php";
+include "admin/funktionen.php";
 
 // ist_eingeloggt();
 
 // include "kopf.php";
 
 ?>
-
-<p><a href="jobs_anlegen.php">Neue Jobs anlegen</a></p>
 
 
 <?php
@@ -62,11 +60,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         echo "<td>" . $row["titel"]  .  "</td>";
 
-   
-
-        echo "<td>" . "<a href='jobs_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
-
-        echo "<td>" . "<a href='jobs_entfernen.php?id={$row["id"]}'>Entfernen</a>"  .  "</td>";
 
 
 

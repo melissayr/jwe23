@@ -6,7 +6,6 @@ $nav_punkte = array(
     "home" => "Home"
     , "jobs" => "Jobs"
     , "ueberuns" => "Team"
-    , "login" => "Login"
     , "bewerbung" => "Bewerben"
     , "faq" => "FAQ´s"
 );
@@ -23,5 +22,5 @@ foreach ($nav_punkte as $href => $nav_punkt) {
     echo "</a></li>" ;
   }
 
-echo "</ul></nav>"; 
+echo "<li><a href='admin/login.php'>Login Adminbereich</a></li></ul></nav>"; 
 ?>
