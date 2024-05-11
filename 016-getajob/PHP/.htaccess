@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteBase /jwe23/016-getajob/PHP
+
+RewriteRule ^/?api/? api.php
