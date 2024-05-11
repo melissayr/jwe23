@@ -13,10 +13,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
   crossorigin="anonymous">
+
 <!-- Link zum css -->
-
-
-
 <link href="style.css" rel="stylesheet" type="text/css" />
   
 <!-- Bootstrap css -->
