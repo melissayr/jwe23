@@ -1,3 +1,9 @@
+<!-- Link zum css -->
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link
+rel="stylesheet"
+href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
+/>
 <?php
 
 
@@ -28,7 +34,7 @@ if(!empty($_POST)){
 
                     // Umleiten in Admin-system
 
-                    header("Location: index.php");
+                    header("Location: jobs_liste.php");
                     exit;
                     //Passwort war falsch
             } else {$error="Benutzername oder Passwort falsch";}
@@ -39,9 +45,6 @@ if(!empty($_POST)){
 }
 
 
-
-
-//asdf
 ?>
 
 <div class="loginNew">
@@ -81,7 +84,7 @@ if (!empty($error)){
                <input type="email" placeholder="Gebe deine Email ein">
                <span>
                </span>
-           </div>
+           </div> //asdf*
            <div class="input-container">
                <input type="password" placeholder="Gebe dein Passwort ein">
              </div>
