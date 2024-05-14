@@ -46,9 +46,6 @@ if (!empty($_POST))
                 $sql_id = "NULL"; // Wenn eine Zutat keine kcal hat, setze auf NULL
             }
 
-            if ($sql_jobs == "") {
-                $sql_jobs = "NULL"; //  setze auf NULL wenn leer
-            }
 
 
 
