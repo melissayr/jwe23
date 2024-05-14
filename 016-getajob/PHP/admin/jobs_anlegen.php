@@ -31,7 +31,7 @@ if (!empty($_POST))
         } else {
 
             //überprüfen ob es die zutat bereits gibt
-            $result = query("SELECT * FROM jobs WHERE titel = '{$sql_titel}' "); // $db in funktionen 
+            $result = query("SELECT * FROM jobs WHERE id = '{$sql_id}' "); // $db in funktionen 
 
                     //Datensatz aus mysqli in ein php array umwandeln
             $row = mysqli_fetch_assoc($result);
@@ -92,17 +92,22 @@ if (!empty($_POST))
     <form action="jobs_anlegen.php" method="post">
         <div>
             <lable for="jobs">Beschreibung:</lable>
-            <input type="text" name="titel" id="titel" />
+            <input type="text" name="jobs" id="jobs" />
         </div>
 
         <div>
             <lable for="titel">Titel:</lable>
-            <input type="text" name="kcal_pro_100" id="kcal_pro_100" />
+            <input type="text" name="titel" id="titel" />
         </div>
 
         <div>
-            <lable for="id">ID:</lable>
-            <input type="number" name="menge" id="menge" />
+        <label for="kategorie_id">Kategorie:</label>
+
+        <select id="kategorie_id">
+            <option value="1">Dev</option>
+            <option value="2">Bau</option>
+
+        </select>
         </div>
 
 

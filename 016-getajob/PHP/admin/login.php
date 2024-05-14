@@ -74,7 +74,7 @@ if (!empty($error)){
 
 </div>
   
- <a href="index.php">Hier gehts zur Startseite von Getajob</a>  
+ <a href="../index.php">Hier gehts zur Startseite von Getajob</a>  
 
 </main>
 

@@ -36,6 +36,7 @@ echo "<tr>";
     echo "<th>ID &nbsp;</th>";
     echo "<th>Beschreibung &nbsp;&nbsp;</th>";
     echo "<th>Titel &nbsp;&nbsp;</th>";
+    echo "<th>Kategorie ID &nbsp;&nbsp;</th>";
     echo "<th>Aktionen &nbsp;&nbsp;</th>";
  
 echo "</tr>";
@@ -52,6 +53,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo "<td>" . $row["jobs"]  .  "</td>";
 
         echo "<td>" . $row["titel"]  .  "</td>";
+
+        echo "<td>" . $row["kategorie_id"]  .  "</td>";
 
    
 
