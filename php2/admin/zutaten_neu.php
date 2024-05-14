@@ -109,5 +109,4 @@ if (!empty($_POST))
         <div><button type="submit">Zutat anlegen</button></div>
     </form>
 
-    
 </body>

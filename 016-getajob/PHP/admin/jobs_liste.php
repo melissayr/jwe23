@@ -55,9 +55,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 
    
 
-        echo "<td>" . "<a href='rezepte_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
+        echo "<td>" . "<a href='jobs_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
 
-        echo "<td>" . "<a href='rezepte_entfernen.php?id={$row["id"]}'>Entfernen</a>"  .  "</td>";
+        echo "<td>" . "<a href='jobs_entfernen.php?id={$row["id"]}'>Entfernen</a>"  .  "</td>";
 
 
 

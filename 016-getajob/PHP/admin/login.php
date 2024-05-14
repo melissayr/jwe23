@@ -9,6 +9,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
 include "funktionen.php";
 
+
 //validieren
 if(!empty($_POST)){
     if(empty($_POST["benutzername"]) || empty($_POST["passwort"]) ){
