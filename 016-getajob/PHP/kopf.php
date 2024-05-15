@@ -100,4 +100,4 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 <?php include "nav.php"; ?>
 
 <!-- Javascript -->
-<script src="getajob.js"></script>
+<script src="../getajob.js"></script>

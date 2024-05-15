@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <!-- Javascript -->
-<script src="getajob.js"></script>
+<script src="../getajob.js"></script>
 
 </main>
 
