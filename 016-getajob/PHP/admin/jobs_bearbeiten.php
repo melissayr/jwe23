@@ -47,9 +47,6 @@ if (!empty($_POST)){
                     $sql_titel == "NULL"; // Wenn Titel leer dann null
                 }
 
-
-
-
             query(" UPDATE jobs SET
             titel = '{$sql_titel}',
             jobs = '{$sql_jobs}',
@@ -123,8 +120,8 @@ if (!empty($_POST)){
                 } else {
                     echo htmlspecialchars($row["kategorie_id"]);
                      }?>" />
-        </div>
- <button type="submit">Job speichern</button></div>
+            </div>
+        <button type="submit">Job speichern</button></div>
     </form>
 
     <?php
