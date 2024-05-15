@@ -6,7 +6,6 @@
 
     <title>getajob</title>
 
-
 </head>
 
 <!-- Google fonts -->
@@ -27,24 +26,10 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-
-
-
-
 <body>
 
 
 <title>Get a Job Abschlussprüfung</title>
-
-<!-- Links auf die verschiedenen Seiten  -->
-
-<!-- <a href="jobs.html">
-<a href="kontaktformular.html">
-<a href="login.html">
-<a href="ueberuns.html">
-<a href="faq.html">
-<a href="bewerbung.html">
-<a href="index.html"> -->
 
     <!-- Hier kommt der header mit einer Navbar mit einem Logo von Logoipsum -->
     
@@ -113,3 +98,6 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
 
 <?php include "nav.php"; ?>
+
+<!-- Javascript -->
+<script src="getajob.js"></script>

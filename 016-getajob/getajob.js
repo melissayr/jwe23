@@ -27,4 +27,28 @@ $(document).ready(function() {
     });
   });
   
+// Hier kommt die select job function
+
+  $(document).ready(function() {
+    // Function Eingabewert Filtern
+    $("#myInput").on("keyup", function() {
+      const input = $(this).val().toUpperCase();
+      const table = $("#myTable");
+      const tr = table.find("tr");
+  
+      // Loop läuft durch alle Tabellenzeilen und versteckt die nicht der Eingabe entsprechen
+      tr.each(function() {
+        const td = $(this).find("td:first-child");
+        if (td.length > 0) {
+          const txtValue = td.text() || td.html();
+          if (txtValue.toUpperCase().indexOf(input) > -1) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        }
+      });
+    });
+  });
+  
 

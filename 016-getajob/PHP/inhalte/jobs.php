@@ -9,22 +9,14 @@
 
       <h3>Selektiere die Stellenanzeigen:</h3>
 
+      <input id="myInput" onkeyup="myFunction()" placeholder="Drücke Enter zum suchen ... " type="text" name="text" class="input" >
 
-      <input placeholder="Drücke Enter zum suchen ... " type="text" name="text" class="input" >
-      <!-- <form>
-          <button title="Suche starten"><i class="fa fa-search"></i></button>
-      </form> -->
-     
-      </div> 
+    </div> 
 
 
       <?php
 
 include "admin/funktionen.php";
-
-// ist_eingeloggt();
-
-// include "kopf.php";
 
 ?>
 
@@ -35,7 +27,7 @@ $result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
 
 
 
-echo "<table border='1'>";
+echo "<table id='myTable' border='1'>";
 
 echo "<thread>";
 echo "<tr>";
@@ -73,6 +65,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 ?>
+
+<!-- Javascript -->
+<script src="getajob.js"></script>
 
 </main>
 
