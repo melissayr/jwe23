@@ -42,20 +42,21 @@ if (!empty($_POST))
 
         if (empty($errors)) {
 
-            if ($sql_id == "") {
-                $sql_id = "NULL"; // Wenn eine Zutat keine kcal hat, setze auf NULL
+            if ($sql_kategorie_id == "") {
+                $sql_kategorie_id == "NULL"; // Wenn job keine kategorie id hat, setze auf NULL
             }
 
 
 
 
-            query("INSERT INTO jobs SET 
+            query(" INSERT INTO jobs SET 
             titel = '{$sql_titel}',
-            id = {$sql_id},
+            id = '{$sql_id}',
             jobs = '{$sql_jobs}',
             kategorie_id = '{$sql_kategorie_id}' ") ;
 
             $erfolg = true;
+
         }
 }
 
@@ -81,7 +82,7 @@ if (!empty($_POST))
         echo "</ul></nav>";
     }
     if ($erfolg) {
-        echo "<p>Job erfolgreich angelegt. <a href='jobs_liste.php'>Zurück zur Jobs Liste</a></p>";
+        echo "<p style='color:green'>Job erfolgreich angelegt. <a href='jobs_liste.php'>Zurück zur Jobs Liste</a></p>";
     }
 
 
@@ -102,12 +103,7 @@ if (!empty($_POST))
 
         <div>
         <label for="kategorie_id">Kategorie:</label>
-
-        <select id="kategorie_id">
-            <option value="1">Dev</option>
-            <option value="2">Bau</option>
-
-        </select>
+        <input type="number" name="kategorie_id" id="kategorie_id" />
         </div>
 
 
@@ -115,3 +111,7 @@ if (!empty($_POST))
     </form>
 
 </body>
+
+<?php
+include "../fuss.php";
+?>
