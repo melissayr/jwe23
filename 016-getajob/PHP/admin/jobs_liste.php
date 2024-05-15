@@ -77,3 +77,8 @@ echo "<br/>";
 
 <p><a class="link-danger" href="logout.php">Hier loggst du dich aus!</a></p>
 
+
+<?php
+include "../fuss.php";
+?>
+

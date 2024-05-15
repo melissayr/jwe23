@@ -47,7 +47,7 @@ if (!empty($_POST)){
 
 
 
-            query("UPDATE zutaten SET 
+            query(" UPDATE zutaten SET 
             titel = '{$sql_titel}',
             kcal_pro_100 = '{$sql_kcal_pro_100}',
             menge = '{$sql_menge}',
@@ -58,6 +58,12 @@ if (!empty($_POST)){
             $erfolg = true;
         }
     }
+
+
+
+
+
+
 
 
 

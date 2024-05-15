@@ -46,7 +46,7 @@ if (!empty($_POST))
 
             query("INSERT INTO zutaten SET 
             titel = '{$sql_titel}',
-            kcal_pro_100 = {$sql_kcal_pro_100},
+            kcal_pro_100 = '{$sql_kcal_pro_100}',
             menge = '{$sql_menge}',
             einheit = '{$sql_einheit}' ") ;
 
