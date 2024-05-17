@@ -37,7 +37,12 @@ echo "<tr>";
     echo "<th>Beschreibung &nbsp;&nbsp;</th>";
     echo "<th>Titel &nbsp;&nbsp;</th>";
     echo "<th>Kategorie ID &nbsp;&nbsp;</th>";
+    echo "<th>&nbsp;Qualifikation</th>";
+    echo "<th>&nbsp;Dienstort</th>";
+    echo "<th>&nbsp;Stundenausmaß</th>";
+    echo "<th>&nbsp;Mindestgehalt_euro</th>";
     echo "<th>Aktionen &nbsp;&nbsp;</th>";
+
  
 echo "</tr>";
 echo "</thread>";
@@ -55,6 +60,14 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo "<td>" . $row["titel"]  .  "</td>";
 
         echo "<td>" . $row["kategorie_id"]  .  "</td>";
+
+        echo "<td>" . $row["qualifikation"]  .  "</td>";
+
+        echo "<td>" . $row["dienstort"]  .  "</td>";
+
+        echo "<td>" . $row["stundenausmaß"]  .  "</td>";
+
+        echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
 
    
 

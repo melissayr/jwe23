@@ -29,13 +29,21 @@ $result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
 
 echo "<table id='myTable' border='1'>";
 
-echo "<thread>";
+echo "<thread border='1'>";
 echo "<tr>";
 
     echo "<th>&nbsp;ID</th>";
     echo "<th>&nbsp;Job-Beschreibung</th>";
     echo "<th>&nbsp;Titel</th>";
+    echo "<th>&nbsp;Qualifikation</th>";
+    echo "<th>&nbsp;Dienstort</th>";
+    echo "<th>&nbsp;Stundenausmaß</th>";
+    echo "<th>&nbsp;Mindestgehalt_euro</th>";
     echo "<th>&nbsp;Aktionen</th>";
+
+
+
+
  
 echo "</tr>";
 echo "</thread>";
@@ -51,6 +59,14 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo "<td>" . $row["jobs"]  .  "</td>";
 
         echo "<td>" . $row["titel"]  .  "</td>";
+
+        echo "<td>" . $row["qualifikation"]  .  "</td>";
+
+        echo "<td>" . $row["dienstort"]  .  "</td>";
+
+        echo "<td>" . $row["stundenausmaß"]  .  "</td>";
+
+        echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
 
 
 

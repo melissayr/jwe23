@@ -106,6 +106,27 @@ if (!empty($_POST))
         <input type="number" name="kategorie_id" id="kategorie_id" />
         </div>
 
+        <div>
+            <lable for="qualifikation">Qualifikation:</lable>
+            <input type="text" name="qualifikation" id="qualifikation" />
+        </div>
+
+        <div>
+            <lable for="dienstort">Dienstort:</lable>
+            <input type="text" name="dienstort" id="dienstort" />
+        </div>
+
+        <div>
+            <lable for="stundenausmaß">Stundenausmaß:</lable>
+            <input type="text" name="stundenausmaß" id="stundenausmaß" />
+        </div>
+
+        <div>
+            <lable for="mindestgehalt_euro">Mindestgehalt_euro:</lable>
+            <input type="text" name="mindestgehalt_euro" id="mindestgehalt_euro" />
+        </div>
+
+
 
         <div><button type="submit">Job anlegen</button></div>
     </form>
