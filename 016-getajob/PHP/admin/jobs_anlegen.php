@@ -118,12 +118,12 @@ if (!empty($_POST))
 
         <div>
             <lable for="stundenausmaß">Stundenausmaß:</lable>
-            <input type="text" name="stundenausmaß" id="stundenausmaß" />
+            <input type="number" name="stundenausmaß" id="stundenausmaß" />
         </div>
 
         <div>
             <lable for="mindestgehalt_euro">Mindestgehalt_euro:</lable>
-            <input type="text" name="mindestgehalt_euro" id="mindestgehalt_euro" />
+            <input type="number" name="mindestgehalt_euro" id="mindestgehalt_euro" />
         </div>
 
 
