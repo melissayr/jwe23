@@ -47,12 +47,9 @@ if (!empty($_POST)){
                     $sql_titel == "NULL"; // Wenn Titel leer dann null
                 }
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 7f35a0b6514a442aad103c6c0ad512c048d8a588
             query(" UPDATE jobs SET
             titel = '{$sql_titel}',
             jobs = '{$sql_jobs}',
@@ -126,13 +123,47 @@ if (!empty($_POST)){
                 } else {
                     echo htmlspecialchars($row["kategorie_id"]);
                      }?>" />
-<<<<<<< HEAD
-            </div>
-        <button type="submit">Job speichern</button></div>
-=======
-        </div>
- <button type="submit">Job speichern</button></div>
->>>>>>> 7f35a0b6514a442aad103c6c0ad512c048d8a588
+
+                     </div>
+
+                     <div>
+                     <lable for="qualifikation">Qualifikation:</lable>
+                     <input type="text" name="qualifikation" id="qualifikation" value="<?php 
+                         if (!$erfolg && !empty($_POST["qualifikation"])) {
+                             echo htmlspecialchars($_POST["qualifikation"]);
+                         } else {
+                             echo htmlspecialchars($row["qualifikation"]);
+                              }?>" />
+                              </div>
+
+                            <div>
+                              <lable for="dienstort">dienstort:</lable>
+                              <input type="text" name="dienstort" id="dienstort" value="<?php 
+                                  if (!$erfolg && !empty($_POST["dienstort"])) {
+                                      echo htmlspecialchars($_POST["dienstort"]);
+                                  } else {
+                                      echo htmlspecialchars($row["dienstort"]);
+                                       }?>" /> </div>
+
+                                       <div>
+                                       <lable for="stundenausmaß">stundenausmaß:</lable>
+                                       <input type="number" name="stundenausmaß" id="stundenausmaß" value="<?php 
+                                           if (!$erfolg && !empty($_POST["stundenausmaß"])) {
+                                               echo htmlspecialchars($_POST["stundenausmaß"]);
+                                           } else {
+                                               echo htmlspecialchars($row["stundenausmaß"]);
+                                                }?>" /> </div>
+                                        
+                                       <div>
+                                       <lable for="mindestgehalt_euro">mindestgehalt_euro:</lable>
+                                       <input type="number" name="mindestgehalt_euro" id="mindestgehalt_euro" value="<?php 
+                                           if (!$erfolg && !empty($_POST["mindestgehalt_euro"])) {
+                                               echo htmlspecialchars($_POST["mindestgehalt_euro"]);
+                                           } else {
+                                               echo htmlspecialchars($row["mindestgehalt_euro"]);
+                                                }?>" /></div>
+       
+ <button type="submit">Job speichern</button>
     </form>
 
     <?php
