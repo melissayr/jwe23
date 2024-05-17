@@ -22,6 +22,12 @@ if (!empty($_POST))
     $sql_id = escape( $_POST["id"]);
     $sql_jobs = escape( $_POST["jobs"]);
     $sql_kategorie_id = escape( $_POST["kategorie_id"]);
+    $sql_qualifikation = escape( $_POST["qualifikation"]);
+    $sql_dienstort = escape( $_POST["dienstort"]);
+    $sql_stundenausmaß = escape( $_POST["stundenausmaß"]);
+    $sql_mindestgehalt_euro = escape( $_POST["mindestgehalt_euro"]);
+
+
 
 
 
@@ -53,7 +59,11 @@ if (!empty($_POST))
             titel = '{$sql_titel}',
             id = '{$sql_id}',
             jobs = '{$sql_jobs}',
-            kategorie_id = '{$sql_kategorie_id}' ") ;
+            kategorie_id = '{$sql_kategorie_id}',
+            qualifikation = '{$sql_qualifikation}',
+            dienstort = '{$sql_dienstort}',
+            stundenausmaß = '{$sql_stundenausmaß}',
+            mindestgehalt_euro = '{$sql_mindestgehalt_euro}' ") ;
 
             $erfolg = true;
 

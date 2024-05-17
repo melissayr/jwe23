@@ -34,14 +34,14 @@ echo "<thread>";
 echo "<tr>";
 
     echo "<th>ID &nbsp;</th>";
-    echo "<th>Beschreibung &nbsp;&nbsp;</th>";
-    echo "<th>Titel &nbsp;&nbsp;</th>";
-    echo "<th>Kategorie ID &nbsp;&nbsp;</th>";
-    echo "<th>&nbsp;Qualifikation</th>";
-    echo "<th>&nbsp;Dienstort</th>";
-    echo "<th>&nbsp;Stundenausmaß</th>";
-    echo "<th>&nbsp;Mindestgehalt_euro</th>";
-    echo "<th>Aktionen &nbsp;&nbsp;</th>";
+    echo "<th>Beschreibung &nbsp;</th>";
+    echo "<th>Titel&nbsp;</th>";
+    echo "<th>Kategorie ID &nbsp;</th>";
+    echo "<th>Qualifikation&nbsp;</th>";
+    echo "<th>Dienstort&nbsp;</th>";
+    echo "<th>Stundenausmaß&nbsp;</th>";
+    echo "<th>Mindestgehalt_euro&nbsp;</th>";
+    echo "<th>Aktionen&nbsp;</th>";
 
  
 echo "</tr>";
