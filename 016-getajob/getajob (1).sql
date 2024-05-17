@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Mai 2024 um 14:52
+-- Erstellungszeit: 17. Mai 2024 um 10:49
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -50,17 +50,25 @@ CREATE TABLE `jobs` (
   `id` int(10) UNSIGNED NOT NULL,
   `jobs` varchar(255) NOT NULL,
   `titel` varchar(50) NOT NULL,
-  `kategorie_id` int(10) UNSIGNED NOT NULL
+  `kategorie_id` int(10) UNSIGNED NOT NULL,
+  `dienstort` varchar(50) NOT NULL,
+  `stundenausmaß` int(50) NOT NULL,
+  `mindestgehalt_euro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`) VALUES
-(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 0),
-(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 0),
-(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 0);
+INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`) VALUES
+(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, '', 0, 0),
+(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, '', 0, 0),
+(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, '', 0, 0),
+(5, 'Augen untersuchen', 'Augenarzt', 5, '', 0, 0),
+(16, 'Bilanzierung, Buchhaltung', 'Buchhalter/in', 2, '', 0, 0),
+(18, 'Administration, Planung', 'IT Systemadministrator/in', 4, '', 0, 0),
+(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, '', 0, 0),
+(20, 'Heilung Therapie', 'Humanenergetik', 5, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -121,23 +129,13 @@ ALTER TABLE `benutzer`
 -- AUTO_INCREMENT für Tabelle `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT für Tabelle `kategorien`
 --
 ALTER TABLE `kategorien`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints der exportierten Tabellen
---
-
---
--- Constraints der Tabelle `jobs`
---
-ALTER TABLE `jobs`
-  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`id`) REFERENCES `kategorien` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
