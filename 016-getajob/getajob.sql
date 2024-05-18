@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Mai 2024 um 10:49
+-- Erstellungszeit: 18. Mai 2024 um 12:25
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -51,24 +51,23 @@ CREATE TABLE `jobs` (
   `jobs` varchar(255) NOT NULL,
   `titel` varchar(50) NOT NULL,
   `kategorie_id` int(10) UNSIGNED NOT NULL,
+  `qualifikation` varchar(255) NOT NULL,
   `dienstort` varchar(50) NOT NULL,
   `stundenausmaß` int(50) NOT NULL,
-  `mindestgehalt_euro` int(11) NOT NULL
+  `mindestgehalt_euro` int(11) NOT NULL,
+  `datum` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`) VALUES
-(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, '', 0, 0),
-(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, '', 0, 0),
-(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, '', 0, 0),
-(5, 'Augen untersuchen', 'Augenarzt', 5, '', 0, 0),
-(16, 'Bilanzierung, Buchhaltung', 'Buchhalter/in', 2, '', 0, 0),
-(18, 'Administration, Planung', 'IT Systemadministrator/in', 4, '', 0, 0),
-(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, '', 0, 0),
-(20, 'Heilung Therapie', 'Humanenergetik', 5, '', 0, 0);
+INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`, `datum`) VALUES
+(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', 25, 3000, '2024-05-18 11:50:39'),
+(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', 30, 3500, '2024-05-18 11:50:39'),
+(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', 38, 4000, '2024-05-18 11:50:39'),
+(5, 'Augen untersuchen', 'Augenarzt', 5, '', '', 0, 0, '2024-05-18 11:50:39'),
+(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, '', '', 0, 0, '2024-05-18 11:50:39');
 
 -- --------------------------------------------------------
 
