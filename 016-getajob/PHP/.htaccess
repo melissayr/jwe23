@@ -1,5 +1,12 @@
+<<<<<<< Updated upstream
 RewriteEngine On
 
 RewriteBase /jwe23/016-getajob/PHP
 
+=======
+RewriteEngine On
+
+RewriteBase /jwe23/016-getajob/PHP
+
+>>>>>>> Stashed changes
 RewriteRule ^/?api/? api.php
