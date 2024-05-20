@@ -45,12 +45,11 @@ if(!empty($_POST)){
     }
 }
 
-
 ?>
 
-<div class="loginNew">
 
-    <h1>Loginbereich</h1>
+    
+<h1>Loginbereich</h1>
 
     <?php 
 if (!empty($error)){

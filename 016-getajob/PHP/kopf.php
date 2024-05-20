@@ -37,7 +37,6 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
     <div id="slideout-menu">
 
-
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -99,5 +98,33 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
 <?php include "nav.php"; ?>
 
-<!-- Javascript -->
-<script src="../getajob.js"></script>
+<!-- Javascript für die burger nav-->
+<script>
+
+$(document).ready(function() {
+    const menuIcon = $("#menu-icon");
+    const slideoutMenu = $("#slideout-menu");
+    const searchIcon = $("#search-icon");
+    const searchBox = $("#searchbox");
+  
+    searchIcon.click(function() {
+      if (searchBox.css("top") === '72px') {
+        searchBox.css("top", '24px');
+        searchBox.css("pointer-events", 'none');
+      } else {
+        searchBox.css("top", '72px');
+        searchBox.css("pointer-events", 'auto');
+      }
+    });
+  
+    menuIcon.click(function() {
+      if (slideoutMenu.css("opacity") === "1") {
+        slideoutMenu.css("opacity", '0');
+        slideoutMenu.css("pointer-events", 'none');
+      } else {
+        slideoutMenu.css("opacity", '1');
+        slideoutMenu.css("pointer-events", 'auto');
+      }
+    });
+  });
+</script>
