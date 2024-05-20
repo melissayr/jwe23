@@ -1,31 +1,25 @@
-<main>
 
-    <h2 class="page-heading">Jobs</h2>
-
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Javascript -->
+<!-- <script src="../016-getajob/getajob.js"></script> PFAD PASST NICHT DESHALB JS AUF DER SEITE UNTEN -->
 
     <!-- Hier werden Jobs selektiert  -->
+    <h2 class="page-heading">Jobs</h2>
 
     <div id="searching">
-
       <h3>Selektiere die Stellenanzeigen:</h3>
-
-      <input id="myInput" onkeyup="myFunction()" placeholder="Drücke Enter zum suchen ... " type="text" name="text" class="input" >
-
-    </div> 
+      <input id="jobSearchInput"  placeholder="Drücke Enter zum suchen ..." type="text" name="text" class="input">
+    </div>
 
 
-      <?php
-
-include "admin/funktionen.php";
-
-?>
-
+<!-- Hier werden die Jobs angezeigt -->
 
 <?php
-//Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
+include "admin/funktionen.php";
+
+//Ausbau Schritt QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
 $result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
-
-
 
 echo "<table id='myTable' border='1'>";
 
@@ -40,9 +34,6 @@ echo "<tr>";
     echo "<th>&nbsp;Stundenausmaß</th>";
     echo "<th>&nbsp;Mindestgehalt_euro</th>";
     echo "<th>&nbsp;Aktionen</th>";
-
-
-
 
  
 echo "</tr>";
@@ -68,9 +59,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
 
-
-
-
     echo "</tr>";
 }
 
@@ -82,32 +70,45 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 ?>
 
-<!-- Javascript -->
-<script src="../getajob.js"></script>
 
+
+<script>
+                    $(document).ready(function() {
+  $("#jobSearchInput").on("keyup", function() {
+    const input = $(this).val().toUpperCase();
+    const table = $("#myTable");
+    const tr = table.find("tr");
+// durchsuch meinen table um Jobs zu filtern
+    tr.each(function() {
+      const td = $(this).find("td");
+      if (td.length > 0) {
+        const jobDescription = td.eq(1).text().toUpperCase();
+        const jobTitle = td.eq(2).text().toUpperCase();
+        const qualifikation = td.eq(3).text().toUpperCase();
+        const dienstort = td.eq(4).text().toUpperCase();
+        const stundenausmaß = td.eq(5).text().toUpperCase();
+        const mindestgehalt = td.eq(6).text().toUpperCase();
+        const suchBegriffe = jobDescription + jobTitle + qualifikation + dienstort + stundenausmaß + mindestgehalt;
+
+
+        if (suchBegriffe.indexOf(input) > -1) {
+          $(this).show(); //zeigt das gesuchte an
+        } else {
+          $(this).hide(); //versteckt, wenn das suchergebnis nicht zutrifft
+        }
+      }
+    });
+ });
+});
+
+
+</script>
 </main>
 
-<!-- 
-      <div class="card">
-
-
-        <div class="card-description">
-         
-            <h3>The Blog Title Here</h3>
-          </a>
-     
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
-            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
-          </p>
-          <a href="#" class="btn-readmore">Read more</a>
-        </div>
-      </div> -->
 
 
 
-
-       <!-- <p>
+       <!-- <p> Liste der Kategorien
               <ul>
                   <li> Bau, Architektur, Vermessung</li>
                   <li>Dienstleistung</li>

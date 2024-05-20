@@ -28,7 +28,7 @@ $result = query ( "SELECT * FROM jobs ORDER BY id ASC");
 
 
 
-echo "<table border='1'>";
+echo "<div class='jobs-list'><table border='1'>";
 
 echo "<thread>";
 echo "<tr>";
@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
     echo"</tbody>";
-echo"</table>";
+echo"</table></div>";
 
 
 echo "<br/>";

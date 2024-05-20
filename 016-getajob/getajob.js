@@ -27,28 +27,34 @@ $(document).ready(function() {
     });
   });
   
-// Hier kommt die select job function
 
-  $(document).ready(function() {
-    // Function Eingabewert Filtern
-    $("#myInput").on("keyup", function() {
-      const input = $(this).val().toUpperCase();
-      const table = $("#myTable");
-      const tr = table.find("tr");
-  
-      // Loop läuft durch alle Tabellenzeilen und versteckt die nicht der Eingabe entsprechen
-      tr.each(function() {
-        const td = $(this).find("td:first-child");
-        if (td.length > 0) {
-          const txtValue = td.text() || td.html();
-          if (txtValue.toUpperCase().indexOf(input) > -1) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
+
+
+  // Hier kommt das selektieren der Job Liste
+
+$(document).ready(function() {
+  $("#jobSearchInput").on("keyup", function() {
+    const input = $(this).val().toUpperCase();
+    const table = $("#myTable");
+    const tr = table.find("tr");
+// durchsuch meinen table um Jobs zu filtern
+    tr.each(function() {
+      const td = $(this).find("td");
+      if (td.length > 0) {
+        const jobDescription = td.eq(1).text().toUpperCase();
+        const jobTitle = td.eq(2).text().toUpperCase();
+        const qualifikation = td.eq(3).text().toUpperCase();
+        const dienstort = td.eq(4).text().toUpperCase();
+        const suchBegriffe = jobDescription + jobTitle + qualifikation + dienstort;
+
+        if (suchBegriffe.indexOf(input) > -1) {
+          $(this).show(); //zeigt das gesuchte an
+        } else {
+          $(this).hide(); //versteckt, wenn das suchergebnis nicht zutrifft
         }
-      });
+      }
     });
-  });
-  
+ });
+});
+
 
