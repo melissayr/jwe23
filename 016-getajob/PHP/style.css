@@ -126,9 +126,7 @@ nav {
     justify-content: space-between;
     padding: 0 16px 0 0;
     box-sizing: border-box;
-    z-index: 100;
-    background: transparent;
-    backdrop-filter: blur(10px);
+
 }
 
 nav a {
@@ -136,8 +134,7 @@ nav a {
     color: rgb(3, 0, 0);
     transition: 0.4s;
     text-decoration: none;
-    background: transparent;
-    backdrop-filter: blur(10px);
+
 }
 
 nav a:hover {
@@ -158,8 +155,7 @@ nav ul {
     font-size: 15px;
     margin: 10px;
     color: rgb(249, 119, 5);
-    background: transparent;
-    backdrop-filter: blur(10px);
+
 }
 
 #logo-img {
@@ -170,14 +166,11 @@ nav ul {
     align-items: center;
     color: white;
     transition: 0.4s;
-    background: transparent;
-    backdrop-filter: blur(10px);
 }
 
 #logo-img img {
     height: 50px;
-    background: transparent;
-    backdrop-filter: blur(10px);
+
 }
 
 #logo-img:hover {
