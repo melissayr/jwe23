@@ -1,5 +1,5 @@
 <!-- Link zum css -->
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
 <link
 rel="stylesheet"
 href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
@@ -68,7 +68,7 @@ if (!empty($error)){
             <input type="password" name="passwort" id="passwort" />
         </div>
 
-        <div><button type="submit">Einloggen</button></div>
+        <div><button class="btn btn-success" type="submit">Einloggen</button></div>
     </form>
 
 </div>

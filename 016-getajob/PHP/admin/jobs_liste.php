@@ -1,5 +1,5 @@
 <!-- Link zum css -->
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
 <link
 rel="stylesheet"
 href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"

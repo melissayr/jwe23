@@ -6,8 +6,8 @@
 
 
 
-<link href="style.css" rel="stylesheet" type="text/css" />
-  
+<link rel="stylesheet" href="style.css">
+
 <!-- Bootstrap css -->
 <link
 rel="stylesheet"

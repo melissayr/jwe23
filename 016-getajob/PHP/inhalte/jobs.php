@@ -1,4 +1,6 @@
 
+<?php include "admin/funktionen.php"; ?>
+
 <!--jQuery-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Javascript -->
@@ -16,8 +18,6 @@
 <!-- Hier werden die Jobs angezeigt -->
 
 <?php
-include "admin/funktionen.php";
-
 //Ausbau Schritt QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
 $result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
 
