@@ -96,22 +96,6 @@ textarea:focus {
     border: 2px solid grey;
 }
 
-/* Search Box */
-
-#searchbox {
-    position: fixed;
-    right: 0;
-    top: 24px;
-    width: 500px;
-    pointer-events: none;
-    z-index: 50;
-    transition: 0.4s;
-}
-
-#searchbox input {
-    height: 48px;
-    width: 100%;
-}
 
 /* Navigation */
 
@@ -126,6 +110,8 @@ nav {
     justify-content: space-between;
     padding: 0 16px 0 0;
     box-sizing: border-box;
+    z-index: 100;
+    background: rgb(249, 119, 5);
 
 }
 
@@ -134,6 +120,7 @@ nav a {
     color: rgb(3, 0, 0);
     transition: 0.4s;
     text-decoration: none;
+    background: rgb(249, 119, 5);
 
 }
 
@@ -155,6 +142,7 @@ nav ul {
     font-size: 15px;
     margin: 10px;
     color: rgb(249, 119, 5);
+    background: rgb(249, 119, 5);
 
 }
 
@@ -166,10 +154,12 @@ nav ul {
     align-items: center;
     color: white;
     transition: 0.4s;
+    background: rgb(249, 119, 5);
 }
 
 #logo-img img {
     height: 50px;
+    background: rgb(249, 119, 5);
 
 }
 
@@ -374,9 +364,7 @@ footer {
     padding: 8px;
     color: #eee;
     display: flex;
-    position:absolute;
-    bottom: 0;
-    width: 100%;
+
 }
 
 footer a {
