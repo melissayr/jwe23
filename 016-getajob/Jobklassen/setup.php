@@ -4,7 +4,7 @@
 const MYSQL_HOST = "localhost";
 const MYSQL_USER = "root";
 const MYSQL_PASSWORT = "";
-const MYSQL_DATENBANK = "gatejob";
+const MYSQL_DATENBANK = "getajob";
 
 // Setup-Code: Nur verändern wenn du weißt, was du tust.
 

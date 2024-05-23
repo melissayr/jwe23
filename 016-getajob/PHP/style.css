@@ -287,7 +287,7 @@ section {
     color: white;
 }
 
-/* Button Read more */
+/* Button Read more NUR ALS HOVER GEMACHT */
 
 .btn-readmore {
     padding: 8px 24px;
@@ -308,17 +308,6 @@ section {
     text-decoration: none;
     padding: 8px 64px 8px 24px;
     color: white;
-}
-
-/* Gallerie mit fade in CSS von stackoverflow.com */
-
-#gallerie img {
-    width: auto;
-    height: 250px;
-}
-
-.loginNew {
-    margin: 50px;
 }
 
 
