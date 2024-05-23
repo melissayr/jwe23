@@ -35,6 +35,9 @@ include "kopf.php";
 
 
 
+
+
+
     // Neues Jobs Objekt
     $jobs = new Jobs();
     
@@ -45,9 +48,9 @@ include "kopf.php";
         echo "<tr>";
 
             // Magic Method für jedes Job Objekt und die einzelne Eigenschaft ausgeben
-            echo "<td>" . $job->beschreibung . "</td>";
+            echo "<td>" . $job->jobs . "</td>"; //jobs = Beschreibung
             echo "<td>" . $job->titel . "</td>";
-            echo "<td>" . $job->kategorie_id()->kategorie . "</td>";
+            echo "<td>" . $job->get_kategorie()->kategorien . "</td>";
             echo "<td>" . $job->qualifikation . "</td>";
             echo "<td>" . $job->dienstort . "</td>";
             echo "<td>" . $job->stundenausmaß . "</td>";
@@ -62,10 +65,8 @@ include "kopf.php";
     echo "</tbody>";
     echo "</table>";
 
-?>
-
-<?php
-
 include "fuss.php";
-
 ?>
+
+
+

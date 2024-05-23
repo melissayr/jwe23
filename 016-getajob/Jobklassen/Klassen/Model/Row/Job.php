@@ -6,10 +6,14 @@ namespace WIFI\getajob\Klassen\Model\Row;
 class Job extends RowAbstract // vererbt von der RowAbstract(parent)
 
 {   
-    protected string $tabelle = "kategorie";
+    protected string $tabelle = "jobs";
 
-    public function get_kategorie(): Kategroie
+    public function get_kategorie(): Kategorie
     {
-        return new Kategroie ($this->kategorie_id);
+        return new Kategorie ($this->$kategorien_id);
     }
 }
+
+
+
+

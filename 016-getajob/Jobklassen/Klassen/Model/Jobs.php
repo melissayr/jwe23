@@ -3,7 +3,7 @@
 namespace WIFI\getajob\Klassen\Model;
 
 use WIFI\getajob\Klassen\Mysql;
-use WIFI\getajob\Klassen\Model\Row\Fahrzeug;
+use WIFI\getajob\Klassen\Model\Row\Job;
 
 
 class Jobs
@@ -16,7 +16,7 @@ class Jobs
         $ergebnis = $db->query("SELECT * FROM jobs ORDER BY id ASC");
 
         while($row = $ergebnis->fetch_assoc()){
-            $alle_jobs[] = new Jobs($row);
+            $alle_jobs[] = new Job($row);
         }
         return $alle_jobs;
     }
