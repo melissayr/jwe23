@@ -3,6 +3,9 @@
 namespace WIFI\getajob\Klassen\Model\Row;
 
 
+
+
+
 class Job extends RowAbstract // vererbt von der RowAbstract(parent)
 
 {   
