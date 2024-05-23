@@ -6,7 +6,7 @@ $nav_punkte = array(
     "home" => "Home"
     , "jobs" => "Jobs"
     , "ueberuns" => "Team"
-    , "bewerbung" => "Bewerben"
+    , "bewerbung" => "Bewerbung"
     , "faq" => "FAQ´s"
 );
 

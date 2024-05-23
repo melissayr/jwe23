@@ -41,7 +41,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 <a href="login.html">Login</a>
             </li>
             <li>
-                <a href="bewerbung.html">Bewerben</a>
+                <a href="bewerbung.html">Login</a>
             </li>
             <li>
                 <a href="faq.html">FAQ´s</a>
@@ -74,7 +74,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 <a href="login.html">Login</a>
             </li>
             <li>
-                <a href="bewerbung.html">Bewerben</a>
+                <a href="bewerbung.html">Login</a>
             </li>
             <li>
                 <a href="faq.html">FAQ´s</a>

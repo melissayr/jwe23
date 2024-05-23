@@ -2,7 +2,7 @@
 
     <h2 class="page-heading">Hier kannst du dich bewerben:</h2>
 
-    <!-- Hier kommt das formular: -->
+   <!-- Hier kommt das formular:  -->
 
     <div class="contact right">
         <form action="dein-ziel-script.php" method="post">
