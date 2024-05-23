@@ -1,5 +1,8 @@
 <?php
 
+use WIFI\getajob\Klassen\Model\Jobs;
+
+
 include "setup.php";
 
 ist_eingeloggt();
@@ -30,12 +33,15 @@ include "kopf.php";
     echo "</thread>";
     echo "<tbody>";
 
+
+
     // Neues Jobs Objekt
     $jobs = new Jobs();
-
+    
+    $alle_jobs = $jobs->alle_jobs();
 
     // Die einzelnen Jobs ausgeben
-    foreach ($all_jobs as $job) {
+    foreach ($alle_jobs as $job) {
         echo "<tr>";
 
             // Magic Method für jedes Job Objekt und die einzelne Eigenschaft ausgeben
