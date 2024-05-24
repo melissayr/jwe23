@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 24. Mai 2024 um 18:49
+-- Erstellungszeit: 24. Mai 2024 um 23:55
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -55,22 +55,23 @@ CREATE TABLE `jobs` (
   `dienstort` varchar(50) NOT NULL,
   `stundenausmaß` varchar(255) NOT NULL,
   `mindestgehalt_euro` varchar(255) NOT NULL,
-  `datum` datetime NOT NULL DEFAULT current_timestamp()
+  `datum` datetime NOT NULL DEFAULT current_timestamp(),
+  `aktiv` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`, `datum`) VALUES
-(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', '25', '3000', '2024-05-18 11:50:39'),
-(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', '30', '3500', '2024-05-18 11:50:39'),
-(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', '38', '4000', '2024-05-18 11:50:39'),
-(5, 'Augen untersuchen', 'Augenarzt', 5, '', '', '0', '0', '2024-05-18 11:50:39'),
-(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '40', '4000', '2024-05-18 11:50:39'),
-(22, 'Allgemeine Bürotätigkeiten', 'Bürokaufmann/frau', 2, 'Mittlerer Bildungsabschluss', 'Salzburg', '30', '2500', '2024-05-24 13:28:53'),
-(27, 'Website gestalten', 'UI/UX Designer/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Wien', '25', '2000', '2024-05-24 15:55:05'),
-(28, 'Administration, Planung', ' Ingenieur Bau', 1, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '35', '3000', '2024-05-24 19:34:24');
+INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`, `datum`, `aktiv`) VALUES
+(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', '25', '3000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', '30', '3500', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', '38', '4000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(5, 'Augen untersuchen', 'Augenarzt', 3, 'Studium oder ähnliche Abschlüsse ', 'Graz', '30', '2700', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '40', '4000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(22, 'Allgemeine Bürotätigkeiten', 'Bürokaufmann/frau', 2, 'Mittlerer Bildungsabschluss', 'Salzburg', '30', '2500', '2024-05-24 13:28:53', '2024-05-24 21:35:08.773002'),
+(27, 'Website gestalten', 'UI/UX Designer/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Wien', '25', '2000', '2024-05-24 15:55:05', '2024-05-24 21:35:08.773002'),
+(28, 'Administration, Planung', ' Ingenieur Bau', 1, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '35', '3000', '2024-05-24 19:34:24', '2024-05-24 21:35:08.773002');
 
 -- --------------------------------------------------------
 
