@@ -5,18 +5,19 @@
 rel="stylesheet"
 href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 />
-<?php
 
-    //LOGOUT 
+
+<?php //LOGOUT 
 
     session_start();
 
     //einer dieser befehle würde reichen!!! :
 
-
     //löscht alle Session variablen
     unset($_SESSION["eingeloggt"]); // entscheidet ob wir eingeloggt sind oder nicht
 
+    //Vernichtet die Session samt Cookies
+    session_destroy();
 
 ?>
 <!DOCTYPE html>
@@ -24,10 +25,10 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout aus dem Jobs-Administrationsbereich</title>
+    <title>Administration Jobs</title>
 </head>
 <body>
-    <h1>Logout aus dem Jobs-Administrationsbereich</h1>
+    <h1>Logout aus dem Administrationsbereich</h1>
 
     <p>Sie wurden ausgeloggt.</p>
 
@@ -35,7 +36,3 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
     
 </body>
 </html>
-
-<?php
-include "../fuss.php";
-?>

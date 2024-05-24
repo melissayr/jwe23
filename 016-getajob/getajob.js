@@ -1,4 +1,4 @@
-// Hier sind die functions für die Hamburger navigation 
+// Hier sind die functions für die Hamburger navigation NUR IM HTML BEREICH
 
 $(document).ready(function() {
     const menuIcon = $("#menu-icon");
@@ -40,7 +40,7 @@ $(document).ready(function() {
 // durchsuch meinen table um Jobs zu filtern
     tr.each(function() {
       const td = $(this).find("td");
-      if (td.length > 0) {
+      if (td.length > 0) { // wenn die 
         const jobDescription = td.eq(1).text().toUpperCase();
         const jobTitle = td.eq(2).text().toUpperCase();
         const qualifikation = td.eq(3).text().toUpperCase();

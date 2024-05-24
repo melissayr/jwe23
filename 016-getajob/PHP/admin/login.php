@@ -4,59 +4,76 @@
 rel="stylesheet"
 href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 />
+
+
 <?php
 
+include "setup.php";
 
-include "funktionen.php";
+use WIFI\getajob\Klassen\Validieren;
+use WIFI\getajob\Klassen\Mysql;
 
 
-//validieren
+
+
+//wurde das Formular abgeschickt?
+
 if(!empty($_POST)){
-    if(empty($_POST["benutzername"]) || empty($_POST["passwort"]) ){
-    $error = "Benutzername oder Passwort ist leer"; //wenn leer kommt error
+    //Validierung
+    $validieren = new Validieren();
+    $validieren->ist_ausgefuellt($_POST["benutzername"], "Benutzername");
+    $validieren->ist_ausgefuellt($_POST["passwort"], "Passwort");
 
-    } else { $sql_benutzername =  escape( $_POST["benutzername"]); // ansonsten wird erstmal escaped
-
-        $result = query ( "SELECT * FROM benutzer     
-        WHERE benutzername = '{$sql_benutzername}'"); //Abfrage Datenbank
-
-        $row = mysqli_fetch_assoc($result); //fetchen (umwandeln in phparray)
-
-        if ($row) {
-            if ( password_verify( $_POST['passwort'] , $row['passwort'])){ //wenn benutzer existiert, passwort prüfen
+    if (!$validieren->fehler_aufgetreten()) {
         
-   //Wenn alles ok 
-                    echo "ist eingeloggt";
+        //wenn kein fehler aufgetreten dann login weitrmachen
+        $db = Mysql::getInstanz();
+        $sql_benutzername = $db->escape($_POST["benutzername"]);
+        $ergebnis = $db->query("SELECT * FROM benutzer WHERE benutzername = '{$sql_benutzername}'");
+        $benutzer = $ergebnis->fetch_assoc();
+        // echo "<pre>"; print_r($benutzer);
 
-                    // Verwendung im Kopf
-                    $_SESSION["eingeloggt"] = true;
-                    $_SESSION["benutzername"] = $row["benutzername"];
-                    $_SESSION["benutzer_id"] = $row["id"];
-
-                    // Umleiten in Admin-system
-
-                    header("Location: jobs_liste.php");
-                    exit;
-                    //Passwort war falsch
-            } else {$error="Benutzername oder Passwort falsch";}
+        if(empty($benutzer) || !password_verify($_POST["passwort"], $benutzer["passwort"])) { //benutzer leer || oder pw falsch
+            //Fehler: Eingegebener Benutzer existiert nicht
+            $validieren->fehler_hinzu("Benutzer oder Passwort war falsch.");
         } else {
-            echo "Du bist eingeloggt!";
+            //Alles ok -> Login in Session merken
+            $_SESSION["eingeloggt"] = true;
+            $_SESSION["benutzername"] = $benutzer["benutzername"];
+            $_SESSION["benutzer_id"] =  $benutzer["id"];
+            
+            //Umleitung zum Admin-System
+            header("Location: jobs_liste.php");
+            exit;
         }
     }
+    
 }
 
+
+
+//asdf
 ?>
 
 
-    
-<h1>Loginbereich</h1>
 
-    <?php 
-if (!empty($error)){
-    echo "<p>" .$error. "</p>";
-    }
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginbereich zur Fahrzeug-DB</title>
+</head>
+<body>
+    <h1>Loginbereich zur Fahrzeug-DB</h1>
+<?php 
+if (!empty($validieren)){
+    echo $validieren->fehler_html();
+}
+
+
 ?>
-
     <form action="login.php" method="post">
         <div>
             <lable for="benutzername">Benutzername:</lable>
@@ -68,15 +85,8 @@ if (!empty($error)){
             <input type="password" name="passwort" id="passwort" />
         </div>
 
-        <div><button class="btn btn-success" type="submit">Einloggen</button></div>
+        <div><button type="submit">Einloggen</button></div>
     </form>
-
-</div>
-  
- <a href="../index.php">Hier gehts zur Startseite von Getajob</a>  
-</main>
-
-
-<?php
-include "../fuss.php";
-?>
+    
+</body>
+</html>
