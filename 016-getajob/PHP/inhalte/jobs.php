@@ -1,79 +1,52 @@
+<?php include "admin/funktionen.php"; ?>
 
-<?php include "funktionen.php";
-include "admin/aktualisiere_jobs.php";
-?>
-
-<!--jQuery-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Javascript -->
-<!-- <script src="../016-getajob/getajob.js"></script> PFAD PASST NICHT DESHALB JS AUF DER SEITE UNTEN -->
-
-    <!-- Hier werden Jobs selektiert  -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Verwaltung</title>
+    <!-- jQuery-Bibliothek -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
     <h2 class="page-heading">Jobs</h2>
+    <h4>Kategorien ID´s</h4>
+    <p>1 Bau, Architektur, Vermessung <br> 2 Dienstleistung<br> 3 Soziales<br> 4 IT, Computer<br> 5 Gesundheit</p>
 
     <div id="searching">
-      <h3>Selektiere die Stellenanzeigen:</h3>
-      <input id="jobSearchInput"  placeholder="Drücke Enter zum suchen ..." type="text" name="text" class="input">
+        <h3>Selektiere die Stellenanzeigen:</h3>
+        <input id="jobSearchInput" placeholder="Drücke Enter zum suchen ..." type="text" name="text" class="input">
     </div>
 
+    <!-- Hier werden die Jobs angezeigt -->
+    <?php
+  
+    // Abfrage aus der Datenbank
+    $result = query("SELECT * FROM jobs ORDER BY id ASC");
 
-<!-- Hier werden die Jobs angezeigt -->
-
-<?php
-//Ausbau Schritt QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
-$result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
-
-echo "<table id='myTable' border='1'>";
-
-echo "<thead style='border-bottom: 1px solid black;'>";
-echo "<tr style='border-bottom: 1px solid black;'>";
-
-    echo "<th>&nbsp;ID</th>";
-    echo "<th>&nbsp;Job-Beschreibung</th>";
-    echo "<th>&nbsp;Titel</th>";
-    echo "<th>&nbsp;Qualifikation</th>";
-    echo "<th>&nbsp;Dienstort</th>";
-    echo "<th>&nbsp;Stundenausmaß</th>";
-    echo "<th>&nbsp;Mindestgehalt_euro</th>";
-    echo "<th>Kategorie&nbsp;</th>";
-
- 
-echo "</tr>";
-echo "</thead>";
-
-    echo "<tbody>";
-
-while ($row = mysqli_fetch_assoc($result)) {
-// print_r($row);
-// die;
-    echo "<tr  style='border-bottom: 1px solid black;'>";
-        echo "<td>" . $row["id"]  .  "</td>";
-      
-        echo "<td>" . $row["jobs"]  .  "</td>";
-
-        echo "<td>" . $row["titel"]  .  "</td>";
-
-        echo "<td>" . $row["qualifikation"]  .  "</td>";
-
-        echo "<td>" . $row["dienstort"]  .  "</td>";
-
-        echo "<td>" . $row["stundenausmaß"]  .  "</td>";
-
-        echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
-
-        echo "<td>" . $row["kategorie_id"]  .  "</td>";
-
-
-    echo "</tr>";
-}
-
-    echo"</tbody>";
-    echo"</table>";
+    echo "<table id='myTable' border='1'>";
+    echo "<thead style='border-bottom: 1px solid black;'>";
+    echo "<tr style='border-bottom: 1px solid black;'>";
     
-    echo "<br/>";
-
-
-?>
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr style='border-bottom: 1px solid black;'>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["jobs"] . "</td>";
+        echo "<td>" . $row["titel"] . "</td>";
+        echo "<td>" . $row["qualifikation"] . "</td>";
+        echo "<td>" . $row["dienstort"] . "</td>";
+        echo "<td>" . $row["stundenausmaß"] . "</td>";
+        echo "<td>" . $row["mindestgehalt_euro"] . "</td>";
+        echo "<td>" . $row["kategorie_id"] . "</td>";
+        echo "</tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+    ?>
 
 
 
@@ -106,6 +79,28 @@ while ($row = mysqli_fetch_assoc($result)) {
  });
 });
 
+
+        $(document).ready(function() {
+            function ladeJobs() {
+                $.ajax({
+                    url: 'http://localhost/workspaces/jwe23/016-getajob/PHP/inhalte/aktualisiere_jobs.php',
+                    type: 'GET',
+                    success: function(response) {
+                        console.log("AJAX Anfrage erfolgreich");
+                        $('#myTable tbody').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Fehler bei der AJAX-Anfrage:", status, error);
+                    }
+                });
+            }
+
+            ladeJobs();
+            setInterval(ladeJobs, 5000);
+        });
+
+
+    
 
 </script>
 </main>
