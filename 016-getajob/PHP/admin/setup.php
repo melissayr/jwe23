@@ -4,12 +4,13 @@
 const MYSQL_HOST = "localhost";
 const MYSQL_USER = "root";
 const MYSQL_PASSWORT = "";
-const MYSQL_DATENBANK = "getajob";
+const MYSQL_DATENBANK = "getajob"; 
 
 // Setup-Code: Nur verändern wenn du weißt, was du tust.
 
 session_start();
 
+//Überprüft ob man eingeloggt ist für den geheimen Admin Bereich
 function ist_eingeloggt() {
     if (empty($_SESSION["eingeloggt"])) {
         // Benutzer nicht eingeloggt -> Umleiten zum Login
@@ -18,6 +19,7 @@ function ist_eingeloggt() {
     }
 }
 
+//Autoload register wird für die namespaces und uses verwendet, damit die "include liste" nicht so lange wird. Hier wird nur vom benötigten geerbt/vererbt
 spl_autoload_register(
     function (string $klasse) {
         // Projekt-spezifisches namespace prefix

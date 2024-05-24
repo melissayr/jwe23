@@ -36,3 +36,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
     
 </body>
 </html>
+
+<?php
+include "../fuss.php";
+?>

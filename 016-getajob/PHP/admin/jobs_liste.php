@@ -24,9 +24,9 @@ ist_eingeloggt();
 echo "<br/>";
 
 //Ausbau Schritt mir ORDER BY // QUERY FUNKTION FÜR KÜRZEREN CODE statt "$result =  mysqli_query ($db ... )"
+
+// Abfrage aus der Datenbank
 $result = query ( "SELECT * FROM jobs ORDER BY id ASC");
-
-
 
 echo "<div class='jobs-list'><table border='1'>";
 

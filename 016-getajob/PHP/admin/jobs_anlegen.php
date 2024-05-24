@@ -16,8 +16,8 @@ $erfolg = false;
 
 
 //prüfen ob formular abgeschickt wurde
-if (!empty($_POST)) 
-{
+if (!empty($_POST)) {
+    //erstmal alles escapen um SQL injections zu vermeiden
     $sql_titel = escape( $_POST["titel"]);
     $sql_id = escape( $_POST["id"]);
     $sql_jobs = escape( $_POST["jobs"]);
@@ -26,9 +26,6 @@ if (!empty($_POST))
     $sql_dienstort = escape( $_POST["dienstort"]);
     $sql_stundenausmaß = escape( $_POST["stundenausmaß"]);
     $sql_mindestgehalt_euro = escape( $_POST["mindestgehalt_euro"]);
-
-
-
 
 
     //Felder validieren
@@ -53,8 +50,7 @@ if (!empty($_POST))
             }
 
 
-
-
+            //anlegen in Datenbank
             query(" INSERT INTO jobs SET 
             titel = '{$sql_titel}',
             id = '{$sql_id}',
@@ -68,8 +64,7 @@ if (!empty($_POST))
             $erfolg = true;
 
         }
-}
-
+    }
 ?>
 
 
@@ -95,10 +90,7 @@ if (!empty($_POST))
         echo "<p style='color:green'>Job erfolgreich angelegt. <a href='jobs_liste.php'>Zurück zur Jobs Liste</a></p>";
     }
 
-
-
-
-    ?>
+?>
 
     <form action="jobs_anlegen.php" method="post">
         <div>

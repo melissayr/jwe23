@@ -7,32 +7,32 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
 
 <?php
-
 include "setup.php";
 
 use WIFI\getajob\Klassen\Validieren;
 use WIFI\getajob\Klassen\Mysql;
+//das wird dank bem autoloader in der setup php übernommen
 
 
 
-
-//wurde das Formular abgeschickt?
-
+//wurde das Formular abgeschickt? Wenn es nicht leer ist dann validiere
 if(!empty($_POST)){
     //Validierung
     $validieren = new Validieren();
     $validieren->ist_ausgefuellt($_POST["benutzername"], "Benutzername");
     $validieren->ist_ausgefuellt($_POST["passwort"], "Passwort");
 
+            
+ //wenn kein fehler aufgetreten dann login weitrmachen
     if (!$validieren->fehler_aufgetreten()) {
-        
-        //wenn kein fehler aufgetreten dann login weitrmachen
+
         $db = Mysql::getInstanz();
         $sql_benutzername = $db->escape($_POST["benutzername"]);
         $ergebnis = $db->query("SELECT * FROM benutzer WHERE benutzername = '{$sql_benutzername}'");
         $benutzer = $ergebnis->fetch_assoc();
         // echo "<pre>"; print_r($benutzer);
 
+        //Validiere die Zugangsdaten
         if(empty($benutzer) || !password_verify($_POST["passwort"], $benutzer["passwort"])) { //benutzer leer || oder pw falsch
             //Fehler: Eingegebener Benutzer existiert nicht
             $validieren->fehler_hinzu("Benutzer oder Passwort war falsch.");
@@ -90,3 +90,10 @@ if (!empty($validieren)){
     
 </body>
 </html>
+
+
+<a href="../index.php">Hier gehts zur Startseite von Getajob</a>  
+
+<?php
+include "../fuss.php";
+?>

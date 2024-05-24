@@ -15,7 +15,7 @@ $sql_id = escape($_GET["id"]);
 
 //wurde das formular abeschickt
 if (!empty($_POST)){
-
+    //erstmal alles escapen um SQL Injection zu vermeiden! 
     $sql_titel = escape($_POST["titel"]);
     $sql_jobs = escape( $_POST["jobs"]);
     $sql_kategorie_id = escape( $_POST["kategorie_id"]);
@@ -23,11 +23,8 @@ if (!empty($_POST)){
     $sql_dienstort = escape( $_POST["dienstort"]);
     $sql_stundenausmaß = escape( $_POST["stundenausmaß"]);
     $sql_mindestgehalt_euro = escape( $_POST["mindestgehalt_euro"]);
-    //erstmal alles escapen um SQL Injection zu vermeiden! 
-
-
+  
     //Validierung der Felder
-    
     if(empty($sql_titel)) {
         $errors[] = "Bitte gebe einen Titel für den Beruf an";
         } else {
@@ -51,8 +48,7 @@ if (!empty($_POST)){
                     $sql_titel == "NULL"; // Wenn Titel leer dann null
                 }
 
-
-
+            //update in Datenbank
 
             query(" UPDATE jobs SET
             titel = '{$sql_titel}',
@@ -92,7 +88,7 @@ if (!empty($_POST)){
     
 
 
-    // <!-- Datenbank fragen nach Zutat-Datensatz zur Vorausfüllung -->
+    // <!-- Datenbank fragen nach Jobs-Datensatz zur Vorausfüllung -->
 
     $result = query("SELECT * FROM jobs WHERE id = '{$sql_id}'");
     $row = mysqli_fetch_assoc($result);
