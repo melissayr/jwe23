@@ -2,6 +2,7 @@
 include "funktionen.php";
 
 // AUFRUF MANUELL über url localhost
+// http://localhost/workspaces/jwe23/016-getajob/PHP/admin/loesche_veraltete_jobs.php
 
 //Datenbank
 $conn = mysqli_connect("localhost", "root", "", "getajob"); //Verbindung Datenbank
