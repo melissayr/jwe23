@@ -103,10 +103,29 @@ if (!empty($_POST)) {
             <input type="text" name="titel" id="titel" />
         </div>
 
-        <div>
-        <label for="kategorie_id">Kategorie:</label>
-        <input type="number" name="kategorie_id" id="kategorie_id" />
-        </div>
+    <?php
+    //Datenbankverbindung herstellen
+    $db = mysqli_connect("localhost", "root", "", "getajob");
+    
+    // Kategorien aus der Tabelle kategorien auswählen
+    $result = mysqli_query($db, "SELECT DISTINCT kategorien FROM kategorien");
+    
+        echo '<div>';
+        echo '<label for="kategorie_id">Kategorie:</label>';
+        echo '<select name="kategorie_id" id="kategorie_id">';
+
+        //optinen für dropdown erstellen
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="' . $row['kategorien'] . '">' . $row['kategorien'] . '</option>';
+        }
+
+        echo '</select>';
+        echo '</div>';
+
+        
+//verbindung schließen
+mysqli_close($db);
+?>
 
         <div>
             <lable for="qualifikation">Qualifikation:</lable>
