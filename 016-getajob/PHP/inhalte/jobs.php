@@ -1,10 +1,5 @@
 <?php include "admin/funktionen.php"; ?>
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Verwaltung</title>
     <!-- jQuery-Bibliothek -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -28,10 +23,10 @@
     echo "<table id='myTable' border='1'>";
     echo "<thead style='border-bottom: 1px solid black;'>";
     echo "<tr style='border-bottom: 1px solid black;'>";
-    
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
+
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr style='border-bottom: 1px solid black;'>";
         echo "<td>" . $row["id"] . "</td>";
@@ -79,7 +74,7 @@
  });
 });
 
-
+    // AJAX für automatische aktualisierung
         $(document).ready(function() {
             function ladeJobs() {
                 $.ajax({
@@ -98,10 +93,6 @@
             ladeJobs();
             setInterval(ladeJobs, 5000);
         });
-
-
-    
-
 </script>
 </main>
 

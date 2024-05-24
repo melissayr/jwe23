@@ -1,15 +1,10 @@
 <main>
-
 <div id="banner">
        
         <h1>Get a job</h1>
         <h3>Finde deine Leidenschaft und bewerbe dich!</h3>
-
-
         
     </div>
-
-  
 
         <!-- Verschiedene Cards für Informationen (Übersicht) -->
         <section>

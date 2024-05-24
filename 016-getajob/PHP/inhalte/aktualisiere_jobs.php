@@ -1,11 +1,9 @@
 <!-- jQuery-Bibliothek -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<?php
+<?php // DB CONN UND QUERY EINGEFÜGT, WEIL PATH NICHT STIMMTE
 session_start(); // für die $SESSION 
-
 $db = mysqli_connect("localhost", "root", "", "getajob"); //Verbindung Datenbank
-
 mysqli_set_charset($db, "utf8"); //alle Befehle kommen als uft8
 
 //function für die query 
