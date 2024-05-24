@@ -25,8 +25,6 @@ if(empty($_POST["email"])) {
 }
 
 
-
-
 if(!empty($_POST["prueffeld"])) {
     $fehlermeldungen[] = "Lassen Sie dieses Feld bitte leer. Sie sind bestimmt ein Roboter!"; 
 }

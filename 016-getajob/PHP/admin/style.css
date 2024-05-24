@@ -303,6 +303,18 @@ section {
 .card-meta-blogpost a {
     color: white;
 }
+/* Table */
+.table-bordered {
+    border-collapse: separate;
+    border-spacing: 0px 5px; /* Legen Sie den Abstand zwischen den Zeilen fest */
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
 
 /* Button Read more */
 

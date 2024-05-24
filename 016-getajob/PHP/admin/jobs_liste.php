@@ -10,9 +10,6 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 include "funktionen.php";
 
 ist_eingeloggt();
-
-
-
 ?>
 
 <h1>Jobs Verwalten im geheimen Admin Bereich</h1>
@@ -28,9 +25,10 @@ echo "<br/>";
 // Abfrage aus der Datenbank
 $result = query ( "SELECT * FROM jobs ORDER BY id ASC");
 
-echo "<div class='jobs-list'><table border='1'>";
+echo "<div class='jobs-list'>";
 
-echo "<thread>";
+echo "<table class='table-bordered'>";
+echo "<thead>";
 echo "<tr>";
 
     echo "<th>ID &nbsp;</th>";
@@ -41,11 +39,11 @@ echo "<tr>";
     echo "<th>Dienstort&nbsp;</th>";
     echo "<th>Stundenausmaß&nbsp;</th>";
     echo "<th>Mindestgehalt_euro&nbsp;</th>";
+    echo "<th>Datum&nbsp;</th>";
     echo "<th>Aktionen&nbsp;</th>";
 
- 
 echo "</tr>";
-echo "</thread>";
+echo "</thead>";
 
     echo "<tbody>";
 
@@ -69,6 +67,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
 
+        echo "<td>" . $row["datum"]  .  "</td>";
+
+
    
 
         echo "<td>" . "<a href='jobs_bearbeiten.php?id={$row["id"]}'>Bearbeiten</a>"  .  "</td>";
@@ -81,7 +82,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
     echo"</tbody>";
-echo"</table></div>";
+    echo"</table>
+</div>";
 
 
 echo "<br/>";

@@ -246,6 +246,35 @@ nav ul {
     padding-right: 150px;
 }
 
+/* Table Jobs */
+
+.jobs-list table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.jobs-list table, .jobs-list th, .jobs-list td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.jobs-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.jobs-list tr:hover {
+    background-color: #ddd;
+}
+
+.jobs-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
 /* Sections */
 
 section {
