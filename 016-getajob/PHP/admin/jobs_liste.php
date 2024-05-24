@@ -4,6 +4,8 @@
 rel="stylesheet"
 href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 />
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- <h1>Verwaltung der Jobs im geheimen Admin Bereich</h1> -->
 <?php

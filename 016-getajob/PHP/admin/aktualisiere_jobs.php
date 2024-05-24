@@ -1,4 +1,5 @@
 <!-- AJAX Call -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
         function ladeJobs() { // function zum aktualisieren der Jobs mit AJAX
@@ -18,3 +19,8 @@
         setInterval(ladeJobs, 5000);
     });
 </script>
+
+<?php
+
+print_r($_GET);
+
