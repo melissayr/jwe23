@@ -14,7 +14,6 @@ function fehler($message) {
     exit;
 }
 
-
 //GET-Parameter aus request uri
 $request_uri_ohne_get = explode("?", $_SERVER["REQUEST_URI"])[0];
 
@@ -69,7 +68,7 @@ if ($parameter[0] == "jobs") {
         fehler("Ungültige Methode für 'jobs'.");
     }
     //Das selbe gilt für Kategorien 
-    
+
 } elseif ($parameter[0] == "categories") {
     if (isset($parameter[1]) && $parameter[1] == "list") {
         $result = query("SELECT * FROM kategorien ORDER BY id ASC");
