@@ -39,8 +39,9 @@ foreach ($parameter as $k => $v) { //foreach schaut nach ob v leer ist ansonsten
     }
 }
 
-$parameter = array_values($parameter);
+$parameter = array_values($parameter); //parameter in array umwandeln
 
+//Wenn Parameter leer ist dann Fehlermeldung, ansonsten ausgabe array
 if (empty($parameter)) {
     fehler("Richtige ausgabe prüfen!");
 }
@@ -50,38 +51,36 @@ $ausgabe = array(
     "result" => array()
 );
 
-
-
+//Wenn der parameter 0 = jobs ist, dann gebe mit hilfer der query aus der datenbank eine Liste der Jobs aus IN JSON FORMAT
 if ($parameter[0] == "jobs") {
-    if ($parameter[1] == "list") {
+    if (isset($parameter[1]) && $parameter[1] == "list") {
         $result = query("SELECT * FROM jobs ORDER BY id ASC");
         while ($row = mysqli_fetch_assoc($result)) {
             $ausgabe["result"][] = $row;
         }
-
-    } elseif ($parameter[1] == "123") {
+        //Ich habe keine ID 123 ... 
+    } elseif (isset($parameter[1]) && $parameter[1] == "123") {
         $result = query("SELECT * FROM jobs WHERE id = 123");
         while ($row = mysqli_fetch_assoc($result)) {
             $ausgabe["result"][] = $row;
         }
-
+        //Ansonsten Fehlermeldung
     } else {
         fehler("Ungültige Methode für 'jobs'.");
     }
-
+    //Das selbe gilt für Kategorien 
+    
 } elseif ($parameter[0] == "categories") {
-    if ($parameter[1] == "list") {
+    if (isset($parameter[1]) && $parameter[1] == "list") {
         $result = query("SELECT * FROM kategorien ORDER BY id ASC");
         while ($row = mysqli_fetch_assoc($result)) {
             $ausgabe["result"][] = $row;
         }
-
-    } elseif ($parameter[1] == "123") {
+    } elseif (isset($parameter[1]) && $parameter[1] == "123") {
         $result = query("SELECT * FROM kategorien WHERE id = 123");
         while ($row = mysqli_fetch_assoc($result)) {
             $ausgabe["result"][] = $row;
         }
-
     } elseif (isset($parameter[2]) && $parameter[2] == "jobs") {
         $result = query("SELECT * FROM jobs WHERE category_id = 123");
         while ($row = mysqli_fetch_assoc($result)) {
@@ -98,3 +97,8 @@ if ($parameter[0] == "jobs") {
 echo json_encode($ausgabe);
 exit;
 ?>
+
+<!-- http://localhost/workspaces/jwe23/016-getajob/PHP/api/v1/jobs/list -->
+
+<!-- http://localhost/workspaces/jwe23/016-getajob/PHP/api/v1/categories/list -->
+
