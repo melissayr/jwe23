@@ -1,6 +1,8 @@
 <?php
 include "funktionen.php";
 
+// AUFRUF MANUELL über url localhost
+
 //Datenbank
 $conn = mysqli_connect("localhost", "root", "", "getajob"); //Verbindung Datenbank
 

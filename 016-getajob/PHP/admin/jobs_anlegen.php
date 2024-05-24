@@ -102,34 +102,34 @@ if (!empty($_POST)) {
             <lable for="titel">Titel:</lable>
             <input type="text" name="titel" id="titel" />
         </div>
-        <?php
-        // datenbank
-        $db = mysqli_connect("localhost", "root", "", "getajob");
-        // abfrage, um alle Kategorien aus der Tabelle "kategorien" abzurufen
-        $result = mysqli_query($db, "SELECT * FROM kategorien");
+                <?php
+                // datenbank
+                $db = mysqli_connect("localhost", "root", "", "getajob");
+                // abfrage, um alle Kategorien aus der Tabelle "kategorien" abzurufen
+                $result = mysqli_query($db, "SELECT * FROM kategorien");
 
-        echo '<div>';
-        echo '<label for="kategorie_id">Kategorie:</label>';
-        echo '<select name="kategorie_id" id="kategorie_id">';
+                echo '<div>';
+                echo '<label for="kategorie_id">Kategorie:</label>';
+                echo '<select name="kategorie_id" id="kategorie_id">';
 
-        // Optionen für kategorien
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<option value="' . $row['id'] . '">' . $row['kategorien'] . '</option>';
-    }
-        echo '</select>';
-        echo '</div>';
+                // Optionen für kategorien
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<option value="' . $row['id'] . '">' . $row['kategorien'] . '</option>';
+            }
+                echo '</select>';
+                echo '</div>';
 
-        // Formular submit überprüfen und Daten in die Datenbank einfügen
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Überprüfen, ob das Formular abgesendet wurde
-            if (isset($_POST['submit'])) {
-            // Formulardaten erhalten
-            $kategorie_id = $_POST['kategorie_id'];
-    }
-}
-// Datenbankverbindung schließen
-mysqli_close($db);
-?>
+                // Formular submit überprüfen und Daten in die Datenbank einfügen
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Überprüfen, ob das Formular abgesendet wurde
+                    if (isset($_POST['submit'])) {
+                    // Formulardaten erhalten
+                    $kategorie_id = $_POST['kategorie_id'];
+            }
+        }
+        // Datenbankverbindung schließen
+        mysqli_close($db);
+        ?>
         <div>
             <lable for="qualifikation">Qualifikation:</lable>
             <input type="text" name="qualifikation" id="qualifikation" />

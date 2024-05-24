@@ -118,16 +118,8 @@ if (!empty($_POST)){
                  }?>" />
         </div>
 
-        <div>
-            <lable for="kategorie_id">Kategorie:</lable>
-            <input type="number" name="kategorie_id" id="kategorie_id" value="<?php 
-                if (!$erfolg && !empty($_POST["kategorie_id"])) {
-                    echo htmlspecialchars($_POST["kategorie_id"]);
-                } else {
-                    echo htmlspecialchars($row["kategorie_id"]);
-                     }?>" />
-
-                     </div>
+                    
+                     
 
                      <div>
                      <lable for="qualifikation">Qualifikation:</lable>
@@ -165,6 +157,36 @@ if (!empty($_POST)){
                                            } else {
                                                echo htmlspecialchars($row["mindestgehalt_euro"]);
                                                 }?>" /></div>
+
+<?php
+        // datenbank
+        $db = mysqli_connect("localhost", "root", "", "getajob");
+        // abfrage, um alle Kategorien aus der Tabelle "kategorien" abzurufen
+        $result = mysqli_query($db, "SELECT * FROM kategorien");
+
+        echo '<div>';
+        echo '<label for="kategorie_id">Kategorie:</label>';
+        echo '<select name="kategorie_id" id="kategorie_id">';
+
+        // Optionen für kategorien
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="' . $row['id'] . '">' . $row['kategorien'] . '</option>';
+    }
+        echo '</select>';
+        echo '</div>';
+
+        // Formular submit überprüfen und Daten in die Datenbank einfügen
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Überprüfen, ob das Formular abgesendet wurde
+            if (isset($_POST['submit'])) {
+            // Formulardaten erhalten
+            $kategorie_id = $_POST['kategorie_id'];
+    }
+}
+// Datenbankverbindung schließen
+mysqli_close($db);
+?>
+
        
  <button type="submit">Job speichern</button>
     </form>
