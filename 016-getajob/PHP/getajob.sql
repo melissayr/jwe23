@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 18. Mai 2024 um 12:25
+-- Erstellungszeit: 24. Mai 2024 um 18:49
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -49,12 +49,12 @@ INSERT INTO `benutzer` (`id`, `benutzername`, `passwort`) VALUES
 CREATE TABLE `jobs` (
   `id` int(10) UNSIGNED NOT NULL,
   `jobs` varchar(255) NOT NULL,
-  `titel` varchar(50) NOT NULL,
+  `titel` varchar(255) NOT NULL,
   `kategorie_id` int(10) UNSIGNED NOT NULL,
   `qualifikation` varchar(255) NOT NULL,
   `dienstort` varchar(50) NOT NULL,
-  `stundenausmaß` int(50) NOT NULL,
-  `mindestgehalt_euro` int(11) NOT NULL,
+  `stundenausmaß` varchar(255) NOT NULL,
+  `mindestgehalt_euro` varchar(255) NOT NULL,
   `datum` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -63,11 +63,14 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `dienstort`, `stundenausmaß`, `mindestgehalt_euro`, `datum`) VALUES
-(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', 25, 3000, '2024-05-18 11:50:39'),
-(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', 30, 3500, '2024-05-18 11:50:39'),
-(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', 38, 4000, '2024-05-18 11:50:39'),
-(5, 'Augen untersuchen', 'Augenarzt', 5, '', '', 0, 0, '2024-05-18 11:50:39'),
-(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, '', '', 0, 0, '2024-05-18 11:50:39');
+(1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', '25', '3000', '2024-05-18 11:50:39'),
+(2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', '30', '3500', '2024-05-18 11:50:39'),
+(3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', '38', '4000', '2024-05-18 11:50:39'),
+(5, 'Augen untersuchen', 'Augenarzt', 5, '', '', '0', '0', '2024-05-18 11:50:39'),
+(19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '40', '4000', '2024-05-18 11:50:39'),
+(22, 'Allgemeine Bürotätigkeiten', 'Bürokaufmann/frau', 2, 'Mittlerer Bildungsabschluss', 'Salzburg', '30', '2500', '2024-05-24 13:28:53'),
+(27, 'Website gestalten', 'UI/UX Designer/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Wien', '25', '2000', '2024-05-24 15:55:05'),
+(28, 'Administration, Planung', ' Ingenieur Bau', 1, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '35', '3000', '2024-05-24 19:34:24');
 
 -- --------------------------------------------------------
 
@@ -77,20 +80,19 @@ INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `die
 
 CREATE TABLE `kategorien` (
   `id` int(10) UNSIGNED NOT NULL,
-  `kategorien` varchar(255) NOT NULL,
-  `sonstige` varchar(255) NOT NULL
+  `kategorien` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `kategorien`
 --
 
-INSERT INTO `kategorien` (`id`, `kategorien`, `sonstige`) VALUES
-(1, 'Bau, Architektur, Vermessung', ''),
-(2, 'Dienstleistung', ''),
-(3, 'Soziales, Pädagogik', ''),
-(4, 'IT, Computer', ''),
-(5, 'Gesundheit', '');
+INSERT INTO `kategorien` (`id`, `kategorien`) VALUES
+(1, 'Bau, Architektur, Vermessung'),
+(2, 'Dienstleistung'),
+(3, 'Soziales'),
+(4, 'IT, Computer'),
+(5, 'Gesundheit');
 
 --
 -- Indizes der exportierten Tabellen
@@ -106,7 +108,8 @@ ALTER TABLE `benutzer`
 -- Indizes für die Tabelle `jobs`
 --
 ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD KEY `kategorie id` (`kategorie_id`);
 
 --
 -- Indizes für die Tabelle `kategorien`
@@ -128,13 +131,23 @@ ALTER TABLE `benutzer`
 -- AUTO_INCREMENT für Tabelle `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT für Tabelle `kategorien`
 --
 ALTER TABLE `kategorien`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `jobs`
+--
+ALTER TABLE `jobs`
+  ADD CONSTRAINT `kategorie id` FOREIGN KEY (`kategorie_id`) REFERENCES `kategorien` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

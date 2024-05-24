@@ -39,7 +39,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 
          
 
-            <div id="right-footer">
+            <!-- <div id="right-footer">
                 <h3>Follow us on</h3>
                 <div id="social-media-footer">
                     <ul>
@@ -59,7 +59,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
               
             </div>
 
