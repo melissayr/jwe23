@@ -1,6 +1,5 @@
+
 <?php
-
-
 
 $nav_punkte = array(
     "home" => "Home"

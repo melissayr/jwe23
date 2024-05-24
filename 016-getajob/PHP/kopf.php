@@ -4,8 +4,6 @@
   crossorigin="anonymous">
 <!-- Link zum css -->
 
-
-
 <link rel="stylesheet" href="style.css">
   
 <!-- Bootstrap css -->
