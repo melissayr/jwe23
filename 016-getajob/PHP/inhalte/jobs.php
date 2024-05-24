@@ -1,5 +1,7 @@
 
-<?php include "funktionen.php"; ?>
+<?php include "funktionen.php";
+include "aktualisiere_jobs.php";
+?>
 
 <!--jQuery-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,8 +25,8 @@ $result = query( "SELECT * FROM jobs WHERE id ORDER BY id ASC");
 
 echo "<table id='myTable' border='1'>";
 
-echo "<thread border='1'>";
-echo "<tr>";
+echo "<thead style='border-bottom: 1px solid black;'>";
+echo "<tr style='border-bottom: 1px solid black;'>";
 
     echo "<th>&nbsp;ID</th>";
     echo "<th>&nbsp;Job-Beschreibung</th>";
@@ -33,18 +35,18 @@ echo "<tr>";
     echo "<th>&nbsp;Dienstort</th>";
     echo "<th>&nbsp;Stundenausmaß</th>";
     echo "<th>&nbsp;Mindestgehalt_euro</th>";
-    echo "<th>&nbsp;Aktionen</th>";
+    echo "<th>Kategorie&nbsp;</th>";
 
  
 echo "</tr>";
-echo "</thread>";
+echo "</thead>";
 
     echo "<tbody>";
 
 while ($row = mysqli_fetch_assoc($result)) {
 // print_r($row);
 // die;
-    echo "<tr>";
+    echo "<tr  style='border-bottom: 1px solid black;'>";
         echo "<td>" . $row["id"]  .  "</td>";
       
         echo "<td>" . $row["jobs"]  .  "</td>";
@@ -58,6 +60,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         echo "<td>" . $row["stundenausmaß"]  .  "</td>";
 
         echo "<td>" . $row["mindestgehalt_euro"]  .  "</td>";
+
+        echo "<td>" . $row["kategorie_id"]  .  "</td>";
+
 
     echo "</tr>";
 }

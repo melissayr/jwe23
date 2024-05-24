@@ -8,14 +8,17 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 <!-- <h1>Verwaltung der Jobs im geheimen Admin Bereich</h1> -->
 <?php
 include "funktionen.php";
+include "aktualisiere_jobs.php";
 
 ist_eingeloggt();
 ?>
 
 <h1>Jobs Verwalten im geheimen Admin Bereich</h1>
 
+<div style="display: flex; justify-content:space-between;">
 <p><a href="jobs_anlegen.php">Neue Jobs anlegen</a></p>
-
+<p><a class="link-danger" href="logout.php">Hier loggst du dich aus!</a></p>
+</div>
 
 <?php
 echo "<br/>";
@@ -25,11 +28,11 @@ echo "<br/>";
 // Abfrage aus der Datenbank
 $result = query ( "SELECT * FROM jobs ORDER BY id ASC");
 
-echo "<div class='jobs-list'>";
 
-echo "<table class='table-bordered'>";
-echo "<thead>";
-echo "<tr>";
+
+echo "<table id='myTable' border='1'>";
+echo "<thead style='border-bottom: 1px solid black;'>";
+echo "<tr style='border-bottom: 1px solid black;'>";
 
     echo "<th>ID &nbsp;</th>";
     echo "<th>Beschreibung &nbsp;</th>";
@@ -50,7 +53,7 @@ echo "</thead>";
 while ($row = mysqli_fetch_assoc($result)) {
 // print_r($row);
 // die;
-    echo "<tr>";
+    echo "<tr style='border-bottom: 1px solid black;'>";
         echo "<td>" . $row["id"]  .  "</td>";
       
         echo "<td>" . $row["jobs"]  .  "</td>";
@@ -82,8 +85,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
     echo"</tbody>";
-    echo"</table>
-</div>";
+    echo"</table>";
+
 
 
 echo "<br/>";

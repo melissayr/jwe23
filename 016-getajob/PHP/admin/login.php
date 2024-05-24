@@ -85,7 +85,7 @@ if (!empty($validieren)){
             <input type="password" name="passwort" id="passwort" />
         </div>
 
-        <div><button type="submit">Einloggen</button></div>
+        <div><button style="margin-left: 10px" class="btn btn-success" type="submit">Einloggen</button></div>
     </form>
     
 </body>

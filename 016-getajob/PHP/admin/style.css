@@ -315,6 +315,10 @@ section {
     padding: 8px;
 }
 
+.loginOut{
+    display: flex;
+    justify-content: space-between;
+}
 
 /* Button Read more */
 
