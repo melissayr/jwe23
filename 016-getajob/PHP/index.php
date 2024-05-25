@@ -1,13 +1,6 @@
-
-
-
 <?php
-// ist_eingeloggt();
-
 include "kopf.php";
 ?>
-
-
 
 <?php //$_GET["seite"] ist die SUPERGLOBALE VARIABLE
  //assoziativer array index "seite"
@@ -45,13 +38,8 @@ if($site == "home") { // Key - Seitenident.
 // auf allen Seiten navigation und footer includen
 ?>
 
-
-
-
 <?php
 
-//nav.php?
-// include "funktionen.php"
 
 include  $include_datei;
 include "fuss.php";

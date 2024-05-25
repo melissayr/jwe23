@@ -117,10 +117,6 @@ if (!empty($_POST)){
                     echo htmlspecialchars($row["jobs"]); 
                  }?>" />
         </div>
-
-                    
-                     
-
                      <div>
                      <lable for="qualifikation">Qualifikation:</lable>
                      <input type="text" name="qualifikation" id="qualifikation" value="<?php 
@@ -132,33 +128,35 @@ if (!empty($_POST)){
                               </div>
 
                             <div>
-                              <lable for="dienstort">dienstort:</lable>
-                              <input type="text" name="dienstort" id="dienstort" value="<?php 
+                            <lable for="dienstort">dienstort:</lable>
+                            <input type="text" name="dienstort" id="dienstort" value="<?php 
                                   if (!$erfolg && !empty($_POST["dienstort"])) {
                                       echo htmlspecialchars($_POST["dienstort"]);
                                   } else {
                                       echo htmlspecialchars($row["dienstort"]);
                                        }?>" /> </div>
 
-                                       <div>
-                                       <lable for="stundenausmaß">stundenausmaß:</lable>
-                                       <input type="number" name="stundenausmaß" id="stundenausmaß" value="<?php 
-                                           if (!$erfolg && !empty($_POST["stundenausmaß"])) {
-                                               echo htmlspecialchars($_POST["stundenausmaß"]);
+                                    <div>
+                                    <lable for="stundenausmaß">stundenausmaß:</lable>
+                                    <input type="number" name="stundenausmaß" id="stundenausmaß" value="<?php 
+                                        if (!$erfolg && !empty($_POST["stundenausmaß"])) {
+                                             echo htmlspecialchars($_POST["stundenausmaß"]);
                                            } else {
-                                               echo htmlspecialchars($row["stundenausmaß"]);
-                                                }?>" /> </div>
+                                            echo htmlspecialchars($row["stundenausmaß"]);
+                                             }?>" /> </div>
                                         
-                                       <div>
-                                       <lable for="mindestgehalt_euro">mindestgehalt_euro:</lable>
-                                       <input type="number" name="mindestgehalt_euro" id="mindestgehalt_euro" value="<?php 
-                                           if (!$erfolg && !empty($_POST["mindestgehalt_euro"])) {
-                                               echo htmlspecialchars($_POST["mindestgehalt_euro"]);
-                                           } else {
-                                               echo htmlspecialchars($row["mindestgehalt_euro"]);
-                                                }?>" /></div>
+                                    <div>
+                                    <lable for="mindestgehalt_euro">mindestgehalt_euro:</lable>
+                                    <input type="number" name="mindestgehalt_euro" id="mindestgehalt_euro" value="<?php 
+                                        if (!$erfolg && !empty($_POST["mindestgehalt_euro"])) {
+                                            echo htmlspecialchars($_POST["mindestgehalt_euro"]);
+                                        } else {
+                                            echo htmlspecialchars($row["mindestgehalt_euro"]);
+                                             }?>" /></div>
 
 <?php
+        //Auswahl der Kategorien in Dropdown 
+        
         // datenbank
         $db = mysqli_connect("localhost", "root", "", "getajob");
         // abfrage, um alle Kategorien aus der Tabelle "kategorien" abzurufen

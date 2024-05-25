@@ -13,8 +13,6 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
 <?php
 include "funktionen.php";
 
-
-
 ist_eingeloggt();
 ?>
 
@@ -34,7 +32,7 @@ echo "<br/>";
 $result = query ( "SELECT * FROM jobs ORDER BY id ASC");
 
 
-
+//Table für die Anzeige der Jobs mit Aktionen
 echo "<table id='myTable' border='1'>";
 echo "<thead style='border-bottom: 1px solid black;'>";
 echo "<tr style='border-bottom: 1px solid black;'>";

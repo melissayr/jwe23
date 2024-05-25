@@ -4,6 +4,7 @@
     <!-- jQuery-Bibliothek -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <h2 class="page-heading">Jobs</h2>
     <h4>Kategorien ID´s</h4>
@@ -43,8 +44,7 @@
     echo "</table>";
     ?>
 
-
-
+<!-- Javascript durchsucht meinen Table in der search zeile zum filtern -->
 <script>
                     $(document).ready(function() {
   $("#jobSearchInput").on("keyup", function() {
@@ -77,10 +77,10 @@
     // AJAX für automatische aktualisierung
         $(document).ready(function() {
             function ladeJobs() {
-                $.ajax({
+                $.ajax({ //Auf URL Pfad aufpassen
                     url: 'http://localhost/workspaces/jwe23/016-getajob/PHP/inhalte/aktualisiere_jobs.php',
                     type: 'GET',
-                    success: function(response) {
+                    success: function(response) { //Wenn erfolgreich, dann gib in der Console aus
                         console.log("AJAX Anfrage erfolgreich");
                         $('#myTable tbody').html(response);
                     },
@@ -90,8 +90,8 @@
                 });
             }
 
-            ladeJobs();
-            setInterval(ladeJobs, 5000);
+            ladeJobs(); //function calln
+            setInterval(ladeJobs, 5000); //alle 5 sek
         });
 </script>
 </main>

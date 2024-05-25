@@ -7,7 +7,7 @@ $db = mysqli_connect("localhost", "root", "", "getajob"); //Verbindung Datenbank
 mysqli_set_charset($db, "utf8"); //alle Befehle kommen als uft8
 
 
-//function für die query 
+//function für die query (Datenbankaufruf)
 function query ($sql_befehl) { 
     global $db; //keyword global um die $db Variable vom globalen scope zu übernehmen
     $result = mysqli_query($db, $sql_befehl);
@@ -22,7 +22,7 @@ function escape($post_var){
 }
 
 
-//Überprüfen ob man eingeloggt ist
+//Überprüfen ob man eingeloggt ist für den Admin Bereich
 function ist_eingeloggt(){
     if (empty ($_SESSION["eingeloggt"])){
         header("Location: login.php");

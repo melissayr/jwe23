@@ -37,7 +37,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 </p>
             </div>
 
-         
+     
 
             <!-- <div id="right-footer">
                 <h3>Follow us on</h3>
@@ -59,9 +59,8 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                             </a>
                         </li>
                     </ul>
-                </div> -->
-              
-            </div>
+                </div>               
+            </div> -->
 
             &copy; <?php// echo "2024 - " . date("Y"); echo $nav_punkte[$site]; ?> <p> Melissa Reim</p>
         </footer>

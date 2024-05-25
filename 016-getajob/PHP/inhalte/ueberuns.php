@@ -1,7 +1,4 @@
-
-
 <main>
-
     <h2 class="page-heading">Über uns</h2>
 
           <div class="card-description">

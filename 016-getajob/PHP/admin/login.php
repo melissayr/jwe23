@@ -11,7 +11,7 @@ include "setup.php";
 
 use WIFI\getajob\Klassen\Validieren;
 use WIFI\getajob\Klassen\Mysql;
-//das wird dank bem autoloader in der setup php übernommen
+//das wird dank dem autoload register in der setup php übernommen und verhindert enlose 'includes'
 
 
 
@@ -50,14 +50,8 @@ if(!empty($_POST)){
     
 }
 
-
-
 //asdf
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -67,12 +61,10 @@ if(!empty($_POST)){
 </head>
 <body>
     <h1>Loginbereich zur Fahrzeug-DB</h1>
-<?php 
+<?php //Wenn login nicht leer ist, dann validieren
 if (!empty($validieren)){
     echo $validieren->fehler_html();
 }
-
-
 ?>
     <form action="login.php" method="post">
         <div>

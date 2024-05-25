@@ -4,6 +4,8 @@
   crossorigin="anonymous">
 <!-- Link zum css -->
 
+
+
 <link rel="stylesheet" href="style.css">
   
 <!-- Bootstrap css -->
@@ -39,9 +41,6 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 <a href="login.html">Login</a>
             </li>
             <li>
-                <a href="bewerbung.html">Login</a>
-            </li>
-            <li>
                 <a href="faq.html">FAQ´s</a>
             </li>
            
@@ -72,7 +71,7 @@ href="../vendor/bootstrap-5.3.2-dist/css/bootstrap.css"
                 <a href="login.html">Login</a>
             </li>
             <li>
-                <a href="bewerbung.html">Login</a>
+                <a href="bewerbung.html">Bewerben</a>
             </li>
             <li>
                 <a href="faq.html">FAQ´s</a>

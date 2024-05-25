@@ -103,6 +103,7 @@ if (!empty($_POST)) {
             <input type="text" name="titel" id="titel" />
         </div>
                 <?php
+                //Auswahl der Kategorien als dropdown
                 // datenbank
                 $db = mysqli_connect("localhost", "root", "", "getajob");
                 // abfrage, um alle Kategorien aus der Tabelle "kategorien" abzurufen

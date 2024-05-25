@@ -1,6 +1,7 @@
 <?php
 namespace WIFI\getajob\Klassen;
 
+//Klasse Validieren für die Validierung
 class validieren 
 {   
 
@@ -14,7 +15,8 @@ class validieren
         } //wenn $wert leer ist, dann fehlermeldung ansonsten true
         return true;
     }
-
+    
+    //Function für wenn ein Fehler aufgetreten ist - gibt bolean zurück
     public function fehler_aufgetreten(): bool
     {
         if (empty($this->errors)) {
@@ -35,8 +37,6 @@ class validieren
         if (!$this->fehler_aufgetreten()) {
             return "";
         }
-
-
 
         $ret = "<ul>";
         foreach($this->errors as $error){

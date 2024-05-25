@@ -13,7 +13,7 @@ class Mysql
     public static function getInstanz(): Mysql //function getInstanz
     {
         if (!self::$instanz) {
-            self:: $instanz = new Mysql();
+            self:: $instanz = new Mysql(); //Neues Objekt Mysql
         }
         return self::$instanz;
     }
@@ -44,6 +44,7 @@ class Mysql
          return $this->db->real_escape_string($wert);
     }
 
+    //query function datenbankabfrage
     public function query(string $input): \mysqli_result|bool  //  -> mysqli_result   | (oder)  bool // Query function (Abfrage Datenbank)
     {
         $ergebnis = $this->db->query($input);
