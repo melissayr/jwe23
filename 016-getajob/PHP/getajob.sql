@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 24. Mai 2024 um 23:55
+-- Erstellungszeit: 25. Mai 2024 um 09:27
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -67,7 +67,7 @@ INSERT INTO `jobs` (`id`, `jobs`, `titel`, `kategorie_id`, `qualifikation`, `die
 (1, 'Web Programmierung, Web Design, ', 'Web-Entwickler/in', 4, 'Abschluss', 'Salzburg', '25', '3000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
 (2, 'Kinderpädagogik, Kindererziehung', 'Erzieher/in', 3, 'Studium ', 'Wien', '30', '3500', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
 (3, 'Inneneinrichtung, Innendesign, Kunst', 'Innenarchitekt', 1, 'Hochschulreife', 'Graz', '38', '4000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
-(5, 'Augen untersuchen', 'Augenarzt', 3, 'Studium oder ähnliche Abschlüsse ', 'Graz', '30', '2700', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
+(5, 'Augen untersuchen', 'Augenarzt', 3, 'Studium oder ähnliche Abschlüsse ', 'Graz', '30', '2500', '2024-05-18 11:50:39', '2024-05-25 07:03:25.359065'),
 (19, 'Entwickeln, Programmieren', 'Softwareentwickler/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Salzburg', '40', '4000', '2024-05-18 11:50:39', '2024-05-24 21:35:08.773002'),
 (22, 'Allgemeine Bürotätigkeiten', 'Bürokaufmann/frau', 2, 'Mittlerer Bildungsabschluss', 'Salzburg', '30', '2500', '2024-05-24 13:28:53', '2024-05-24 21:35:08.773002'),
 (27, 'Website gestalten', 'UI/UX Designer/in', 4, 'Studium oder ähnliche Abschlüsse ', 'Wien', '25', '2000', '2024-05-24 15:55:05', '2024-05-24 21:35:08.773002'),
@@ -89,7 +89,7 @@ CREATE TABLE `kategorien` (
 --
 
 INSERT INTO `kategorien` (`id`, `kategorien`) VALUES
-(1, 'Bau, Architektur, Vermessung'),
+(1, 'Bau, Architektur,Vermessung'),
 (2, 'Dienstleistung'),
 (3, 'Soziales'),
 (4, 'IT, Computer'),
@@ -138,7 +138,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT für Tabelle `kategorien`
 --
 ALTER TABLE `kategorien`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints der exportierten Tabellen
