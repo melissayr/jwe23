@@ -2,10 +2,6 @@
 
 namespace WIFI\getajob\Klassen\Model\Row;
 
-
-
-
-
 class Job extends RowAbstract // vererbt von der RowAbstract(parent)
 
 {   
@@ -13,7 +9,7 @@ class Job extends RowAbstract // vererbt von der RowAbstract(parent)
 
     public function get_kategorie(): Kategorie
     {
-        return new Kategorie ($this->$kategorien_id);
+        return new Kategorie ($this->kategorien_id);
     }
 }
 

@@ -57,7 +57,7 @@ if ($parameter[0] == "jobs") {
         while ($row = mysqli_fetch_assoc($result)) {
             $ausgabe["result"][] = $row;
         }
-        //Ich habe keine ID 123 ... 
+        //Ich habe keine ID 123 ...
     } elseif (isset($parameter[1]) && $parameter[1] == "123") {
         $result = query("SELECT * FROM jobs WHERE id = 123");
         while ($row = mysqli_fetch_assoc($result)) {

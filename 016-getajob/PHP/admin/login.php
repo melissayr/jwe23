@@ -13,8 +13,6 @@ use WIFI\getajob\Klassen\Validieren;
 use WIFI\getajob\Klassen\Mysql;
 //das wird dank dem autoload register in der setup php übernommen und verhindert enlose 'includes'
 
-
-
 //wurde das Formular abgeschickt? Wenn es nicht leer ist dann validiere
 if(!empty($_POST)){
     //Validierung
